@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Ultimate</string>
+    <string name="boutonLancement">Play</string>
+    <string name="boutonQuitter">Exit</string>
+</resources>
