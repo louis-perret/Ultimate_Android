@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.37135416666666665" />
+        <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/drawable/ic_launcher_background.xml" value="0.37135416666666665" />
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout/fenetre_lancement.xml" value="0.24094202898550723" />
+        <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout/fenetre_selection.xml" value="0.25" />
       </map>
     </option>
   </component>

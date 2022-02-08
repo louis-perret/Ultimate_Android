@@ -5,16 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/buttonExit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="@+id/buttonPlay"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="@+id/buttonPlay"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPlay" />
-
     <TextView
         android:id="@+id/titreJeu"
         android:layout_width="wrap_content"
@@ -25,6 +15,7 @@
         android:inputType="textPersonName"
         android:textSize="50sp"
 
+        android:text="@string/app_name"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/buttonPlay"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,11 +27,23 @@
         android:id="@+id/buttonPlay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:onClick="lancementJeu"
+        android:text="@string/boutonLancement"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/titreJeu"
         app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="@+id/titreJeu"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499" />
+
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/boutonQuitter"
+        android:onClick="quitterJeu"
+        app:layout_constraintEnd_toEndOf="@+id/buttonPlay"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="@+id/buttonPlay"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPlay" />
 </androidx.constraintlayout.widget.ConstraintLayout>

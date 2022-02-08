@@ -2,7 +2,9 @@ package com.example.ultimateandroid.modele.pokemon;
 
 import com.example.ultimateandroid.modele.pokemon.etat.Etat;
 
-public class Pokemon {
+import java.io.Serializable;
+
+public class Pokemon implements Serializable {
 
     private String nom; //son nom
     private String image; //son image de déplacement
@@ -11,10 +13,10 @@ public class Pokemon {
     private int attaque; //ses points d'attaque
     private int defense; //ses points de défense
     private int vitesse; //ses points de vitesse
-    /*private transient Position position; //ses coordonées
-    private Type type; //son type
-    private Mouvement[] mouvements; //contient ses 4 attaques*/
 
+    private transient Position position; //ses coordonées
+    private Type type; //son type
+    private Mouvement[] mouvements; //contient ses 4 attaques
     private int niveau; //son niveau (1 au minimum)
     private int experience; //son expérience (0 au minimum)
     private String evolution; //contient le nom de son évolution
@@ -34,17 +36,17 @@ public class Pokemon {
      * @param experience : son expérience
      * @param evolution : le nom de son évolution
      */
-    public Pokemon(String nom, String image,String imageCombat, int pv, int attaque, int defense, int vitesse, int niveau, int experience, String evolution,Boolean isStarter) {
-        setNom(nom);
+    public Pokemon(String nom, String image,String imageCombat, int pv, int attaque, int defense, int vitesse, int niveau,Position position, Type type, Mouvement[] tabMouvements, int experience, String evolution,Boolean isStarter) {
+        this.nom=nom;
         this.image = image;
-        setImageCombat(imageCombat);
-        setPv(pv);
+        this.imageCombat=imageCombat;
+        this.pv=pv;
         this.attaque = attaque;
         this.defense = defense;
         this.vitesse = vitesse;
-       /* this.position = position;
+        this.position = position;
         this.type = type;
-        this.mouvements=tabMouvements;*/
+        this.mouvements=tabMouvements;
         this.niveau=niveau;
         this.experience=experience;
         this.evolution=evolution;
@@ -56,9 +58,9 @@ public class Pokemon {
      * Clone le pokemon (Patron Prototype)
      * @return un Pokemon
      */
-    /*public Pokemon cloner(){
+    public Pokemon cloner(){
         return new Pokemon(getNom(),getImage(),getImageCombat(),getPv(),getAttaque(),getDefense(),getVitesse(),getPosition(),getType(),getMouvements(),getNiveau(),getExperience(),getEvolution(),getStarter());
-    }*/
+    }
 
     /**
      * Applique les effets de son états (Patron Etat)
@@ -69,22 +71,6 @@ public class Pokemon {
         }
     }
 
-    /**
-     *  Initialisation des propriétés après la deserialisation
-     */
-    /*public void initialisationProprietesOnDeserialized(){
-        nom=new SimpleStringProperty();
-        setNom(nomPrive);
-        imageCombat= new SimpleStringProperty();
-        setImageCombat(imageCombatPrive);
-        pv= new SimpleIntegerProperty();
-        setPv(pvPrive);
-        if(mouvements != null) {
-            for (Mouvement m : mouvements) {
-                m.initialisationProprietesOnDeserialized();
-            }
-        }
-    }*/
 
     /* Getter et Setter */
 
@@ -140,7 +126,7 @@ public class Pokemon {
         this.vitesse = vitesse;
     }
 
-   /* public Position getPosition() {
+   public Position getPosition() {
         return position;
     }
 
@@ -161,27 +147,27 @@ public class Pokemon {
     }
 
     public void setMouvements(Mouvement[] mouvements) {
-        /*int i=0;
+        int i=0;
         for(Mouvement m : mouvements) {
             this.mouvements[i] = m;
             i=i+1;
         }
         this.mouvements=mouvements;
-    }*/
+    }
 
     /**
      * Retourne sa technique par rapport à son nom
      * @param  : nom de l'attaque
      * @return un Mouvement
      */
-   /*public Mouvement getMouvement(String nom){
+   public Mouvement getMouvement(String nom){
         for (Mouvement m : mouvements){
             if(m.getNom().equals(nom)){
                 return m;
             }
         }
         return null; //pas trouvé
-    }*/
+    }
 
     public int getNiveau() {
         return niveau;
@@ -251,12 +237,12 @@ public class Pokemon {
      * Renvoie l'instance sous forme de chaîne de caractères
      * @return un string
      */
-    /*@Override
+    @Override
     public String toString(){
         String res = "Pokemon : " + this.getNom() + " de type " + this.getType()  + ". A comme technique : ";
         for (Mouvement m : mouvements){
             res  += m.getNom();
         }
         return res;
-    }*/
+    }
 }

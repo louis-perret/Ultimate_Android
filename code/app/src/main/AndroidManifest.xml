@@ -17,6 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity android:name=".vues.FenetreSelection">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".vues.FenetreLancement"/>
+        </activity>
     </application>
 
 </manifest>
