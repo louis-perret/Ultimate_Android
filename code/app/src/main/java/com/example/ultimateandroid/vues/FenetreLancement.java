@@ -19,6 +19,12 @@ public class FenetreLancement extends AppCompatActivity {
         startActivity(intent); //On lance l'activité
     }
 
+    public void consultationScores(View view){
+        Intent intent = new Intent(this,FenetreScore.class);
+        startActivity(intent); //On lance l'activité
+    }
+
+
     public void quitterJeu(View view) {
         finish();
     }
@@ -28,6 +34,7 @@ public class FenetreLancement extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fenetre_lancement); //Je rattache le code behind à la fenêtre
     }
+
 
 
 }

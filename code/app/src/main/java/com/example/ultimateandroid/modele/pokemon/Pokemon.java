@@ -59,7 +59,7 @@ public class Pokemon implements Serializable {
      * @return un Pokemon
      */
     public Pokemon cloner(){
-        return new Pokemon(getNom(),getImage(),getImageCombat(),getPv(),getAttaque(),getDefense(),getVitesse(),getPosition(),getType(),getMouvements(),getNiveau(),getExperience(),getEvolution(),getStarter());
+        return new Pokemon(getNom(),getImage(),getImageCombat(),getPv(),getAttaque(),getDefense(),getVitesse(),getNiveau(), getPosition(),getType(),getMouvements(),getExperience(),getEvolution(),getStarter());
     }
 
     /**

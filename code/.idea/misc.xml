@@ -7,6 +7,14 @@
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/drawable/ic_launcher_background.xml" value="0.37135416666666665" />
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout/fenetre_lancement.xml" value="0.24094202898550723" />
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout/fenetre_selection.xml" value="0.25" />
+        <entry key="app/src/main/res/layout-land/fenetre_jeu.xml" value="0.16049382716049382" />
+        <entry key="app/src/main/res/layout-land/fenetre_lancement.xml" value="0.25" />
+        <entry key="app/src/main/res/layout-land/fenetre_score.xml" value="0.16049382716049382" />
+        <entry key="app/src/main/res/layout-land/fenetre_selection.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fenetre_jeu.xml" value="0.18958333333333333" />
+        <entry key="app/src/main/res/layout/fenetre_lancement.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fenetre_score.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fenetre_selection.xml" value="0.21105072463768115" />
       </map>
     </option>
   </component>
