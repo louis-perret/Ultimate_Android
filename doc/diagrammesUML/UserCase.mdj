@@ -1713,7 +1713,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -96,
-											"top": -32,
+											"top": -48,
 											"height": 13
 										},
 										{
@@ -1724,10 +1724,10 @@
 											},
 											"font": "Arial;13;1",
 											"left": 315,
-											"top": 83.5,
+											"top": 75.5,
 											"width": 132,
 											"height": 13,
-											"text": "Choisir son pokemon"
+											"text": "Choisir son starter"
 										},
 										{
 											"_type": "LabelView",
@@ -1738,7 +1738,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -96,
-											"top": -32,
+											"top": -48,
 											"width": 80.9072265625,
 											"height": 13,
 											"text": "(from Model1)"
@@ -1752,15 +1752,15 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -96,
-											"top": -32,
+											"top": -48,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 310,
-									"top": 76.5,
-									"width": 142.90087890625,
+									"top": 68.5,
+									"width": 142,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF9mVgij8iWiyQ="
@@ -1787,7 +1787,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": -48,
-									"top": -16,
+									"top": -24,
 									"width": 10,
 									"height": 10
 								},
@@ -1803,7 +1803,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": -48,
-									"top": -16,
+									"top": -24,
 									"width": 10,
 									"height": 10
 								},
@@ -1819,7 +1819,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": -48,
-									"top": -16,
+									"top": -24,
 									"width": 10,
 									"height": 10
 								},
@@ -1835,7 +1835,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": -48,
-									"top": -16,
+									"top": -24,
 									"width": 10,
 									"height": 10
 								},
@@ -1851,7 +1851,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": -48,
-									"top": -16,
+									"top": -24,
 									"width": 10,
 									"height": 10
 								}
@@ -1859,7 +1859,7 @@
 							"font": "Arial;13;0",
 							"containerChangeable": true,
 							"left": 280,
-							"top": 72,
+							"top": 64,
 							"width": 202,
 							"height": 35,
 							"nameCompartment": {
@@ -1904,8 +1904,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 242,
-									"top": 149,
+									"left": 241,
+									"top": 145,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -1925,8 +1925,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 234,
-									"top": 136,
+									"left": 233,
+									"top": 132,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -1946,8 +1946,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 257,
-									"top": 174,
+									"left": 258,
+									"top": 170,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -1967,8 +1967,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 163,
-									"top": 197,
+									"left": 162,
+									"top": 196,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -1988,8 +1988,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 158,
-									"top": 185,
+									"left": 157,
+									"top": 183,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -2010,7 +2010,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 173,
-									"top": 223,
+									"top": 221,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -2030,8 +2030,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 321,
-									"top": 101,
+									"left": 322,
+									"top": 94,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -2051,7 +2051,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 312,
-									"top": 91,
+									"top": 84,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -2070,8 +2070,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 339,
-									"top": 122,
+									"left": 340,
+									"top": 115,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -2116,7 +2116,7 @@
 								"$ref": "AAAAAAF9kXPS89Odrq0="
 							},
 							"lineStyle": 1,
-							"points": "149:230;351:107",
+							"points": "149:229;352:99",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF9mVhfTcmWYA4="
@@ -2174,7 +2174,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 364,
-									"top": 118,
+									"top": 114,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -2194,7 +2194,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 415,
-									"top": 115,
+									"top": 111,
 									"width": 55.65625,
 									"height": 13,
 									"alpha": -1.468456562095233,
@@ -2217,7 +2217,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 393,
-									"top": 119,
+									"top": 115,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -2235,7 +2235,7 @@
 								"$ref": "AAAAAAF9kXP0b9PHm6o="
 							},
 							"lineStyle": 1,
-							"points": "379:143;380:107",
+							"points": "378:143;380:99",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF9mVhy7MocP+Q="
@@ -2268,8 +2268,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 453,
-									"top": 180,
+									"left": 452,
+									"top": 179,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -2288,8 +2288,8 @@
 										"$ref": "AAAAAAF9mVilxMrfEn0="
 									},
 									"font": "Arial;13;0",
-									"left": 432,
-									"top": 192,
+									"left": 430,
+									"top": 191,
 									"width": 55.65625,
 									"height": 13,
 									"alpha": 2.1474232182442448,
@@ -2311,8 +2311,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 474,
-									"top": 159,
+									"left": 475,
+									"top": 160,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -2330,7 +2330,7 @@
 								"$ref": "AAAAAAF9kXWlzdVB+h0="
 							},
 							"lineStyle": 1,
-							"points": "417:199;464:176;397:107",
+							"points": "417:199;464:176;396:99",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF9mVilxMriBp4="
@@ -2425,7 +2425,7 @@
 								"$ref": "AAAAAAF9kXR46dP2X2Y="
 							},
 							"lineStyle": 1,
-							"points": "432:263;544:224;592:96;482:92",
+							"points": "432:263;544:224;592:96;482:88",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF9mVjIkMwJmUo="
@@ -3153,7 +3153,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF9kXO5/dOWga0="
 					},
-					"name": "Choisir son pokemon"
+					"name": "Choisir son starter"
 				},
 				{
 					"_type": "UMLUseCase",
