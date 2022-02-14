@@ -36,7 +36,7 @@ public class Pokemon implements Serializable {
      * @param experience : son expérience
      * @param evolution : le nom de son évolution
      */
-    public Pokemon(String nom, String image,String imageCombat, int pv, int attaque, int defense, int vitesse, int niveau,Position position, Type type, Mouvement[] tabMouvements, int experience, String evolution,Boolean isStarter) {
+    public Pokemon(String nom, String image,String imageCombat, int pv, int attaque, int defense, int vitesse, Position position, Type type, Mouvement[] tabMouvements,int niveau, int experience, String evolution,Boolean isStarter) {
         this.nom=nom;
         this.image = image;
         this.imageCombat=imageCombat;
@@ -59,7 +59,7 @@ public class Pokemon implements Serializable {
      * @return un Pokemon
      */
     public Pokemon cloner(){
-        return new Pokemon(getNom(),getImage(),getImageCombat(),getPv(),getAttaque(),getDefense(),getVitesse(),getNiveau(), getPosition(),getType(),getMouvements(),getExperience(),getEvolution(),getStarter());
+        return new Pokemon(getNom(),getImage(),getImageCombat(),getPv(),getAttaque(),getDefense(),getVitesse(), getPosition(),getType(),getMouvements(),getNiveau(),getExperience(),getEvolution(),getStarter());
     }
 
     /**
