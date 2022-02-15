@@ -15,8 +15,8 @@ public class Monde {
      * @param dicoTuiles : Dictionnaire contenant les types de tuiles
      */
     public Monde(Map<Integer,Tuile> dicoTuiles) {
-        lesCartes.put("lobby",new Carte("Ressources/cartes/Lobby.txt",dicoTuiles));
-        lesCartes.put("arene",new Carte("Ressources/cartes/Arène.txt",dicoTuiles));
+        lesCartes.put("lobby",new Carte("@raw/cartes/lobby.txt",dicoTuiles));
+        lesCartes.put("arene",new Carte("@raw/cartes/arene.txt",dicoTuiles));
     }
 
     //Getter et setter

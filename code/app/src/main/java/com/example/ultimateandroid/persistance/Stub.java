@@ -1,5 +1,6 @@
 package com.example.ultimateandroid.persistance;
 
+import com.example.ultimateandroid.R;
 import com.example.ultimateandroid.modele.Manager;
 import com.example.ultimateandroid.modele.monde.Tuile;
 import com.example.ultimateandroid.modele.pokemon.CollectionPokemon;
@@ -226,7 +227,7 @@ public class Stub extends Chargeur{
 
         //Création des pokemon
         Mouvement[] tabMouvements=new Mouvement[]{foutLiane,toxic,charge,sabotage};
-        Pokemon p = new Pokemon("Bulbizarre","@drawable/sprite/Sprite_bulbi/bulb_1.png","/sprite/Sprite_bulbi/bulb_combat_dos.png",70,25,30,10,position, plante,tabMouvements,1,0,"Herbizarre", true);
+        Pokemon p = new Pokemon("Bulbizarre","@drawable/sprite/bulb_1","/sprite/Sprite_bulbi/bulb_combat_dos.png",70,25,30,10,position, plante,tabMouvements,1,0,"Herbizarre", true);
         niveau1.add(p);
         tabMouvements=new Mouvement[]{flammèche,charge,ombre_portee,trempette};
         p = new Pokemon("Salamèche","/sprite/Sprite_salam/salam_1.png","/sprite/Sprite_salam/salam_combat_dos.png",70,30,20,15,position, feu,tabMouvements,1,0,"Reptincel", true);

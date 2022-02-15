@@ -51,7 +51,7 @@ public class Manager implements Serializable {
         this.pokedex=collectionPokemon;
         //this.controleurCombat = new ControleurCombatV1(collectionPokemon);
         this.dicoTuiles=dicoTuiles;
-       // this.monde=new Monde(dicoTuiles);
+        this.monde=new Monde(dicoTuiles);
     }
 
     /**
