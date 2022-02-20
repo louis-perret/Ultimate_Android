@@ -30,7 +30,7 @@ public class FenetreJeu extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fenetre_jeu); //Je rattache le code behind à la fenêtre
-        //manager.setPokemonCourant(manager.getPokedex().getPokemon("Bulbizarre",1));
-        //manager=(Manager)savedInstanceState.get("manager");
+        manager=(Manager)getIntent().getSerializableExtra("manager");
+        manager.setPokemonCourant(manager.getPokedex().getPokemon("Bulbizarre",1));
     }
 }

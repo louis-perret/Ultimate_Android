@@ -14,33 +14,21 @@ public class Carte {
 
 
     /**
-     * Constructeur
-     * @param chemin : chemin du fichier qui contient la carte à charger
-     * @param dicoTuiles : type de tuiles qui l'a compose
+     * Construit une carte
+     * @param lesTuiles
+     * @param hauteur
+     * @param largeur
+     * @param spawnX
+     * @param spawnY
+     * @param dicoTuiles
      */
-    public Carte(String chemin,Map<Integer,Tuile> dicoTuiles){
-        chargerCarte(chemin);
-        this.dicoTuiles=dicoTuiles;
-    }
-
-    /**
-     * Charge la carte d'après son fichier assigné
-     * @param chemin : chemin du fichier à charger
-     */
-    public void chargerCarte(String chemin) {
-        String fichier = LectureMonde.chargerFichier(chemin);
-        String[] partie = fichier.split("\\s+");
-        largeur = LectureMonde.parseInt(partie[0]);
-        hauteur = LectureMonde.parseInt(partie[1]);
-        spawnX = LectureMonde.parseInt(partie[2]);
-        spawnY = LectureMonde.parseInt(partie[3]);
-
-        lesTuiles = new int[hauteur][largeur];
-        for(int j=0;hauteur>j;j++){
-            for(int i=0;i<largeur;i++) {
-                lesTuiles[j][i] = LectureMonde.parseInt(partie[(i + j  * largeur) + 4]);
-            }
-        }
+    public Carte(int[][] lesTuiles, int hauteur, int largeur, int spawnX, int spawnY, Map<Integer, Tuile> dicoTuiles) {
+        this.lesTuiles = lesTuiles;
+        this.hauteur = hauteur;
+        this.largeur = largeur;
+        this.spawnX = spawnX;
+        this.spawnY = spawnY;
+        this.dicoTuiles = dicoTuiles;
     }
 
     /**

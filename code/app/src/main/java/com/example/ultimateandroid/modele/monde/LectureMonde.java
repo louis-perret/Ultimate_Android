@@ -3,6 +3,8 @@ package com.example.ultimateandroid.modele.monde;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  * Classe utilitaire permettant de lire un fichier .txt
@@ -11,13 +13,13 @@ public class LectureMonde {
 
     /**
      * Charge un fichier dans une chaîne de caractères
-     * @param chemin : chemin du fichier
+     * @param fichier : chemin du fichier
      * @return un string
      */
-    public static String chargerFichier(String chemin) {
+    public static String chargerFichier(InputStream fichier) {
         StringBuilder builder = new StringBuilder();
         try{
-            BufferedReader br = new BufferedReader(new FileReader(chemin));
+            BufferedReader br = new BufferedReader(new InputStreamReader(fichier));
             String ligne;
             while((ligne = br.readLine()) != null){
                 builder.append(ligne + "\n");

@@ -14,6 +14,7 @@ import com.example.ultimateandroid.modele.pokemon.Mouvement;
 import com.example.ultimateandroid.modele.pokemon.Pokemon;
 import com.example.ultimateandroid.modele.pokemon.Position;
 
+import java.io.InputStream;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
@@ -51,7 +52,7 @@ public class Manager implements Serializable {
         this.pokedex=collectionPokemon;
         //this.controleurCombat = new ControleurCombatV1(collectionPokemon);
         this.dicoTuiles=dicoTuiles;
-        this.monde=new Monde(dicoTuiles);
+        this.monde=new Monde();
     }
 
     /**
@@ -174,6 +175,10 @@ public class Manager implements Serializable {
             this.setCarteCourante("lobby");
         }
         return carteCourante;
+    }
+
+    public void ajouterCarte(String nomCarte, InputStream fichier){
+        monde.ajouterCarte(nomCarte,fichier,dicoTuiles);
     }
 
     public void setCarteCourante(String nomCarte) {
