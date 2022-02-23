@@ -2,8 +2,10 @@ package com.example.ultimateandroid.modele;
 
 import com.example.ultimateandroid.modele.boucle.BoucleJeu;
 import com.example.ultimateandroid.modele.boucle.BoucleJeu16;
+import com.example.ultimateandroid.modele.combat.ControleurCombat;
 import com.example.ultimateandroid.modele.deplacement.DeplaceurPokemon;
 import com.example.ultimateandroid.modele.deplacement.DeplaceurPokemonSimple;
+import com.example.ultimateandroid.modele.joueur.Joueur;
 import com.example.ultimateandroid.modele.monde.Carte;
 import com.example.ultimateandroid.modele.monde.Monde;
 import com.example.ultimateandroid.modele.monde.Tuile;
@@ -16,6 +18,7 @@ import com.example.ultimateandroid.modele.pokemon.Position;
 
 import java.io.InputStream;
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -25,7 +28,7 @@ import java.util.Map;
 public class Manager implements Serializable {
 
     private transient DeplaceurPokemon deplaceur; //pour le déplacement
-    //private transient ControleurCombat controleurCombat; //pour les combats
+    private transient ControleurCombat controleurCombat; //pour les combats
 
     private transient Pokemon pokemonCourant; //le pokemon choisie par l'utilisateur
     private transient Pokemon pokemonEnnemiCourant; //pokemon qu'affronte le joueur
@@ -42,17 +45,21 @@ public class Manager implements Serializable {
     private transient int hauteurSurfaceJeu;
     private transient int largeurSurfaceJeu;
 
+    private List<Joueur> lesJoueurs; //faire une array
+    private Joueur joueurCourant;
+
     /**
      * Constructeur
      * @param collectionPokemon : collection des pokemons
      * @param dicoTuiles : type de tuiles
      */
-    public Manager(CollectionPokemon collectionPokemon, Map<Integer, Tuile>dicoTuiles){
+    public Manager(CollectionPokemon collectionPokemon, Map<Integer, Tuile>dicoTuiles, List<Joueur> lesJoueurs){
         this.deplaceur = new DeplaceurPokemonSimple(hauteurSurfaceJeu,largeurSurfaceJeu,Tuile.getTuileHauteur());
         this.pokedex=collectionPokemon;
         //this.controleurCombat = new ControleurCombatV1(collectionPokemon);
         this.dicoTuiles=dicoTuiles;
         this.monde=new Monde();
+        this.lesJoueurs = lesJoueurs;
     }
 
     /**
@@ -195,4 +202,11 @@ public class Manager implements Serializable {
 
     public void setNumeroVague(int numeroVague) { this.numeroVague=numeroVague; }
 
+    public List<Joueur> getLesJoueurs() {
+        return lesJoueurs;
+    }
+
+    public Joueur getJoueurCourant() {
+        return joueurCourant;
+    }
 }

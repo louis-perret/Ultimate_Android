@@ -2,6 +2,7 @@ package com.example.ultimateandroid.persistance;
 
 import com.example.ultimateandroid.R;
 import com.example.ultimateandroid.modele.Manager;
+import com.example.ultimateandroid.modele.joueur.Joueur;
 import com.example.ultimateandroid.modele.monde.Tuile;
 import com.example.ultimateandroid.modele.pokemon.CollectionPokemon;
 import com.example.ultimateandroid.modele.pokemon.Mouvement;
@@ -26,6 +27,16 @@ public class Stub extends Chargeur{
      */
     @Override
     public Manager charger() {
+
+        //test pour les scores
+        List<Joueur> lesJoueurs = new ArrayList<>();
+        Joueur j1 = new Joueur("Hansi", 2);
+        Joueur j2 = new Joueur("Levi", 6);
+        Joueur j3 = new Joueur("Erwin", 4);
+        lesJoueurs.add(j1);
+        lesJoueurs.add(j2);
+        lesJoueurs.add(j3);
+
         List<Pokemon> niveau1=new ArrayList<>();
         List<Pokemon> niveau2=new ArrayList<>();
         List<Pokemon> niveau3=new ArrayList<>();
@@ -345,6 +356,6 @@ public class Stub extends Chargeur{
         dicoTuiles.put(tuileRocher.getId(),tuileRocher);
         dicoTuiles.put(tuileSol.getId(),tuileSol);
         dicoTuiles.put(tuileTronc.getId(),tuileTronc);
-        return new Manager(collectionPokemon,dicoTuiles);
+        return new Manager(collectionPokemon,dicoTuiles, lesJoueurs);
     }
 }
