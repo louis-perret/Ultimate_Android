@@ -21,6 +21,7 @@
         app:layout_constraintVertical_bias="0.555" />
 
     <TextView
+        android:textSize="20dp"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,12 +35,15 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="128dp"
-        android:layout_height="20dp"
+        android:layout_width="145dp"
+        android:layout_height="61dp"
+        android:gravity="center"
         android:text="Nombre de victoire"
+        android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.526" />
+        app:layout_constraintVertical_bias="0.812" />
 </androidx.constraintlayout.widget.ConstraintLayout>
