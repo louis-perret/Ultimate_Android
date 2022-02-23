@@ -28,6 +28,7 @@ public class FenetreLancement extends AppCompatActivity {
 
     public void consultationScores(View view){
         Intent intent = new Intent(this,FenetreScore.class);
+        intent.putExtra("manager",manager);
         startActivity(intent); //On lance l'activité
     }
 

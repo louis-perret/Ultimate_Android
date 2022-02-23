@@ -36,7 +36,7 @@ public class Adaptateur extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Joueur joueur = lesJoueurs.get(position);
         ((ViewHolderJoueur)holder).getTextViewP().setText(joueur.getPseudo());
-        ((ViewHolderJoueur)holder).getTextViewV().setText(joueur.getNbVictoire());
+        ((ViewHolderJoueur)holder).getTextViewV().setText(String.valueOf(joueur.getNbVictoire()));
     }
 
     @Override
