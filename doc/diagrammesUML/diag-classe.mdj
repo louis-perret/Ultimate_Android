@@ -13198,6 +13198,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
+									"left": -8,
 									"top": -360,
 									"width": 10,
 									"height": 10
@@ -13213,6 +13214,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
+									"left": -8,
 									"top": -360,
 									"width": 10,
 									"height": 10
@@ -23528,9 +23530,9 @@
 										"$ref": "AAAAAAF/RkjwpmGaODo="
 									},
 									"font": "Arial;13;0",
-									"left": 2020,
+									"left": 2019,
 									"top": 697,
-									"width": 5.05908203125,
+									"width": 6.5,
 									"height": 13,
 									"alpha": 0.7692160185521799,
 									"distance": 21.400934559032695,
@@ -23798,9 +23800,9 @@
 										"$ref": "AAAAAAF/Rk0LSsGqJyo="
 									},
 									"font": "Arial;13;0",
-									"left": 1784,
+									"left": 1783,
 									"top": 1407,
-									"width": 5.05908203125,
+									"width": 6.5,
 									"height": 13,
 									"alpha": -0.42662766435981725,
 									"distance": 24.166091947189145,
