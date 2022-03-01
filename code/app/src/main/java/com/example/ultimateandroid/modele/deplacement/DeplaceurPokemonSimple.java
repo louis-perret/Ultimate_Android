@@ -21,26 +21,13 @@ public class DeplaceurPokemonSimple extends DeplaceurPokemon {
 
     /**
      * Effectue le déplacement d'un pokemon
-     * @param p : pokemon à déplacer
-     * @param keyChar : touche appuyée
+     * @param p : pokemon à déplace
      * @param carte : Carte pour vérifier la collision
      */
     @Override
-    public void deplacer(Pokemon p, String keyChar, Carte carte){
-        switch (keyChar){
-            case "Z" :
-                deplacerEnHaut(p,carte);
-                break;
-            case "D" :
-                deplacerADroite(p,carte);
-                break;
-            case "S" :
-                deplacerEnBas(p,carte);
-                break;
-            case "Q" :
-                deplacerAGauche(p,carte);
-                break;
-        }
+    public void deplacer(Pokemon p, Carte carte){
+        p.getPosition().setPositionX(p.getPosition().getPositionX()+10);
+        p.getPosition().setPositionY(p.getPosition().getPositionY()+0);
         //On regarde l'évènement lié à la tuile où l'on s'est déplacé
         /*
         if(getChangeurCarte().isChangement(p.getPosition(), carte) == 1) { //on va sur la carte lobby

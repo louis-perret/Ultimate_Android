@@ -3,6 +3,8 @@ package com.example.ultimateandroid.modele.deplacement;
 import com.example.ultimateandroid.modele.monde.Carte;
 import com.example.ultimateandroid.modele.pokemon.Pokemon;
 
+import java.io.Serializable;
+
 /**
  * Interface pour les déplacements d'un pokemon
  */
@@ -15,10 +17,9 @@ public abstract class DeplaceurPokemon {
     /**
      * Effectue le déplacement d'un pokemon
      * @param p : pokemon à déplacer
-     * @param keyChar : touche appuyée
      * @param carte : Carte pour vérifier la collision
      */
-    public void deplacer(Pokemon p, String keyChar, Carte carte){
+    public void deplacer(Pokemon p, Carte carte){
 
     }
 

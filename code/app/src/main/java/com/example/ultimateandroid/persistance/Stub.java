@@ -323,22 +323,20 @@ public class Stub extends Chargeur{
 
         CollectionPokemon collectionPokemon = new CollectionPokemon(niveau1,niveau2,niveau3);
 
-        Tuile tuileHerbe = new Tuile(0, "tuiles/herbe.png",true,0);
-        Tuile tuilePbg = new Tuile(1,"tuiles/portail_bas_gauche.png",true,2);
-        Tuile tuilePbd = new Tuile(2,"tuiles/portail_bas_droite.png",true,2);
-        Tuile tuilePhg = new Tuile(3,"tuiles/portail_haut_gauche.png",false, 0);
-        Tuile tuilePhd = new Tuile(4,"tuiles/portail_haut_droite.png",false, 0);
-        Tuile tuileBrique = new Tuile(5,"tuiles/brique.png",false,0);
-        Tuile tuileSortie = new Tuile(6,"tuiles/sortie.png",true,1);
-        Tuile tuileSolA = new Tuile(7,"tuiles/sol_arene.png",true,3);
-        Tuile tuilePanneau = new Tuile(8,"tuiles/panneau.png",false,0);
-        Tuile tuileArbre = new Tuile(9,"tuiles/arbre.png",false,0);
-        Tuile tuilePilier = new Tuile(10,"tuiles/pilier.png",false,0);
-        Tuile tuileRocher = new Tuile(11,"tuiles/rocher.png",false,0);
-        Tuile tuileSol = new Tuile(12,"tuiles/sol.png",true,0);
-        Tuile tuileTronc = new Tuile(13,"tuiles/tronc.png",false,0);
-
-
+        Tuile tuileHerbe = new Tuile(0, R.drawable.herbe,true,0);
+        Tuile tuilePbg = new Tuile(1,R.drawable.portail_bas_gauche,true,2);
+        Tuile tuilePbd = new Tuile(2,R.drawable.portail_bas_droite,true,2);
+        Tuile tuilePhg = new Tuile(3,R.drawable.portail_haut_gauche,false, 0);
+        Tuile tuilePhd = new Tuile(4,R.drawable.portail_haut_droite,false, 0);
+        Tuile tuileBrique = new Tuile(5,R.drawable.brique,false,0);
+        Tuile tuileSortie = new Tuile(6,R.drawable.sortie,true,1);
+        Tuile tuileSolA = new Tuile(7,R.drawable.sol_arene,true,3);
+        Tuile tuilePanneau = new Tuile(8,R.drawable.panneau,false,0);
+        Tuile tuileArbre = new Tuile(9,R.drawable.arbre,false,0);
+        Tuile tuilePilier = new Tuile(10,R.drawable.pilier,false,0);
+        Tuile tuileRocher = new Tuile(11,R.drawable.rocher,false,0);
+        Tuile tuileSol = new Tuile(12,R.drawable.sol,true,0);
+        Tuile tuileTronc = new Tuile(13,R.drawable.tronc,false,0);
 
         //Création des tuiles
         Map<Integer,Tuile> dicoTuiles=new HashMap<>();

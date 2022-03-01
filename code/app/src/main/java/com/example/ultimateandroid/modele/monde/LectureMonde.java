@@ -26,6 +26,7 @@ public class LectureMonde {
 
             }
             br.close();
+            fichier.close();
         }
         catch (IOException e){
             e.printStackTrace();

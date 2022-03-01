@@ -11,7 +11,7 @@ public class Tuile implements Serializable {
     public transient static final int tuileLargeur = 32;
 
     private int id; //son id
-    private String image; //son image
+    private int image; //son image
     private Boolean isTraversable; //true si on peut se déplacer dessus
     private int evenement; //son évènement associé
 
@@ -23,7 +23,7 @@ public class Tuile implements Serializable {
      * @param evenement: Evenement attaché à une tuile
      */
 
-    public Tuile(int id, String image, Boolean isTraversable, int evenement){
+    public Tuile(int id, int image, Boolean isTraversable, int evenement){
         this.id = id;
         this.image = image;
         this.isTraversable = isTraversable;
@@ -47,11 +47,11 @@ public class Tuile implements Serializable {
         this.id = id;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
     }
 

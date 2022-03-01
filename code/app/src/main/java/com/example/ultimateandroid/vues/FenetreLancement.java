@@ -32,7 +32,6 @@ public class FenetreLancement extends AppCompatActivity {
         startActivity(intent); //On lance l'activité
     }
 
-
     public void quitterJeu(View view) {
         finish();
     }
@@ -43,6 +42,7 @@ public class FenetreLancement extends AppCompatActivity {
         setContentView(R.layout.fenetre_lancement); //Je rattache le code behind à la fenêtre
         manager = new Stub().charger();
         manager.ajouterCarte("lobby",getResources().openRawResource(R.raw.lobby));
+
     }
 
 

@@ -36,7 +36,7 @@ public class Manager implements Serializable {
     private transient List<Pokemon> listePokemonByVague; //liste des pokemon ennemi de la vague
 
     private transient Carte carteCourante; //la carte actuellement affichée
-    private transient Monde monde; //notre monde
+    private Monde monde; //notre monde
     private CollectionPokemon pokedex; //collection des pokemons
     private int nbVictoires; //nombre de victoires du joueur
     private Map<Integer, Tuile> dicoTuiles; //dictionnaire contenant toutes les types de tuiles de nos cartes (pour le sauvegarder)
@@ -98,26 +98,28 @@ public class Manager implements Serializable {
     }*/
 
     /**
-     * Gère le déplacement d'un pokemon
-     * @param keyChar : Touche appuyée par l'utilisateur
+     * Gère le déplacement d'un pokemon vers le portail
      */
-    public void deplacerPokemon(String keyChar){
-        deplaceur.deplacer(pokemonCourant,keyChar,carteCourante);
+    public void deplacerPokemon(){
+        if(deplaceur == null){
+            deplaceur = new DeplaceurPokemonSimple(hauteurSurfaceJeu,largeurSurfaceJeu,Tuile.getTuileHauteur());
+        }
+        deplaceur.deplacer(pokemonCourant,carteCourante);
     }
 
     /**
      * Lance la boucle de jeu utile au déplacement du pokemon du joueur
      */
-    /*
-    public void lancerBoucleJeu(){
-        pokemonCourant.setPosition(new Position(128,192)); //on set la position du pokemon au point de spawn de la map
-        setCompteur(0); //on remet le compteur à 0
-        Observateur observateur = new ObservateurBoucle(this); //On créé l'observateur de la boucle
+
+    public void lancerBoucleJeu(List<Observateur> observateurs){
+        pokemonCourant.setPosition(new Position(carteCourante.getSpawnX(),carteCourante.getSpawnY())); //on set sa position au point de spawn de la carte avant de commencer à le déplacer
         BoucleJeu boucleJeu = new BoucleJeu16();
-        boucleJeu.addObservateur(observateur);
+        for(Observateur o : observateurs){
+            boucleJeu.addObservateur(o);
+        }
         thread = new Thread(boucleJeu);
         thread.start(); //On lance le thread qui contient la boucle
-    }*/
+    }
 
     /**
      * Arrête le thread de la boucle de jeu
@@ -185,6 +187,9 @@ public class Manager implements Serializable {
     }
 
     public void ajouterCarte(String nomCarte, InputStream fichier){
+        if(monde == null){
+            monde = new Monde();
+        }
         monde.ajouterCarte(nomCarte,fichier,dicoTuiles);
     }
 

@@ -21,8 +21,9 @@ public class BoucleJeu16 extends BoucleJeu{
      */
     @Override
     public void run() {
+        boolean isRunning = true;
         try{
-            while(true) {
+            while(isRunning) {
                 Thread.sleep(16);
                 notifier();
             }
@@ -39,11 +40,9 @@ public class BoucleJeu16 extends BoucleJeu{
     @Override
     public void notifier() {
         //Instruction envoyée au thread principal
-        //Platform.runLater(() -> {
         //Platform.runLater n'est plus utilisée car bloquait nos déplacement de façon aléatoire
         for(Observateur o : super.observateurs){
             o.update();
         }
-        // });
     }
 }

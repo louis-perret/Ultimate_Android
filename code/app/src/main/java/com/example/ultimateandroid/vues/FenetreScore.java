@@ -28,7 +28,7 @@ public class FenetreScore extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        recyclerView.setAdapter(new Adaptateur(manager.getLesJoueurs(),this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)); //Met les cellules en verticales
+        recyclerView.setAdapter(new Adaptateur(manager.getLesJoueurs(),this)); //Créer son adapateur
     }
 }

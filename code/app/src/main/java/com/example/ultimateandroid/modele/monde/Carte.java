@@ -1,14 +1,15 @@
 package com.example.ultimateandroid.modele.monde;
 
+import java.io.Serializable;
 import java.util.Map;
 
 /**
  * Classe définissant une carte
  */
-public class Carte {
+public class Carte implements Serializable {
 
     private int[][] lesTuiles; //les élements qui composent la carte
-    private int hauteur, largeur, spawnX, spawnY; //hauteur et largeur de la carte, point de spawn en x & y
+    private int hauteur, largeur, spawnX, spawnY, xPortail, yPortail; //hauteur et largeur de la carte, point de spawn en x & y
 
     private Map<Integer,Tuile> dicoTuiles; //Contient tous les types de tuiles de la carte
 
@@ -22,12 +23,14 @@ public class Carte {
      * @param spawnY
      * @param dicoTuiles
      */
-    public Carte(int[][] lesTuiles, int hauteur, int largeur, int spawnX, int spawnY, Map<Integer, Tuile> dicoTuiles) {
+    public Carte(int[][] lesTuiles, int hauteur, int largeur, int spawnX, int spawnY, int xPortail, int yPortail, Map<Integer, Tuile> dicoTuiles) {
         this.lesTuiles = lesTuiles;
         this.hauteur = hauteur;
         this.largeur = largeur;
         this.spawnX = spawnX;
         this.spawnY = spawnY;
+        this.xPortail = xPortail;
+        this.yPortail = yPortail;
         this.dicoTuiles = dicoTuiles;
     }
 
@@ -56,32 +59,24 @@ public class Carte {
         return hauteur;
     }
 
-    public void setHauteur(int hauteur) {
-        this.hauteur = hauteur;
-    }
-
     public int getLargeur() {
         return largeur;
-    }
-
-    public void setLargeur(int largeur) {
-        this.largeur = largeur;
     }
 
     public int getSpawnX() {
         return spawnX;
     }
 
-    public void setSpawnX(int spawnX) {
-        this.spawnX = spawnX;
-    }
-
     public int getSpawnY() {
         return spawnY;
     }
 
-    public void setSpawnY(int spawnY) {
-        this.spawnY = spawnY;
+    public int getxPortail() {
+        return xPortail;
+    }
+
+    public int getyPortail() {
+        return yPortail;
     }
 
     /**
