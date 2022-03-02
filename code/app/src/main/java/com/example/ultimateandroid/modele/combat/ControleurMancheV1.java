@@ -6,13 +6,13 @@ import com.example.ultimateandroid.modele.entite.Entite;
 
 
 
-public class ControleurCombatV1 extends ControleurCombat{
+public class ControleurMancheV1 extends ControleurManche {
 
     /**
      * Constructeur
      * @param pokedex : La collection d'entité utile au contrôleur niveau
      */
-    public ControleurCombatV1(CollectionEntite pokedex){
+    public ControleurMancheV1(CollectionEntite pokedex){
         iaEntite = new IAEntiteFacile();
         controleurNiveau = new ControleurNiveau(pokedex);
         attaqueur = new AttaqueurEntite();

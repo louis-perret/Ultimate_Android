@@ -8,10 +8,11 @@ import com.example.ultimateandroid.modele.entite.Entite;
 /**
  * Cette classe permet de gérer l'attaque d'une entité vers un autre
  */
-public class AttaqueurEntite implements Attaqueur{
+public class AttaqueurEntite extends Attaqueur{
 
-    private CalculCoefficient calculCoefficient= new CalculCoefficientV1();
-
+    public AttaqueurEntite(){
+        calculCoefficient = new CalculCoefficientV1();
+    }
     /**
      * Gère l'attaque d'une entité vers un autre
      * @param attaquant : entité attaquant

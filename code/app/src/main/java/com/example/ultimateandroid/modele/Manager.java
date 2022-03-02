@@ -2,7 +2,7 @@ package com.example.ultimateandroid.modele;
 
 import com.example.ultimateandroid.modele.boucle.BoucleJeu;
 import com.example.ultimateandroid.modele.boucle.BoucleJeu16;
-import com.example.ultimateandroid.modele.combat.ControleurCombat;
+import com.example.ultimateandroid.modele.combat.ControleurManche;
 import com.example.ultimateandroid.modele.deplacement.DeplaceurEntite;
 import com.example.ultimateandroid.modele.deplacement.DeplaceurEntiteSimple;
 import com.example.ultimateandroid.modele.joueur.Joueur;
@@ -25,7 +25,7 @@ import java.util.Map;
 public class Manager implements Serializable {
 
     private transient DeplaceurEntite deplaceur; //pour le déplacement
-    private transient ControleurCombat controleurCombat; //pour les combats
+    private transient ControleurManche controleurManche; //pour les combats
 
     private transient Entite entiteCourant; //l'entité choisie par l'utilisateur
     private transient Entite entiteEnnemiCourant; //entité qu'affronte le joueur

@@ -7,7 +7,7 @@ import com.example.ultimateandroid.modele.entite.Entite;
 /**
  * classe abtraite gérant le contrôle d'un combat
  */
-public abstract class ControleurCombat {
+public abstract class ControleurManche {
 
     protected IAEntite iaEntite; //ia de l'entité ennemi
     protected ControleurNiveau controleurNiveau; //pour contrôler le gain d'expérience et la montée d'un niveau
