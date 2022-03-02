@@ -1,57 +1,55 @@
 package com.example.ultimateandroid.modele.deplacement;
 
 import com.example.ultimateandroid.modele.monde.Carte;
-import com.example.ultimateandroid.modele.pokemon.Pokemon;
-
-import java.io.Serializable;
+import com.example.ultimateandroid.modele.entite.Entite;
 
 /**
- * Interface pour les déplacements d'un pokemon
+ * Interface pour les déplacements de l'entité
  */
-public abstract class DeplaceurPokemon {
+public abstract class DeplaceurEntite {
 
     private Collisionneur collisionneur; //pour savoir les collisions
     private ChangeurCarte changeurCarte; //pour savoir les évènements
 
 
     /**
-     * Effectue le déplacement d'un pokemon
-     * @param p : pokemon à déplacer
+     * Effectue le déplacement de l'entité
+     * @param p : entité à déplacer
      * @param carte : Carte pour vérifier la collision
      */
-    public void deplacer(Pokemon p, Carte carte){
+    public void deplacer(Entite p, Carte carte){
 
     }
 
     /* Déplacer dans les 4 directions */
 
     /**
-     * Déplacer le pokemon vers la gauche
-     * @param p : Pokemon à déplacer
+     * Déplacer l'entité vers la gauche
+     * @param p : Entité à déplacer
      * @param carte : Carte pour la collision
      */
-    public abstract void deplacerAGauche(Pokemon p,Carte carte);
+    public abstract void deplacerAGauche(Entite p, Carte carte);
 
     /**
-     * Déplacer le pokemon vers la droite
-     * @param p : Pokemon à déplacer
+     * Déplacer l'entité vers la droite
+     * @param p : Entité à déplacer
      * @param carte : Carte pour la collision
      */
-    public abstract void deplacerADroite(Pokemon p,Carte carte);
+    public abstract void deplacerADroite(Entite p, Carte carte);
 
     /**
-     * Déplacer le pokemon vers le haut
-     * @param p : Pokemon à déplacer
+     * Déplacer l'entité vers le haut
+     * @param p : Entité à déplacer
      * @param carte : Carte pour la collision
      */
-    public abstract void deplacerEnHaut(Pokemon p,Carte carte);
+    public abstract void deplacerEnHaut(Entite p, Carte carte);
 
     /**
-     * Déplacer le pokemon vers le bas
-     * @param p : Pokemon à déplacer
+     * Déplacer l'entité vers le bas
+     * @param p : Entité à déplacer
      * @param carte : Carte pour la collision
      */
-    public abstract void deplacerEnBas(Pokemon p,Carte carte);
+    public abstract void deplacerEnBas(Entite p, Carte carte);
 
 
     //Getter et Setter

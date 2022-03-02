@@ -1,6 +1,6 @@
-package com.example.ultimateandroid.modele.pokemon.etat;
+package com.example.ultimateandroid.modele.entite.etat;
 
-import com.example.ultimateandroid.modele.pokemon.Pokemon;
+import com.example.ultimateandroid.modele.entite.Entite;
 
 import java.io.Serializable;
 
@@ -13,7 +13,7 @@ public abstract class Etat implements Serializable {
      * Comportement associé à l'état
      * @param p : Pokemon sur lequel sera appliqué ce comportement
      */
-    public abstract void comportement(Pokemon p);
+    public abstract void comportement(Entite p);
 
     //Getter et setter
     public String getNom() {

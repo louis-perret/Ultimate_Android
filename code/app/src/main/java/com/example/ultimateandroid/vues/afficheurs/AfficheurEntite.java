@@ -5,25 +5,24 @@ import android.widget.ImageView;
 import com.example.ultimateandroid.modele.entite.Position;
 
 /**
- * Classe qui gère l'affichage d'une tuile
+ * Classe qui gère l'affichage d'une entité
  */
-public class AfficheurTuile  implements Afficheur {
+public class AfficheurEntite implements Afficheur {
 
     /**
      * Gère l'affichage d'un objet
-     *
-     * @param objet    : objet à afficher
+     * @param objet : objet à afficher
      * @param position : à telle position
      * @return une ImageView
      */
+
     @Override
     public ImageView affiche(Object objet, Position position) {
-        /*if (!(objet instanceof Tuile)) {
-            throw new IllegalArgumentException("L'objet " + objet.toString() + " passé en paramètre n'est pas une tuile.");
+        /*if (!(objet instanceof Entite)) {
+            throw new IllegalArgumentException("L'objet " + objet.toString() + " passé en paramètre n'est pas une entité.");
         }
-        Tuile tuile = (Tuile) objet;
-        ImageView img = new ImageView();
-        img.setImage(new Image(tuile.getImage()));
+        Entite entite = (Entite) objet;
+        ImageView img = new ImageView(entite.getImage());
         img.setX(position.getPositionX());
         img.setY(position.getPositionY());
         return img;*/

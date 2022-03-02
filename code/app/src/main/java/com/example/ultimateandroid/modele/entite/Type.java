@@ -1,6 +1,4 @@
-package com.example.ultimateandroid.modele.pokemon;
-
-import com.example.ultimateandroid.modele.pokemon.NomType;
+package com.example.ultimateandroid.modele.entite;
 
 import java.io.Serializable;
 import java.util.List;

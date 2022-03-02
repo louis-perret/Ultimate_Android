@@ -1,19 +1,19 @@
 package com.example.ultimateandroid.modele.combat;
 
-import com.example.ultimateandroid.modele.pokemon.Mouvement;
-import com.example.ultimateandroid.modele.pokemon.Pokemon;
+import com.example.ultimateandroid.modele.entite.Mouvement;
+import com.example.ultimateandroid.modele.entite.Entite;
 
 /**
- * Interface fonctionnelle pour gérer l'attaque d'un pokemon
+ * Interface fonctionnelle pour gérer l'attaque d'une entité
  */
 public interface Attaqueur {
 
     /**
-     * Gère l'attaque d'un pokemon vers un autre
-     * @param attaquant : pokemon attaquant
-     * @param attaque : pokepon attaqué
+     * Gère l'attaque d'une entité vers un autre
+     * @param attaquant : entité attaquant
+     * @param attaque : entité attaqué
      * @param m : l'attaque utilisée
-     * @return True si le pokemon attaquant a gagné le combat
+     * @return True si l'entité attaquant a gagné le combat
      */
-    public boolean attaquer(Pokemon attaquant, Pokemon attaque, Mouvement m);
+    public boolean attaquer(Entite attaquant, Entite attaque, Mouvement m);
 }

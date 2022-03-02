@@ -1,6 +1,6 @@
-package com.example.ultimateandroid.modele.pokemon.etat;
+package com.example.ultimateandroid.modele.entite.etat;
 
-import com.example.ultimateandroid.modele.pokemon.Pokemon;
+import com.example.ultimateandroid.modele.entite.Entite;
 
 public class Paralyse extends Etat{
 
@@ -21,7 +21,7 @@ public class Paralyse extends Etat{
      * @param p : Pokemon sur lequel sera appliqué ce comportement
      */
     @Override
-    public void comportement(Pokemon p) {
+    public void comportement(Entite p) {
         if(!vitesseReduit){ //On réduit la vitesse de moitié qu'une seule fois
             vitesseReduit=true; //Pour dire qu'on a appliqué le comportement
             p.setVitesse(p.getVitesse()/2);

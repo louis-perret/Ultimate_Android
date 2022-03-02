@@ -4,9 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.os.Bundle;
-import android.view.WindowMetrics;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,7 +26,7 @@ public class FenetreJeu extends AppCompatActivity {
     private Manager manager;
     private Canvas canvas = new Canvas();
     private ConstraintLayout layout;
-    private ImageView pokemonAllie;
+    private ImageView refactorAllie;
 
     private void afficherCarte() {
         Carte carte = manager.getCarteCourante();
@@ -46,8 +44,8 @@ public class FenetreJeu extends AppCompatActivity {
     }
 
     public void updatePosition(){
-        pokemonAllie.setX((float) manager.getPokemonCourant().getPosition().getPositionX());
-        pokemonAllie.setY((float) manager.getPokemonCourant().getPosition().getPositionY());
+        refactorAllie.setX((float) manager.getEntiteCourant().getPosition().getPositionX());
+        refactorAllie.setY((float) manager.getEntiteCourant().getPosition().getPositionY());
     }
 
     @Override
@@ -56,13 +54,13 @@ public class FenetreJeu extends AppCompatActivity {
         setContentView(R.layout.fenetre_jeu); //Je rattache le code behind à la fenêtre
         layout = findViewById(R.id.layout2);
         manager=(Manager)getIntent().getSerializableExtra("manager");
-        manager.setPokemonCourant(manager.getPokedex().getPokemon("Bulbizarre",1));
+        manager.setEntiteCourant(manager.getPokedex().getEntite("Bulbizarre",1));
         afficherCarte();
-        pokemonAllie = new ImageView(this); //On ajoute notre image view pour qu'elle soit au dessus et non en dessous de la map
-        pokemonAllie.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.bulb_1));
-        pokemonAllie.setX(manager.getCarteCourante().getSpawnX());
-        pokemonAllie.setY(manager.getCarteCourante().getSpawnY());
-        layout.addView(pokemonAllie);
+        refactorAllie = new ImageView(this); //On ajoute notre image view pour qu'elle soit au dessus et non en dessous de la map
+        refactorAllie.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.bulb_1));
+        refactorAllie.setX(manager.getCarteCourante().getSpawnX());
+        refactorAllie.setY(manager.getCarteCourante().getSpawnY());
+        layout.addView(refactorAllie);
 
         List<Observateur> observateurs = new ArrayList<>();
         observateurs.add(new ObservateurBoucle(manager));

@@ -1,13 +1,13 @@
 package com.example.ultimateandroid.modele.combat;
 
-import com.example.ultimateandroid.modele.pokemon.Mouvement;
-import com.example.ultimateandroid.modele.pokemon.Pokemon;
+import com.example.ultimateandroid.modele.entite.Mouvement;
+import com.example.ultimateandroid.modele.entite.Entite;
 
 import java.util.Random;
 
-public class IAPokemonFacile implements IAPokemon{
+public class IAEntiteFacile implements IAEntite {
     @Override
-    public Mouvement choisirAttaque(Pokemon p) {
+    public Mouvement choisirAttaque(Entite p) {
         Random random = new Random(); //sélection via l'aléatoire
         return p.getMouvements()[random.nextInt(p.getMouvements().length)];
     }

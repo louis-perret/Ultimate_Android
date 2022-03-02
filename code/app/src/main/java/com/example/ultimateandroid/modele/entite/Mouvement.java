@@ -1,19 +1,19 @@
-package com.example.ultimateandroid.modele.pokemon;
+package com.example.ultimateandroid.modele.entite;
 
-import com.example.ultimateandroid.modele.pokemon.etat.Etat;
+import com.example.ultimateandroid.modele.entite.etat.Etat;
 
 import java.io.Serializable;
 import java.util.Random;
 
 /**
- * Classe qui définit les attaques d'un pokemon
+ * Classe qui définit les attaques de l'entité
  */
 public class Mouvement implements Serializable{
 
     private int degats; //ses points de dégâts
     private String nom; //son nom
     private Type type; //son type
-    private Etat etat; //l'état qu'il peut infliger au pokemon ennemi
+    private Etat etat; //l'état qu'il peut infliger à l'entité ennemi
 
     /**
      * Constructeur
@@ -30,11 +30,11 @@ public class Mouvement implements Serializable{
     }
 
     /**
-     * Comportement de l'attaque sur un pokemon. Peut modifier l'état d'un pokemon
-     * @param ennemi : pokemon sur lequel sera appliaué ce comportement
+     * Comportement de l'attaque sur une entité. Peut modifier l'état d'une entité
+     * @param ennemi : entité sur lequel sera appliaué ce comportement
      */
-    public void comportement(Pokemon ennemi){
-        if(ennemi.getEtat() == null) { //un pokemon ne peut pas avoir qu'un état à la fois jusqu'à sa guérison, donc si null -> le pokemon ennemi peut subir un changement d'état
+    public void comportement(Entite ennemi){
+        if(ennemi.getEtat() == null) { //un entité ne peut pas avoir qu'un état à la fois jusqu'à sa guérison, donc si null -> l'entité ennemi peut subir un changement d'état
             if (etat != null) { //si null -> l'attaque n'affectera pas l'état de l'adversaire
                 Random random = new Random();
                 if (random.nextInt(4) == 0) {

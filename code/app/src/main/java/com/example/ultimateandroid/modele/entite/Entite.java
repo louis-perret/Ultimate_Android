@@ -1,10 +1,10 @@
-package com.example.ultimateandroid.modele.pokemon;
+package com.example.ultimateandroid.modele.entite;
 
-import com.example.ultimateandroid.modele.pokemon.etat.Etat;
+import com.example.ultimateandroid.modele.entite.etat.Etat;
 
 import java.io.Serializable;
 
-public class Pokemon implements Serializable {
+public class Entite implements Serializable {
 
     private String nom; //son nom
     private String image; //son image de déplacement
@@ -21,7 +21,7 @@ public class Pokemon implements Serializable {
     private int experience; //son expérience (0 au minimum)
     private String evolution; //contient le nom de son évolution
     private Boolean isStarter; //true si c'est un starter, false sinon
-    private transient Etat etat; //état d'un pokemon
+    private transient Etat etat; //état d'une entité
 
 
     /**
@@ -36,7 +36,7 @@ public class Pokemon implements Serializable {
      * @param experience : son expérience
      * @param evolution : le nom de son évolution
      */
-    public Pokemon(String nom, String image,String imageCombat, int pv, int attaque, int defense, int vitesse, Position position, Type type, Mouvement[] tabMouvements,int niveau, int experience, String evolution,Boolean isStarter) {
+    public Entite(String nom, String image, String imageCombat, int pv, int attaque, int defense, int vitesse, Position position, Type type, Mouvement[] tabMouvements, int niveau, int experience, String evolution, Boolean isStarter) {
         this.nom=nom;
         this.image = image;
         this.imageCombat=imageCombat;
@@ -55,11 +55,11 @@ public class Pokemon implements Serializable {
     }
 
     /**
-     * Clone le pokemon (Patron Prototype)
-     * @return un Pokemon
+     * Clone l'entité (Patron Prototype)
+     * @return une Entite
      */
-    public Pokemon cloner(){
-        return new Pokemon(getNom(),getImage(),getImageCombat(),getPv(),getAttaque(),getDefense(),getVitesse(), getPosition(),getType(),getMouvements(),getNiveau(),getExperience(),getEvolution(),getStarter());
+    public Entite cloner(){
+        return new Entite(getNom(),getImage(),getImageCombat(),getPv(),getAttaque(),getDefense(),getVitesse(), getPosition(),getType(),getMouvements(),getNiveau(),getExperience(),getEvolution(),getStarter());
     }
 
     /**
@@ -215,7 +215,7 @@ public class Pokemon implements Serializable {
         if(this==o) return true;
         if(this.getClass()!=o.getClass()) return false;
 
-        Pokemon p=(Pokemon)o;
+        Entite p=(Entite)o;
         if(getNom().equals(p.getNom())) return true;
         return false;
     }
@@ -239,7 +239,7 @@ public class Pokemon implements Serializable {
      */
     @Override
     public String toString(){
-        String res = "Pokemon : " + this.getNom() + " de type " + this.getType()  + ". A comme technique : ";
+        String res = "Entité : " + this.getNom() + " de type " + this.getType()  + ". A comme technique : ";
         for (Mouvement m : mouvements){
             res  += m.getNom();
         }

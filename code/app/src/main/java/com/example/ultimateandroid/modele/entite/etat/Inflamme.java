@@ -1,8 +1,8 @@
-package com.example.ultimateandroid.modele.pokemon.etat;
+package com.example.ultimateandroid.modele.entite.etat;
 
 import static java.lang.Math.ceil;
 
-import com.example.ultimateandroid.modele.pokemon.Pokemon;
+import com.example.ultimateandroid.modele.entite.Entite;
 
 public class Inflamme extends Etat{
 
@@ -23,7 +23,7 @@ public class Inflamme extends Etat{
      * @param p : Pokemon sur lequel sera appliqué ce comportement
      */
     @Override
-    public void comportement(Pokemon p) {
+    public void comportement(Entite p) {
         p.setPv((int) (p.getPv()-ceil(p.getPv()*coefficient)));
     }
 }

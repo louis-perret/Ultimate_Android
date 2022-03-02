@@ -2,7 +2,7 @@ package com.example.ultimateandroid.vues.afficheurs;
 
 import android.widget.ImageView;
 
-import com.example.ultimateandroid.modele.pokemon.Position;
+import com.example.ultimateandroid.modele.entite.Position;
 
 /**
  * Interface fonctionnelle pour notre affichage

@@ -4,15 +4,15 @@ import com.example.ultimateandroid.R;
 import com.example.ultimateandroid.modele.Manager;
 import com.example.ultimateandroid.modele.joueur.Joueur;
 import com.example.ultimateandroid.modele.monde.Tuile;
-import com.example.ultimateandroid.modele.pokemon.CollectionPokemon;
-import com.example.ultimateandroid.modele.pokemon.Mouvement;
-import com.example.ultimateandroid.modele.pokemon.NomType;
-import com.example.ultimateandroid.modele.pokemon.Pokemon;
-import com.example.ultimateandroid.modele.pokemon.Position;
-import com.example.ultimateandroid.modele.pokemon.Type;
-import com.example.ultimateandroid.modele.pokemon.etat.Empoisonne;
-import com.example.ultimateandroid.modele.pokemon.etat.Inflamme;
-import com.example.ultimateandroid.modele.pokemon.etat.Paralyse;
+import com.example.ultimateandroid.modele.entite.CollectionEntite;
+import com.example.ultimateandroid.modele.entite.Mouvement;
+import com.example.ultimateandroid.modele.entite.NomType;
+import com.example.ultimateandroid.modele.entite.Entite;
+import com.example.ultimateandroid.modele.entite.Position;
+import com.example.ultimateandroid.modele.entite.Type;
+import com.example.ultimateandroid.modele.entite.etat.Empoisonne;
+import com.example.ultimateandroid.modele.entite.etat.Inflamme;
+import com.example.ultimateandroid.modele.entite.etat.Paralyse;
 
 import java.util.*;
 
@@ -37,9 +37,9 @@ public class Stub extends Chargeur{
         lesJoueurs.add(j2);
         lesJoueurs.add(j3);
 
-        List<Pokemon> niveau1=new ArrayList<>();
-        List<Pokemon> niveau2=new ArrayList<>();
-        List<Pokemon> niveau3=new ArrayList<>();
+        List<Entite> niveau1=new ArrayList<>();
+        List<Entite> niveau2=new ArrayList<>();
+        List<Entite> niveau3=new ArrayList<>();
 
         /* Création des types */
         List<NomType> faiblesses = new ArrayList<>();
@@ -236,92 +236,92 @@ public class Stub extends Chargeur{
         Mouvement psyko = new Mouvement(25,"Psyko",psy,null);
 
 
-        //Création des pokemon
+        //Création des entités
         Mouvement[] tabMouvements=new Mouvement[]{foutLiane,toxic,charge,sabotage};
-        Pokemon p = new Pokemon("Bulbizarre","@drawable/sprite/bulb_1","/sprite/Sprite_bulbi/bulb_combat_dos.png",70,25,30,10,position, plante,tabMouvements,1,0,"Herbizarre", true);
+        Entite p = new Entite("Bulbizarre","@drawable/sprite/bulb_1","/sprite/Sprite_bulbi/bulb_combat_dos.png",70,25,30,10,position, plante,tabMouvements,1,0,"Herbizarre", true);
         niveau1.add(p);
         tabMouvements=new Mouvement[]{flammèche,charge,ombre_portee,trempette};
-        p = new Pokemon("Salamèche","/sprite/Sprite_salam/salam_1.png","/sprite/Sprite_salam/salam_combat_dos.png",70,30,20,15,position, feu,tabMouvements,1,0,"Reptincel", true);
+        p = new Entite("Salamèche","/sprite/Sprite_salam/salam_1.png","/sprite/Sprite_salam/salam_combat_dos.png",70,30,20,15,position, feu,tabMouvements,1,0,"Reptincel", true);
         niveau1.add(p);
         tabMouvements=new Mouvement[]{pistolet_a_eau,charge,sabotage,machpunch};
-        p = new Pokemon("Carapuce","/sprite/Sprite_carap/squi_1.png","/sprite/Sprite_carap/squi_combat_dos.png",70,25,25,20,position, eau,tabMouvements,1,0,"Carabaffe", true);
+        p = new Entite("Carapuce","/sprite/Sprite_carap/squi_1.png","/sprite/Sprite_carap/squi_combat_dos.png",70,25,25,20,position, eau,tabMouvements,1,0,"Carabaffe", true);
         niveau1.add(p);
 
         tabMouvements=new Mouvement[]{piqure,charge,toxic,dracosouffle};
-        p= new Pokemon("Chenipan","/sprite/chenipan.png","/sprite/chenipan.png",35,5,5,5,position,insecte,tabMouvements,1,0,"Chrysacier",false);
+        p= new Entite("Chenipan","/sprite/chenipan.png","/sprite/chenipan.png",35,5,5,5,position,insecte,tabMouvements,1,0,"Chrysacier",false);
         niveau1.add(p);
         tabMouvements=new Mouvement[]{charge};
-        p= new Pokemon("Ratatta",null,"/sprite/ratata.png",35,10,5,15,position,normal,tabMouvements,1,0,"Ratattac",false);
+        p= new Entite("Ratatta",null,"/sprite/ratata.png",35,10,5,15,position,normal,tabMouvements,1,0,"Ratattac",false);
         niveau1.add(p);
         tabMouvements=new Mouvement[]{machpunch,sabotage};
-        p= new Pokemon("Machoc",null,"/sprite/machoc.png",35,15,15,10,position,combat,tabMouvements,1,0,"Machopeur",false);
+        p= new Entite("Machoc",null,"/sprite/machoc.png",35,15,15,10,position,combat,tabMouvements,1,0,"Machopeur",false);
         niveau1.add(p);
         tabMouvements=new Mouvement[]{vague_psy,ombre_portee};
-        p= new Pokemon("Abra",null,"/sprite/abra.png",38,15,9,10,position,psy,tabMouvements,1,0,"Ratattac",false);
+        p= new Entite("Abra",null,"/sprite/abra.png",38,15,9,10,position,psy,tabMouvements,1,0,"Ratattac",false);
         niveau1.add(p);
         tabMouvements=new Mouvement[]{ombre_portee,vague_psy,toxic};
-        p= new Pokemon("Fantominus",null,"/sprite/fantominus.png",30,10,0,15,position,spectre,tabMouvements,1,0,"Ratattac",false);
+        p= new Entite("Fantominus",null,"/sprite/fantominus.png",30,10,0,15,position,spectre,tabMouvements,1,0,"Ratattac",false);
         niveau1.add(p);
         tabMouvements=new Mouvement[]{trempette};
-        p= new Pokemon("Magicarp",null,"/sprite/magicarp.png",35,5,5,5,position,eau,tabMouvements,1,0,"Leviathor",false);
+        p= new Entite("Magicarp",null,"/sprite/magicarp.png",35,5,5,5,position,eau,tabMouvements,1,0,"Leviathor",false);
         niveau1.add(p);
 
 
         tabMouvements=new Mouvement[]{feuilleMagik,acide,belier,tranche_nuit};
-        p = new Pokemon("Herbizarre","/sprite/Sprite_herbi/herb_1.png","/sprite/Sprite_herbi/herb_combat_dos.png",150,55,65,30,position, plante,tabMouvements,2,0,"Florizarre", true);
+        p = new Entite("Herbizarre","/sprite/Sprite_herbi/herb_1.png","/sprite/Sprite_herbi/herb_combat_dos.png",150,55,65,30,position, plante,tabMouvements,2,0,"Florizarre", true);
         niveau2.add(p);
         tabMouvements=new Mouvement[]{lanceFlamme,cru_aile,belier,pietisol};
-        p = new Pokemon("Reptincel","/sprite/Sprite_rept/rept_2.png","/sprite/Sprite_rept/rept_combat_dos.png",150,60,40,45,position, feu,tabMouvements,2,0,"Dracaufeu", true);
+        p = new Entite("Reptincel","/sprite/Sprite_rept/rept_2.png","/sprite/Sprite_rept/rept_combat_dos.png",150,60,40,45,position, feu,tabMouvements,2,0,"Dracaufeu", true);
         niveau2.add(p);
         tabMouvements=new Mouvement[]{surf,pied_saute,belier,tomberoche2};
-        p = new Pokemon("Carabaffe","/sprite/Sprite_carab/war_1.png","/sprite/Sprite_carab/war_combat_dos.png",150,60,55,40,position, eau,tabMouvements,2,0,"Tortank", true);
+        p = new Entite("Carabaffe","/sprite/Sprite_carab/war_1.png","/sprite/Sprite_carab/war_combat_dos.png",150,60,55,40,position, eau,tabMouvements,2,0,"Tortank", true);
         niveau2.add(p);
 
         tabMouvements=new Mouvement[]{choque_psy};
-        p = new Pokemon("Kadabra",null,"/sprite/kadabra.png",70,45,39,43,position, psy,tabMouvements,2,0,"Alakazam", false);
+        p = new Entite("Kadabra",null,"/sprite/kadabra.png",70,45,39,43,position, psy,tabMouvements,2,0,"Alakazam", false);
         niveau2.add(p);
         tabMouvements=new Mouvement[]{acide,griffOmbre,sabotage};
-        p = new Pokemon("Spectrum",null,"/sprite/spectrum.png",60,43,35,40,position, spectre,tabMouvements,2,0,"Ectoplasma", false);
+        p = new Entite("Spectrum",null,"/sprite/spectrum.png",60,43,35,40,position, spectre,tabMouvements,2,0,"Ectoplasma", false);
         niveau2.add(p);
         tabMouvements=new Mouvement[]{survInsecte,trempette};
-        p = new Pokemon("Chrysacier",null,"/sprite/chrysacier.png",60,5,50,5,position, insecte,tabMouvements,2,0,"Papillusion", false);
+        p = new Entite("Chrysacier",null,"/sprite/chrysacier.png",60,5,50,5,position, insecte,tabMouvements,2,0,"Papillusion", false);
         niveau2.add(p);
         tabMouvements=new Mouvement[]{belier,charge};
-        p = new Pokemon("Ratatak",null,"/sprite/ratatak.png",65,40,30,40,position, normal,tabMouvements,2,0,null, false);
+        p = new Entite("Ratatak",null,"/sprite/ratatak.png",65,40,30,40,position, normal,tabMouvements,2,0,null, false);
         niveau2.add(p);
         tabMouvements=new Mouvement[]{pied_saute};
-        p = new Pokemon("Machopeur",null,"/sprite/machopeur.png",70,40,40,40,position, combat,tabMouvements,2,0,"Mackogneur", false);
+        p = new Entite("Machopeur",null,"/sprite/machopeur.png",70,40,40,40,position, combat,tabMouvements,2,0,"Mackogneur", false);
         niveau2.add(p);
 
 
 
         tabMouvements=new Mouvement[]{tempeteVerte,detricanon,giga_impact,seisme};
-        p = new Pokemon("Florizarre","/sprite/Sprite_flo/flo_1.png","/sprite/Sprite_flo/flo_combat_dos.png",300,70,90,50,position, plante,tabMouvements,3,0,null, true);
+        p = new Entite("Florizarre","/sprite/Sprite_flo/flo_1.png","/sprite/Sprite_flo/flo_combat_dos.png",300,70,90,50,position, plante,tabMouvements,3,0,null, true);
         niveau3.add(p);
         tabMouvements=new Mouvement[]{deflagration,rapace,draco_meteore,tonnerre};
-        p = new Pokemon("Dracaufeu","/sprite/Sprite_drac/drac_1.png","/sprite/Sprite_drac/drac_combat_dos.png",300,90,80,80,position, feu,tabMouvements,3,0,null, true);
+        p = new Entite("Dracaufeu","/sprite/Sprite_drac/drac_1.png","/sprite/Sprite_drac/drac_combat_dos.png",300,90,80,80,position, feu,tabMouvements,3,0,null, true);
         niveau3.add(p);
         tabMouvements=new Mouvement[]{hydrocanon,close_combat,blizzard,lame_de_roc};
-        p = new Pokemon("Tortank","/sprite/Sprite_tort/blas_1.png","/sprite/Sprite_tort/blas_combat_dos.png",300,80,80,65,position, eau,tabMouvements,3,0,null, true);
+        p = new Entite("Tortank","/sprite/Sprite_tort/blas_1.png","/sprite/Sprite_tort/blas_combat_dos.png",300,80,80,65,position, eau,tabMouvements,3,0,null, true);
         niveau3.add(p);
 
         tabMouvements=new Mouvement[]{psyko,ball_ombre};
-        p = new Pokemon("Alakazam",null,"/sprite/alakazam.png",100,50,60,55,position, psy,tabMouvements,3,0,null, false);
+        p = new Entite("Alakazam",null,"/sprite/alakazam.png",100,50,60,55,position, psy,tabMouvements,3,0,null, false);
         niveau3.add(p);
         tabMouvements=new Mouvement[]{ball_ombre,detricanon,psyko,coup_bas};
-        p = new Pokemon("Ectoplasma",null,"/sprite/ectoplasama.png",100,50,60,55,position, spectre,tabMouvements,3,0,null, false);
+        p = new Entite("Ectoplasma",null,"/sprite/ectoplasama.png",100,50,60,55,position, spectre,tabMouvements,3,0,null, false);
         niveau3.add(p);
         tabMouvements=new Mouvement[]{hydrocanon,giga_impact};
-        p = new Pokemon("Leviathor",null,"/sprite/leviathor.png",110,70,70,60,position, eau,tabMouvements,3,0,null, false);
+        p = new Entite("Leviathor",null,"/sprite/leviathor.png",110,70,70,60,position, eau,tabMouvements,3,0,null, false);
         niveau3.add(p);
         tabMouvements=new Mouvement[]{close_combat};
-        p = new Pokemon("Mackogneur",null,"/sprite/mackogneur.png",120,70,80,80,position, combat,tabMouvements,3,0,null, false);
+        p = new Entite("Mackogneur",null,"/sprite/mackogneur.png",120,70,80,80,position, combat,tabMouvements,3,0,null, false);
         niveau3.add(p);
         tabMouvements=new Mouvement[]{bourdon,rapace};
-        p = new Pokemon("Papillusion",null,"/sprite/papillusion.png",80,40,40,95,position, insecte,tabMouvements,3,0,null, false);
+        p = new Entite("Papillusion",null,"/sprite/papillusion.png",80,40,40,95,position, insecte,tabMouvements,3,0,null, false);
         niveau3.add(p);
 
-        CollectionPokemon collectionPokemon = new CollectionPokemon(niveau1,niveau2,niveau3);
+        CollectionEntite collectionEntite = new CollectionEntite(niveau1,niveau2,niveau3);
 
         Tuile tuileHerbe = new Tuile(0, R.drawable.herbe,true,0);
         Tuile tuilePbg = new Tuile(1,R.drawable.portail_bas_gauche,true,2);
@@ -354,6 +354,6 @@ public class Stub extends Chargeur{
         dicoTuiles.put(tuileRocher.getId(),tuileRocher);
         dicoTuiles.put(tuileSol.getId(),tuileSol);
         dicoTuiles.put(tuileTronc.getId(),tuileTronc);
-        return new Manager(collectionPokemon,dicoTuiles, lesJoueurs);
+        return new Manager(collectionEntite,dicoTuiles, lesJoueurs);
     }
 }

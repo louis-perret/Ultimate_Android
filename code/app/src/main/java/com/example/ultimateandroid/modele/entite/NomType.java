@@ -1,4 +1,4 @@
-package com.example.ultimateandroid.modele.pokemon;
+package com.example.ultimateandroid.modele.entite;
 
 import java.io.Serializable;
 

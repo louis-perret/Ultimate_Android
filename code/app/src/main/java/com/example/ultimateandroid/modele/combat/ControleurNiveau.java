@@ -1,26 +1,26 @@
 package com.example.ultimateandroid.modele.combat;
 
-import com.example.ultimateandroid.modele.pokemon.CollectionPokemon;
-import com.example.ultimateandroid.modele.pokemon.Pokemon;
+import com.example.ultimateandroid.modele.entite.CollectionEntite;
+import com.example.ultimateandroid.modele.entite.Entite;
 
 public class ControleurNiveau {
 
-    private CollectionPokemon collectionPokemon; //la collection de tous les pokemon
+    private CollectionEntite collectionEntite; //la collection de tous les entités
 
     /**
      * Constructeur
-     * @param collectionPokemon : collection de tous les pokmon
+     * @param collectionEntite : collection de tous les pokmon
      */
-    public ControleurNiveau(CollectionPokemon collectionPokemon) {
-        this.collectionPokemon = collectionPokemon;
+    public ControleurNiveau(CollectionEntite collectionEntite) {
+        this.collectionEntite = collectionEntite;
     }
 
     /**
-     * Augmente l'expérience du pokemon p en fonction du niveau du pokemon ennemi
-     * @param p : pokemon qui gagne de l'expérience
-     * @param ennemi : le pokemon ennemi
+     * Augmente l'expérience de l'entité p en fonction du niveau de l'entité ennemi
+     * @param p : entité qui gagne de l'expérience
+     * @param ennemi : l'entité ennemi
      */
-    public void gagnerExperience(Pokemon p, Pokemon ennemi){
+    public void gagnerExperience(Entite p, Entite ennemi){
         int xpGagne=0;
         int niveauEnnemi=ennemi.getNiveau();
 
@@ -49,14 +49,14 @@ public class ControleurNiveau {
     }
 
     /**
-     * Fait évoluer un pokemon
-     * @param p : Pokemon à faire évoluer
+     * Fait évoluer une entité
+     * @param p : Entité à faire évoluer
      * @param experienceRestante : son expérience restante à rajouter après
      */
-    public void evoluer(Pokemon p,int experienceRestante){
-        Pokemon pEvolue=collectionPokemon.getPokemon(p.getEvolution(),p.getNiveau()+1); //Récupère l'évolution du pokemon
+    public void evoluer(Entite p, int experienceRestante){
+        Entite pEvolue= collectionEntite.getEntite(p.getEvolution(),p.getNiveau()+1); //Récupère l'évolution de l'entité
         if(pEvolue == null){
-            return; //le pokemon ne peut pas évoluer
+            return; //de l'entité ne peut pas évoluer
         }
         //Modifie chacun de ses attributs par ceux de son évolution
         p.setNom(pEvolue.getNom());

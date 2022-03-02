@@ -3,22 +3,19 @@ package com.example.ultimateandroid.modele;
 import com.example.ultimateandroid.modele.boucle.BoucleJeu;
 import com.example.ultimateandroid.modele.boucle.BoucleJeu16;
 import com.example.ultimateandroid.modele.combat.ControleurCombat;
-import com.example.ultimateandroid.modele.deplacement.DeplaceurPokemon;
-import com.example.ultimateandroid.modele.deplacement.DeplaceurPokemonSimple;
+import com.example.ultimateandroid.modele.deplacement.DeplaceurEntite;
+import com.example.ultimateandroid.modele.deplacement.DeplaceurEntiteSimple;
 import com.example.ultimateandroid.modele.joueur.Joueur;
 import com.example.ultimateandroid.modele.monde.Carte;
 import com.example.ultimateandroid.modele.monde.Monde;
 import com.example.ultimateandroid.modele.monde.Tuile;
 import com.example.ultimateandroid.modele.observateurs.Observateur;
-import com.example.ultimateandroid.modele.observateurs.ObservateurBoucle;
-import com.example.ultimateandroid.modele.pokemon.CollectionPokemon;
-import com.example.ultimateandroid.modele.pokemon.Mouvement;
-import com.example.ultimateandroid.modele.pokemon.Pokemon;
-import com.example.ultimateandroid.modele.pokemon.Position;
+import com.example.ultimateandroid.modele.entite.CollectionEntite;
+import com.example.ultimateandroid.modele.entite.Entite;
+import com.example.ultimateandroid.modele.entite.Position;
 
 import java.io.InputStream;
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -27,17 +24,17 @@ import java.util.Map;
  */
 public class Manager implements Serializable {
 
-    private transient DeplaceurPokemon deplaceur; //pour le déplacement
+    private transient DeplaceurEntite deplaceur; //pour le déplacement
     private transient ControleurCombat controleurCombat; //pour les combats
 
-    private transient Pokemon pokemonCourant; //le pokemon choisie par l'utilisateur
-    private transient Pokemon pokemonEnnemiCourant; //pokemon qu'affronte le joueur
+    private transient Entite entiteCourant; //l'entité choisie par l'utilisateur
+    private transient Entite entiteEnnemiCourant; //entité qu'affronte le joueur
     private transient int numeroVague = 1; //numéro de la vague
-    private transient List<Pokemon> listePokemonByVague; //liste des pokemon ennemi de la vague
+    private transient List<Entite> listeEntiteByVague; //liste des entités ennemi de la vague
 
     private transient Carte carteCourante; //la carte actuellement affichée
     private Monde monde; //notre monde
-    private CollectionPokemon pokedex; //collection des pokemons
+    private CollectionEntite pokedex; //collection des entités
     private int nbVictoires; //nombre de victoires du joueur
     private Map<Integer, Tuile> dicoTuiles; //dictionnaire contenant toutes les types de tuiles de nos cartes (pour le sauvegarder)
     private transient Thread thread; //thread de la boucle de jeu
@@ -50,31 +47,31 @@ public class Manager implements Serializable {
 
     /**
      * Constructeur
-     * @param collectionPokemon : collection des pokemons
+     * @param collectionEntite : collection des entités
      * @param dicoTuiles : type de tuiles
      */
-    public Manager(CollectionPokemon collectionPokemon, Map<Integer, Tuile>dicoTuiles, List<Joueur> lesJoueurs){
-        this.deplaceur = new DeplaceurPokemonSimple(hauteurSurfaceJeu,largeurSurfaceJeu,Tuile.getTuileHauteur());
-        this.pokedex=collectionPokemon;
-        //this.controleurCombat = new ControleurCombatV1(collectionPokemon);
+    public Manager(CollectionEntite collectionEntite, Map<Integer, Tuile>dicoTuiles, List<Joueur> lesJoueurs){
+        this.deplaceur = new DeplaceurEntiteSimple(hauteurSurfaceJeu,largeurSurfaceJeu,Tuile.getTuileHauteur());
+        this.pokedex= collectionEntite;
+        //this.controleurCombat = new ControleurCombatV1(collectionEntite);
         this.dicoTuiles=dicoTuiles;
         this.monde=new Monde();
         this.lesJoueurs = lesJoueurs;
     }
 
     /**
-     * Gère un tour de combat entre deux pokemon
-     * @param allie : pokemon du joueur
-     * @param ennemi : pokemon ennemi
-     * @param mAllie : l'attaque utilisée par le pokemon du joueur
+     * Gère un tour de combat entre deux entités
+     * @param allie : entité du joueur
+     * @param ennemi : entité ennemi
+     * @param mAllie : l'attaque utilisée par l'entité du joueur
      */
     /*
-    public int tourDeCombat(Pokemon allie, Pokemon ennemi, Mouvement mAllie){
+    public int tourDeCombat(Entite allie, Entite ennemi, Mouvement mAllie){
         int resultat = controleurCombat.effectuerCombat(allie,ennemi,mAllie);
-        if(resultat == 1){ //le pokemon ennemi est ko
-            listePokemonByVague.remove(0); //on l'enlève de la liste des pokemon ennemis
-            if(!listePokemonByVague.isEmpty()){ //s'il reste des pokemon à combattre
-                setPokemonEnnemiCourant(listePokemonByVague.get(0)); //on envoie le prochain au casse-pipe
+        if(resultat == 1){ //l'entité ennemi est ko
+            listeEntiteByVague.remove(0); //on l'enlève de la liste des entités ennemis
+            if(!listeEntiteByVague.isEmpty()){ //s'il reste des entités à combattre
+                setEntiteEnnemiCourant(listeEntiteByVague.get(0)); //on envoie le prochain au casse-pipe
                 return 1;
             }
             else{ //sinon la vague est finie
@@ -83,7 +80,7 @@ public class Manager implements Serializable {
                     setNbVictoires(getNbVictoires()+1); //on incrémente son nombre de victoires
                     return 4; //la partie est finie et le joueur a gagné
                 }
-                pokemonCourant.setPv(pokedex.getPokemon(pokemonCourant.getNom(),pokemonCourant.getNiveau()).getPv()); //on le soigne
+                entitieCourant.setPv(pokedex.getEntite(entiteCourant.getNom(),entiteCourant.getNiveau()).getPv()); //on le soigne
                 numeroVague++;
                 return 3;
             }
@@ -91,28 +88,28 @@ public class Manager implements Serializable {
         else{
             if(resultat == 2){
                 numeroVague=1;
-                return 2; //le pokemon du joueur est ko
+                return 2; //l'entité du joueur est ko
             }
         }
-        return 0; //aucun pokemon n'est ko
+        return 0; //aucune entité n'est ko
     }*/
 
     /**
-     * Gère le déplacement d'un pokemon vers le portail
+     * Gère le déplacement d'une entité vers le portail
      */
-    public void deplacerPokemon(){
+    public void deplacerEntite(){
         if(deplaceur == null){
-            deplaceur = new DeplaceurPokemonSimple(hauteurSurfaceJeu,largeurSurfaceJeu,Tuile.getTuileHauteur());
+            deplaceur = new DeplaceurEntiteSimple(hauteurSurfaceJeu,largeurSurfaceJeu,Tuile.getTuileHauteur());
         }
-        deplaceur.deplacer(pokemonCourant,carteCourante);
+        deplaceur.deplacer(entiteCourant,carteCourante);
     }
 
     /**
-     * Lance la boucle de jeu utile au déplacement du pokemon du joueur
+     * Lance la boucle de jeu utile au déplacement d'une entité du joueur
      */
 
     public void lancerBoucleJeu(List<Observateur> observateurs){
-        pokemonCourant.setPosition(new Position(carteCourante.getSpawnX(),carteCourante.getSpawnY())); //on set sa position au point de spawn de la carte avant de commencer à le déplacer
+        entiteCourant.setPosition(new Position(carteCourante.getSpawnX(),carteCourante.getSpawnY())); //on set sa position au point de spawn de la carte avant de commencer à le déplacer
         BoucleJeu boucleJeu = new BoucleJeu16();
         for(Observateur o : observateurs){
             boucleJeu.addObservateur(o);
@@ -134,49 +131,49 @@ public class Manager implements Serializable {
     }
 
     /**
-     * Gère les vagues de pokemon ennemi du jeu
-     * @return une liste de 3 pokemon que devra combattre le joueur
+     * Gère les vagues d'entité ennemi du jeu
+     * @return une liste de 3 entités que devra combattre le joueur
      */
     /*
     public boolean lancerVague(){
         if(numeroVague>3){ //Le joueur a gagné toutes les vagues
             setNbVictoires(getNbVictoires()+1);
-            return true;//Pour prévenir qu'il n'y a plus de pokemon à combattre
+            return true;//Pour prévenir qu'il n'y a plus d'entité à combattre
         }
-        listePokemonByVague=pokedex.getListePokemon(numeroVague,3, pokemonCourant);  //Sinon on renvoie les pokemon de la vague d'après
-        pokemonEnnemiCourant=listePokemonByVague.get(0);
+        listeEntiteByVague=pokedex.getListeEntite(numeroVague,3, entiteCourant);  //Sinon on renvoie les entités de la vague d'après
+        entiteEnnemiCourant=listeEntiteByVague.get(0);
         return false;
     }*/
 
-    public List<Pokemon> getStarterslvl1() {
+    public List<Entite> getStarterslvl1() {
         return pokedex.getStarterLvl1();
     }
 
     //Getter et setter
-    public Pokemon getPokemonCourant() {
-        return pokemonCourant;
+    public Entite getEntiteCourant() {
+        return entiteCourant;
     }
 
-    public void setPokemonCourant(Pokemon pokemonCourant) {
-        //On clone le pokemon pour éviter qu'il pointe vers la même référence et ainsi éviter qu'il modifie directement le pokemon contenu dans le pokedex
-        this.pokemonCourant = pokemonCourant.cloner();
+    public void setEntiteCourant(Entite entiteCourant) {
+        //On clone l'entité pour éviter qu'il pointe vers la même référence et ainsi éviter qu'il modifie directement l'entité contenu dans le pokedex
+        this.entiteCourant = entiteCourant.cloner();
     }
 
-    public Pokemon getPokemonEnnemiCourant() {
-        return pokemonEnnemiCourant;
+    public Entite getEntiteEnnemiCourant() {
+        return entiteEnnemiCourant;
     }
 
-    public void setPokemonEnnemiCourant(Pokemon pokemon) {
-        pokemonEnnemiCourant.setNom(pokemon.getNom());
-        pokemonEnnemiCourant.setPv(pokemon.getPv());
-        pokemonEnnemiCourant.setImageCombat(pokemon.getImageCombat());
-        pokemonEnnemiCourant.setImage(pokemon.getImage());
-        pokemonEnnemiCourant.setMouvements(pokemon.getMouvements());
-        pokemonEnnemiCourant.setEtat(pokemon.getEtat());
-        pokemonEnnemiCourant.setVitesse(pokemon.getVitesse());
-        pokemonEnnemiCourant.setAttaque((pokemon.getAttaque()));
-        pokemonEnnemiCourant.setDefense(pokemon.getDefense());
-        pokemonEnnemiCourant.setType(pokemon.getType());
+    public void setEntiteEnnemiCourant(Entite entite) {
+        entiteEnnemiCourant.setNom(entite.getNom());
+        entiteEnnemiCourant.setPv(entite.getPv());
+        entiteEnnemiCourant.setImageCombat(entite.getImageCombat());
+        entiteEnnemiCourant.setImage(entite.getImage());
+        entiteEnnemiCourant.setMouvements(entite.getMouvements());
+        entiteEnnemiCourant.setEtat(entite.getEtat());
+        entiteEnnemiCourant.setVitesse(entite.getVitesse());
+        entiteEnnemiCourant.setAttaque((entite.getAttaque()));
+        entiteEnnemiCourant.setDefense(entite.getDefense());
+        entiteEnnemiCourant.setType(entite.getType());
     }
 
     public Carte getCarteCourante() {
@@ -201,7 +198,7 @@ public class Manager implements Serializable {
         return monde;
     }
 
-    public CollectionPokemon getPokedex() {
+    public CollectionEntite getPokedex() {
         return pokedex;
     }
 

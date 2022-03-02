@@ -1,7 +1,7 @@
 package com.example.ultimateandroid.modele.deplacement;
 
 import com.example.ultimateandroid.modele.monde.Carte;
-import com.example.ultimateandroid.modele.pokemon.Position;
+import com.example.ultimateandroid.modele.entite.Position;
 
 /**
  * Classe qui gère les évènements

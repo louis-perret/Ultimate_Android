@@ -5,7 +5,7 @@ import com.example.ultimateandroid.modele.observateurs.Observateur;
 import java.util.LinkedList;
 
 /**
- * Boucle de jeu utile pour le déplacement du pokemon choisi par l'utilisateur
+ * Boucle de jeu utile pour le déplacement de l'entité choisi par l'utilisateur
  */
 public class BoucleJeu16 extends BoucleJeu{
 
