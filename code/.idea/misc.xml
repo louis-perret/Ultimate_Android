@@ -18,11 +18,13 @@
         <entry key="app/src/main/res/layout-land/fenetre_lancement.xml" value="0.25" />
         <entry key="app/src/main/res/layout-land/fenetre_score.xml" value="0.16049382716049382" />
         <entry key="app/src/main/res/layout-land/fenetre_selection.xml" value="0.25" />
+        <entry key="app/src/main/res/layout-land/fenetre_selection2.xml" value="0.2879188712522046" />
         <entry key="app/src/main/res/layout/cellule_joueur.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fenetre_jeu.xml" value="0.18958333333333333" />
         <entry key="app/src/main/res/layout/fenetre_lancement.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fenetre_score.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fenetre_selection.xml" value="0.21105072463768115" />
+        <entry key="app/src/main/res/layout/fenetre_selection.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fenetre_selection2.xml" value="0.35520833333333335" />
       </map>
     </option>
   </component>

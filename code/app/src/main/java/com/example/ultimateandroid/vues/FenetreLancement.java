@@ -21,7 +21,7 @@ public class FenetreLancement extends AppCompatActivity {
     private Manager manager;
 
     public void lancementJeu(View view){
-        Intent intent = new Intent(this,FenetreSelection.class);
+        Intent intent = new Intent(this,FenetreSelection2.class);
         intent.putExtra("manager",manager);
         startActivity(intent); //On lance l'activité
     }
@@ -44,7 +44,7 @@ public class FenetreLancement extends AppCompatActivity {
         manager.ajouterCarte("lobby",getResources().openRawResource(R.raw.lobby));
 
     }
-
+    //TODO faire en sorte que fenetre_selection2 se lance
 
 
 }
