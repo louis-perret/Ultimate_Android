@@ -339,7 +339,7 @@
 											"top": 587,
 											"width": 124.26806640625,
 											"height": 13,
-											"text": "+cloner(): Pokemon",
+											"text": "+cloner(): Entite",
 											"horizontalAlignment": 0
 										},
 										{
@@ -22652,7 +22652,9 @@
 									"_parent": {
 										"$ref": "AAAAAAF/RobpZSQtAng="
 									},
-									"type": "Pokemon",
+									"type": {
+										"$ref": "AAAAAAF/RoAj5iOm4mc="
+									},
 									"direction": "return"
 								}
 							]
