@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
@@ -20,13 +21,14 @@ import com.example.ultimateandroid.vues.observateurs.ObservateurBoucleVue;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.BlockingDeque;
 
 public class FenetreJeu extends AppCompatActivity {
 
     private Manager manager;
     private Canvas canvas = new Canvas();
     private ConstraintLayout layout;
-    private ImageView refactorAllie;
+    private ImageView imageAllie;
 
     private void afficherCarte() {
         Carte carte = manager.getCarteCourante();
@@ -44,28 +46,40 @@ public class FenetreJeu extends AppCompatActivity {
     }
 
     public void updatePosition(){
-        refactorAllie.setX((float) manager.getEntiteCourant().getPosition().getPositionX());
-        refactorAllie.setY((float) manager.getEntiteCourant().getPosition().getPositionY());
+        imageAllie.setX((float) manager.getAllie().getPosition().getPositionX());
+        imageAllie.setY((float) manager.getAllie().getPosition().getPositionY());
     }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("","onCreate: ");
         setContentView(R.layout.fenetre_jeu); //Je rattache le code behind à la fenêtre
         layout = findViewById(R.id.layout2);
-        manager=(Manager)getIntent().getSerializableExtra("manager");
-        manager.setEntiteCourant(manager.getPokedex().getEntite("Bulbizarre",1));
+        manager= manager = ((App)getApplication()).getManager();
+        manager.setAllie("Bulbizarre",1);
         afficherCarte();
-        refactorAllie = new ImageView(this); //On ajoute notre image view pour qu'elle soit au dessus et non en dessous de la map
-        refactorAllie.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.bulb_1));
-        refactorAllie.setX(manager.getCarteCourante().getSpawnX());
-        refactorAllie.setY(manager.getCarteCourante().getSpawnY());
-        layout.addView(refactorAllie);
+        imageAllie = new ImageView(this); //On ajoute notre image view pour qu'elle soit au dessus et non en dessous de la map
+        imageAllie.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.bulb_1));
+        imageAllie.setX(manager.getCarteCourante().getSpawnX());
+        imageAllie.setY(manager.getCarteCourante().getSpawnY());
+        layout.addView(imageAllie);
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("", "onStart: ");
         List<Observateur> observateurs = new ArrayList<>();
         observateurs.add(new ObservateurBoucle(manager));
         observateurs.add(new ObservateurBoucleVue(this));
         manager.lancerBoucleJeu(observateurs);
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("", "onStop: ");
+        manager.terminerBoucleJeu();
+    }
 }

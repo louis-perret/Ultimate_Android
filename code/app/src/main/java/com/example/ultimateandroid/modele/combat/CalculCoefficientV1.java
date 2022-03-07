@@ -2,6 +2,9 @@ package com.example.ultimateandroid.modele.combat;
 
 import com.example.ultimateandroid.modele.entite.Type;
 
+/**
+ * Classe gérant le calcul du coefficient entre les types
+ */
 public class CalculCoefficientV1 implements CalculCoefficient{
     /**
      * Retourne un coefficiant de dégâts en fonction du type de l'attaque lancée par rapport au type de l'entité attaqué

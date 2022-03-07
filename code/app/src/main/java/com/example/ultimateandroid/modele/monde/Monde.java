@@ -34,9 +34,8 @@ public class Monde implements Serializable {
      * Charge la carte d'après son fichier assigné
      * @param nomCarte : chemin du fichier à charger
      * @param fichier
-     * @param dicoTuiles
      */
-    public void ajouterCarte(String nomCarte, InputStream fichier, Map<Integer, Tuile> dicoTuiles) {
+    public void ajouterCarte(String nomCarte, InputStream fichier) {
         String contenuFichier = LectureMonde.chargerFichier(fichier);
         String[] partie = contenuFichier.split("\\s+");
         int largeur = LectureMonde.parseInt(partie[0]);
@@ -52,7 +51,7 @@ public class Monde implements Serializable {
             }
         }
 
-        lesCartes.put(nomCarte,new Carte(lesTuiles,hauteur, largeur, spawnX, spawnY, xPortail, yPortail, dicoTuiles));
+        lesCartes.put(nomCarte,new Carte(lesTuiles,hauteur, largeur, spawnX, spawnY, xPortail, yPortail));
     }
 
 }

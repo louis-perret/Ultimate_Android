@@ -18,12 +18,12 @@ public class FenetreSelection extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fenetre_selection);
-        manager=(Manager)getIntent().getSerializableExtra("manager");
+        manager = ((App)getApplication()).getManager();
+        manager.ajouterCarte("lobby",getResources().openRawResource(R.raw.lobby));
     }
 
     public void lancementPartie(View view){
         Intent intent = new Intent(this,FenetreJeu.class);
-        intent.putExtra("manager",manager);
         startActivity(intent); //On lance l'activité
     }
 

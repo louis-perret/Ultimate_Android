@@ -4,6 +4,7 @@ import static java.lang.Math.abs;
 
 import com.example.ultimateandroid.modele.monde.Carte;
 import com.example.ultimateandroid.modele.entite.Position;
+import com.example.ultimateandroid.modele.monde.Tuile;
 
 /**
  * Classe gérant les collisions
@@ -13,10 +14,9 @@ public class CollisionneurV1 extends Collisionneur{
     /**
      * Constructeur
      */
-    public CollisionneurV1(int hauteurSurface, int largeurSurface,int hauteurTuile){
+    public CollisionneurV1(int hauteurSurface, int largeurSurface){
         setHauteurSurface(hauteurSurface/2);
         setLargeurSurface(largeurSurface);
-        setHauteurTuile(hauteurTuile);
     }
 
     /**
@@ -34,12 +34,12 @@ public class CollisionneurV1 extends Collisionneur{
         }
 
         //Le y sur la fenêtre commence à 0 au milieu de la fenêtre, il fallait gérer cette partie
-        int posTuilX = nextX/getHauteurTuile(),posTuilY = nextY;
+        int posTuilX = nextX/ Tuile.tuileHauteur,posTuilY = nextY;
         if(posTuilY<0){ //Si c'est négatif
-            posTuilY = (abs(getHauteurSurface() - getHauteurTuile()) + posTuilY)/getHauteurTuile(); //On fait partir le y du début du tableau
+            posTuilY = (abs(getHauteurSurface() - Tuile.tuileHauteur) + posTuilY)/Tuile.tuileHauteur; //On fait partir le y du début du tableau
         }
         else{ //Si c'est positif
-            posTuilY=(carte.getHauteur()/2)+(posTuilY/getHauteurTuile()); //on fait partir le y du milieu du tableau
+            posTuilY=(carte.getHauteur()/2)+(posTuilY/Tuile.tuileHauteur); //on fait partir le y du milieu du tableau
         }
         return !carte.getTuile(posTuilX,posTuilY).getTraversable(); //Renvoie true s'il y a collision
     }

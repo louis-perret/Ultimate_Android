@@ -2,6 +2,9 @@ package com.example.ultimateandroid.modele.entite.etat;
 
 import com.example.ultimateandroid.modele.entite.Entite;
 
+/**
+ * Classe abstraite représentant l'état paralysé d'un entité
+ */
 public class Paralyse extends Etat{
 
     private boolean vitesseReduit=false; //permet de savoir si l'effet a déjà été appliqué
@@ -18,13 +21,13 @@ public class Paralyse extends Etat{
 
     /**
      * Comportement associé à l'état, ici réduit une seule fois la vitesse de moitié
-     * @param p : Pokemon sur lequel sera appliqué ce comportement
+     * @param e : Pokemon sur lequel sera appliqué ce comportement
      */
     @Override
-    public void comportement(Entite p) {
+    public void comportement(Entite e) {
         if(!vitesseReduit){ //On réduit la vitesse de moitié qu'une seule fois
             vitesseReduit=true; //Pour dire qu'on a appliqué le comportement
-            p.setVitesse(p.getVitesse()/2);
+            e.setVitesse(e.getVitesse()/2);
         }
     }
 }

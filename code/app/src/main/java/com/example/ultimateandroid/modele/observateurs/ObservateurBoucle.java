@@ -23,6 +23,5 @@ public class ObservateurBoucle implements Observateur {
     @Override
     public void update() {
         manager.deplacerEntite();
-        System.out.println("Observateur modèle appelé");
     }
 }

@@ -10,14 +10,14 @@ public abstract class DeplaceurEntite {
 
     private Collisionneur collisionneur; //pour savoir les collisions
     private ChangeurCarte changeurCarte; //pour savoir les évènements
-
+    protected int pas;
 
     /**
      * Effectue le déplacement de l'entité
-     * @param p : entité à déplacer
+     * @param e : entité à déplacer
      * @param carte : Carte pour vérifier la collision
      */
-    public void deplacer(Entite p, Carte carte){
+    public void deplacer(Entite e, Carte carte){
 
     }
 

@@ -10,7 +10,6 @@ public abstract class Collisionneur {
 
     private int hauteurSurface; //hauteur de surface de jeu
     private int largeurSurface; //largeur de la surface de jeu
-    private int hauteurTuile; //Taille du pas
 
     /**
      * Effectue les collisions pour le déplacement
@@ -35,13 +34,5 @@ public abstract class Collisionneur {
 
     public void setLargeurSurface(int largeurSurface) {
         this.largeurSurface = largeurSurface;
-    }
-
-    public int getHauteurTuile() {
-        return hauteurTuile;
-    }
-
-    public void setHauteurTuile(int hauteurTuile) {
-        this.hauteurTuile = hauteurTuile;
     }
 }

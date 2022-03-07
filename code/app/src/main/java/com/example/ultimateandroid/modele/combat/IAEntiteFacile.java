@@ -5,10 +5,13 @@ import com.example.ultimateandroid.modele.entite.Entite;
 
 import java.util.Random;
 
+/**
+ * Classe qui gère la sélection de l'attaque de l'allié
+ */
 public class IAEntiteFacile implements IAEntite {
     @Override
-    public Mouvement choisirAttaque(Entite p) {
+    public Mouvement choisirAttaque(Entite allie) {
         Random random = new Random(); //sélection via l'aléatoire
-        return p.getMouvements()[random.nextInt(p.getMouvements().length)];
+        return allie.getMouvements()[random.nextInt(allie.getMouvements().length)];
     }
 }

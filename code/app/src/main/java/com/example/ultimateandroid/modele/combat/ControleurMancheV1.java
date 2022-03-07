@@ -5,7 +5,9 @@ import com.example.ultimateandroid.modele.entite.Mouvement;
 import com.example.ultimateandroid.modele.entite.Entite;
 
 
-
+/**
+ * Classe gérant le contrôle d'une manche
+ */
 public class ControleurMancheV1 extends ControleurManche {
 
     /**

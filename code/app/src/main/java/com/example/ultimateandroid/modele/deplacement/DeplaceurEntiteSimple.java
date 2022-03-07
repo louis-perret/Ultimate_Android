@@ -13,20 +13,30 @@ public class DeplaceurEntiteSimple extends DeplaceurEntite {
     /**
      * Constructeur
      */
-    public DeplaceurEntiteSimple(int hauteurSurface, int largeurSurface, int hauteurTuile) {
-        super.setCollisionneur(new CollisionneurV1(hauteurSurface,largeurSurface,hauteurTuile));
-        super.setChangeurCarte(new ChangeurCarteV1(hauteurSurface,largeurSurface,hauteurTuile));
+    public DeplaceurEntiteSimple(int hauteurSurface, int largeurSurface, int pas) {
+        super.setCollisionneur(new CollisionneurV1(hauteurSurface,largeurSurface));
+        this.pas = pas;
+       // super.setChangeurCarte(new ChangeurCarteV1(hauteurSurface,largeurSurface,hauteurTuile));
     }
 
     /**
      * Effectue le déplacement de l'entité
-     * @param p : entité à déplace
+     * @param e : entité à déplace
      * @param carte : Carte pour vérifier la collision
      */
     @Override
-    public void deplacer(Entite p, Carte carte){
-        p.getPosition().setPositionX(p.getPosition().getPositionX()+10);
-        p.getPosition().setPositionY(p.getPosition().getPositionY()+0);
+    public void deplacer(Entite e, Carte carte){
+        int xPortail = carte.getxPortail();
+        int yPortail = carte.getyPortail();
+        double diff;
+        /*if(e.getPosition().getPositionX() == xPortail){
+            diff = e.getPosition().getPositionY() - xPortail;
+            if(diff < 0){
+                e.setPosition(new Position(e.getPosition().getPositionX(),e.getPosition().getPositionY()+pas));
+            }
+        }*/
+        e.getPosition().setPositionX(e.getPosition().getPositionX()+5);
+        e.getPosition().setPositionY(e.getPosition().getPositionY()+0);
         //On regarde l'évènement lié à la tuile où l'on s'est déplacé
         /*
         if(getChangeurCarte().isChangement(p.getPosition(), carte) == 1) { //on va sur la carte lobby

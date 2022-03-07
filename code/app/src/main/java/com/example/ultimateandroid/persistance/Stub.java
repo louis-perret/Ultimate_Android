@@ -1,6 +1,7 @@
 package com.example.ultimateandroid.persistance;
 
 import com.example.ultimateandroid.R;
+import com.example.ultimateandroid.modele.Banque;
 import com.example.ultimateandroid.modele.Manager;
 import com.example.ultimateandroid.modele.joueur.Joueur;
 import com.example.ultimateandroid.modele.monde.Tuile;
@@ -26,7 +27,7 @@ public class Stub extends Chargeur{
      * @return un Manager
      */
     @Override
-    public Manager charger() {
+    public Banque charger() {
 
         //test pour les scores
         List<Joueur> lesJoueurs = new ArrayList<>();
@@ -354,6 +355,6 @@ public class Stub extends Chargeur{
         dicoTuiles.put(tuileRocher.getId(),tuileRocher);
         dicoTuiles.put(tuileSol.getId(),tuileSol);
         dicoTuiles.put(tuileTronc.getId(),tuileTronc);
-        return new Manager(collectionEntite,dicoTuiles, lesJoueurs);
+        return new Banque(collectionEntite,lesJoueurs,dicoTuiles);
     }
 }

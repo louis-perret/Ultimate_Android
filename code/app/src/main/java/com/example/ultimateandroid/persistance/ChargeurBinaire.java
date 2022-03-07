@@ -1,5 +1,6 @@
 package com.example.ultimateandroid.persistance;
 
+import com.example.ultimateandroid.modele.Banque;
 import com.example.ultimateandroid.modele.Manager;
 
 import java.io.FileInputStream;
@@ -26,10 +27,10 @@ public class ChargeurBinaire extends Chargeur{
      * @return un Manager
      */
     @Override
-    public Manager charger() {
-        Manager type=null;
+    public Banque charger() {
+        Banque type=null;
         try(ObjectInputStream reader = new ObjectInputStream(new FileInputStream(cheminFichier))) {
-            type=(Manager) reader.readObject(); //on lit l'objet
+            type=(Banque) reader.readObject(); //on lit l'objet
         }
         catch (FileNotFoundException e) {
             e.printStackTrace();

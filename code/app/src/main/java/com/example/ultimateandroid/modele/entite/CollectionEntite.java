@@ -13,7 +13,7 @@ import java.util.Set;
  */
 public class CollectionEntite implements Serializable {
 
-    private Map<Integer, List<Entite>> pokedex; //On stocke les entités suivant leur niveau
+    private Map<Integer, List<Entite>> encyclopedie; //On stocke les entités suivant leur niveau
 
     /**
      * Constructeur
@@ -22,10 +22,10 @@ public class CollectionEntite implements Serializable {
      * @param niveau3 : Collection des entités de niveau 3
      */
     public CollectionEntite(List<Entite> niveau1, List<Entite> niveau2, List<Entite> niveau3){
-        pokedex= new HashMap<>();
-        pokedex.put(1,niveau1);
-        pokedex.put(2,niveau2);
-        pokedex.put(3,niveau3);
+        encyclopedie = new HashMap<>();
+        encyclopedie.put(1,niveau1);
+        encyclopedie.put(2,niveau2);
+        encyclopedie.put(3,niveau3);
     }
 
     /**
@@ -35,7 +35,7 @@ public class CollectionEntite implements Serializable {
      * @return une entité
      */
     public Entite getEntite(String nom, int niveau){
-        List<Entite> ens = pokedex.get(niveau);
+        List<Entite> ens = encyclopedie.get(niveau);
         Entite entiteRecherche =null;
         for(Entite p : ens){
             if(p.getNom().equals((nom))){
@@ -50,7 +50,7 @@ public class CollectionEntite implements Serializable {
      * @return une liste de l'entité
      */
     public List<Entite> getStarterLvl1(){
-        List<Entite> niv1 = pokedex.get(1); //On récupère la liste des entités de niveau 1
+        List<Entite> niv1 = encyclopedie.get(1); //On récupère la liste des entités de niveau 1
         List<Entite> listeStarterNiv1 = new ArrayList<Entite>();
         for (Entite p : niv1){
             if(p.getStarter()){ //Si c'est un starter
@@ -73,7 +73,7 @@ public class CollectionEntite implements Serializable {
         Random random = new Random();
         Entite p;
         while(listeEntite.size()<nbEntiteByVague){
-            p=pokedex.get(numeroVague).get(random.nextInt(pokedex.get(numeroVague).size()));
+            p= encyclopedie.get(numeroVague).get(random.nextInt(encyclopedie.get(numeroVague).size()));
             if(!listeEntite.contains(p) && !p.getStarter()) { //Si l'entité n'a pas déjà été pris et si ce n'est pas un starter
                 listeEntite.add(p.cloner()); //On l'ajoute à la liste
             }
@@ -89,7 +89,7 @@ public class CollectionEntite implements Serializable {
     @Override
     public String toString(){
         String res="";
-        Set<Map.Entry<Integer,List<Entite>>> ens = pokedex.entrySet();
+        Set<Map.Entry<Integer,List<Entite>>> ens = encyclopedie.entrySet();
         for(Map.Entry<Integer,List<Entite>> dico : ens){
             res+= "Niveau " + dico.getKey() + " : ";
             for(Entite p : dico.getValue()){

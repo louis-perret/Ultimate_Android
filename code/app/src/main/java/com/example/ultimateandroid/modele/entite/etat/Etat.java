@@ -4,6 +4,9 @@ import com.example.ultimateandroid.modele.entite.Entite;
 
 import java.io.Serializable;
 
+/**
+ * Classe abstraite représentant l'état d'un allié
+ */
 public abstract class Etat implements Serializable {
 
     protected String nom; //nom de l'état
@@ -11,9 +14,9 @@ public abstract class Etat implements Serializable {
 
     /**
      * Comportement associé à l'état
-     * @param p : Pokemon sur lequel sera appliqué ce comportement
+     * @param e : Pokemon sur lequel sera appliqué ce comportement
      */
-    public abstract void comportement(Entite p);
+    public abstract void comportement(Entite e);
 
     //Getter et setter
     public String getNom() {

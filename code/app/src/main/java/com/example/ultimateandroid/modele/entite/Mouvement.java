@@ -31,14 +31,14 @@ public class Mouvement implements Serializable{
 
     /**
      * Comportement de l'attaque sur une entité. Peut modifier l'état d'une entité
-     * @param ennemi : entité sur lequel sera appliaué ce comportement
+     * @param e : entité sur lequel sera appliaué ce comportement
      */
-    public void comportement(Entite ennemi){
-        if(ennemi.getEtat() == null) { //un entité ne peut pas avoir qu'un état à la fois jusqu'à sa guérison, donc si null -> l'entité ennemi peut subir un changement d'état
+    public void comportement(Entite e){
+        if(e.getEtat() == null) { //un entité ne peut pas avoir qu'un état à la fois jusqu'à sa guérison, donc si null -> l'entité ennemi peut subir un changement d'état
             if (etat != null) { //si null -> l'attaque n'affectera pas l'état de l'adversaire
                 Random random = new Random();
                 if (random.nextInt(4) == 0) {
-                    ennemi.setEtat(etat); //une chance sur 4 de modifier l'état de l'adversaire
+                    e.setEtat(etat); //une chance sur 4 de modifier l'état de l'adversaire
                 }
             }
         }

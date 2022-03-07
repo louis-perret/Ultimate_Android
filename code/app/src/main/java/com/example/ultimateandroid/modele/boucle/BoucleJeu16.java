@@ -29,7 +29,7 @@ public class BoucleJeu16 extends BoucleJeu{
             }
         }
         catch (Exception e){
-            System.out.println("Erreur dans la boucle : " + e.getMessage());
+            isRunning=false;
         }
 
     }
@@ -40,7 +40,6 @@ public class BoucleJeu16 extends BoucleJeu{
     @Override
     public void notifier() {
         //Instruction envoyée au thread principal
-        //Platform.runLater n'est plus utilisée car bloquait nos déplacement de façon aléatoire
         for(Observateur o : super.observateurs){
             o.update();
         }

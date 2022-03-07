@@ -1,5 +1,6 @@
 package com.example.ultimateandroid.persistance;
 
+import com.example.ultimateandroid.modele.Banque;
 import com.example.ultimateandroid.modele.Manager;
 
 import java.io.FileNotFoundException;
@@ -22,15 +23,15 @@ public class SauveurBinaire extends Sauveur{
 
     /**
      * Sauvegarde un objet Manager dans le fichier cheminFichier
-     * @param manager : objet à sérialiser
+     * @param banque : objet à sérialiser
      */
     @Override
-    public boolean sauver(Manager manager) {
-        if(manager==null){
+    public boolean sauver(Banque banque) {
+        if(banque==null){
             throw new IllegalArgumentException("Objet vide, impossible de l'enregistrer");
         }
         try(ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(cheminFichier))) {
-            writer.writeObject(manager); //on écrit l'objet
+            writer.writeObject(banque); //on écrit l'objet
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             return false;

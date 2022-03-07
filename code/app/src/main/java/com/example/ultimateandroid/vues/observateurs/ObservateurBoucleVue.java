@@ -14,6 +14,5 @@ public class ObservateurBoucleVue implements Observateur {
     @Override
     public void update() {
         fenetre.updatePosition();
-        System.out.println("Observateur vu appelé");
     }
 }

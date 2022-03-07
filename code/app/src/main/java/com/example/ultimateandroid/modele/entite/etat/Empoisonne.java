@@ -4,6 +4,9 @@ import static java.lang.Math.ceil;
 
 import com.example.ultimateandroid.modele.entite.Entite;
 
+/**
+ * Classe abstraite représentant l'état empoisonné d'une entité
+ */
 public class Empoisonne extends Etat{
 
     private static float coefficient=1/4F; //Dégâts de l'empoisenement
@@ -20,10 +23,10 @@ public class Empoisonne extends Etat{
 
     /**
      * Comportement associé à l'état, ici réduit les pv de 1/4 à chaque tour de combat
-     * @param p : Pokemon sur lequel sera appliqué ce comportement
+     * @param e : Pokemon sur lequel sera appliqué ce comportement
      */
     @Override
-    public void comportement(Entite p){
-        p.setPv((int) (p.getPv()-ceil(p.getPv()*coefficient)));
+    public void comportement(Entite e){
+        e.setPv((int) (e.getPv()-ceil(e.getPv()*coefficient)));
     }
 }

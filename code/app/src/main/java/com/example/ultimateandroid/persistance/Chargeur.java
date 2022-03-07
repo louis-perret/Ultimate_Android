@@ -1,5 +1,6 @@
 package com.example.ultimateandroid.persistance;
 
+import com.example.ultimateandroid.modele.Banque;
 import com.example.ultimateandroid.modele.Manager;
 
 /**
@@ -14,5 +15,5 @@ public abstract class Chargeur {
      *
      * @return un Manager
      */
-    public abstract Manager charger();
+    public abstract Banque charger();
 }

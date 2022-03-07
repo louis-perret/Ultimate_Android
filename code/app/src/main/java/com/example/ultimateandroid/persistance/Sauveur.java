@@ -1,5 +1,6 @@
 package com.example.ultimateandroid.persistance;
 
+import com.example.ultimateandroid.modele.Banque;
 import com.example.ultimateandroid.modele.Manager;
 
 /**
@@ -11,7 +12,7 @@ public abstract class Sauveur {
 
     /**
      * Sauvegarde un objet Manager dans le fichier cheminFichier
-     * @param manager : objet à sérialiser
+     * @param banque : objet à sérialiser
      */
-    public abstract boolean sauver(Manager manager);
+    public abstract boolean sauver(Banque banque);
 }

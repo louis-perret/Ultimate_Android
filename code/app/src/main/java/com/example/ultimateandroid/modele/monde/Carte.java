@@ -1,5 +1,7 @@
 package com.example.ultimateandroid.modele.monde;
 
+import com.example.ultimateandroid.modele.Banque;
+
 import java.io.Serializable;
 import java.util.Map;
 
@@ -11,9 +13,6 @@ public class Carte implements Serializable {
     private int[][] lesTuiles; //les élements qui composent la carte
     private int hauteur, largeur, spawnX, spawnY, xPortail, yPortail; //hauteur et largeur de la carte, point de spawn en x & y
 
-    private Map<Integer,Tuile> dicoTuiles; //Contient tous les types de tuiles de la carte
-
-
     /**
      * Construit une carte
      * @param lesTuiles
@@ -21,9 +20,8 @@ public class Carte implements Serializable {
      * @param largeur
      * @param spawnX
      * @param spawnY
-     * @param dicoTuiles
      */
-    public Carte(int[][] lesTuiles, int hauteur, int largeur, int spawnX, int spawnY, int xPortail, int yPortail, Map<Integer, Tuile> dicoTuiles) {
+    public Carte(int[][] lesTuiles, int hauteur, int largeur, int spawnX, int spawnY, int xPortail, int yPortail) {
         this.lesTuiles = lesTuiles;
         this.hauteur = hauteur;
         this.largeur = largeur;
@@ -31,7 +29,6 @@ public class Carte implements Serializable {
         this.spawnY = spawnY;
         this.xPortail = xPortail;
         this.yPortail = yPortail;
-        this.dicoTuiles = dicoTuiles;
     }
 
     /**
@@ -41,7 +38,7 @@ public class Carte implements Serializable {
      * @return une Tuile
      */
     public Tuile getTuile(int x, int y) {
-        Tuile t=dicoTuiles.get(lesTuiles[y][x]);
+        Tuile t= Banque.DICOTUILES.get(lesTuiles[y][x]);
         return t;
     }
 

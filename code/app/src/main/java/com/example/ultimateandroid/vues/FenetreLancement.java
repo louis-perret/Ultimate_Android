@@ -21,14 +21,12 @@ public class FenetreLancement extends AppCompatActivity {
     private Manager manager;
 
     public void lancementJeu(View view){
-        Intent intent = new Intent(this,FenetreSelection2.class);
-        intent.putExtra("manager",manager);
+        Intent intent = new Intent(this,FenetreSelection.class);
         startActivity(intent); //On lance l'activité
     }
 
     public void consultationScores(View view){
         Intent intent = new Intent(this,FenetreScore.class);
-        intent.putExtra("manager",manager);
         startActivity(intent); //On lance l'activité
     }
 
@@ -39,9 +37,8 @@ public class FenetreLancement extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //taille de la fenêtre : displayMetrix
         setContentView(R.layout.fenetre_lancement); //Je rattache le code behind à la fenêtre
-        manager = new Stub().charger();
-        manager.ajouterCarte("lobby",getResources().openRawResource(R.raw.lobby));
-
+        manager = ((App)getApplication()).getManager();
     }
 }

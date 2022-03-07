@@ -5,7 +5,7 @@ import com.example.ultimateandroid.modele.entite.Mouvement;
 import com.example.ultimateandroid.modele.entite.Entite;
 
 /**
- * classe abtraite gérant le contrôle d'un combat
+ * Classe abtraite gérant le contrôle d'une manche
  */
 public abstract class ControleurManche {
 

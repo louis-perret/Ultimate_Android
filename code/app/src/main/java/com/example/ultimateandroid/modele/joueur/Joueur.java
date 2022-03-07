@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 
 public class Joueur implements Serializable {
-    String pseudo;
-    int nbVictoire;
+    private String pseudo;
+    private int nbVictoire;
 
     /**
      * constructeur de la classe Joueur
@@ -18,7 +18,7 @@ public class Joueur implements Serializable {
     }
 
     public void incrementerScore(){
-
+        nbVictoire++;
     }
 
 

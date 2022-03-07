@@ -21,7 +21,7 @@ public class FenetreScore extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fenetre_score);
-        manager=(Manager)getIntent().getSerializableExtra("manager");
+        manager=((App)getApplication()).getManager();
     }
 
     @Override
