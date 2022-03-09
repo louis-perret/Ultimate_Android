@@ -9,16 +9,26 @@ import androidx.fragment.app.Fragment;
 
 import com.example.ultimateandroid.R;
 
-public class FragmentImage extends Fragment {
+public class FragmentStarter extends Fragment {
     private FenetreSelection2 activiteParente;
 
-    public FragmentImage() {super(R.layout.fragment_image);}
+    public FragmentStarter() {super(R.layout.fragment_starter);}
 
-   /* @Override
+   /*@Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        activiteParente = (FenetreSelection2) getContext();
+
     }*/
 
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Bundle b = this.getArguments();
+        if (b != null){
+            String value = b.getString("test");
+
+        }
+
+    }
 }

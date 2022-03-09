@@ -3,7 +3,6 @@ package com.example.ultimateandroid.vues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
@@ -27,7 +26,7 @@ public class FenetreSelection2 extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .add(R.id.fragment_container_view, FragmentImage.class, null)
+                .add(R.id.fragment_gauche, FragmentStarter.class, null)
                 .commit();
     }
 
@@ -37,7 +36,7 @@ public class FenetreSelection2 extends AppCompatActivity {
     }
 
     //TODO finir cette méthode: vérifier si l'images courante et l'image du bouton son les mêmes, si =/= alors on récup le bouton, on vérifie qu'il est cliqué et on change l'image sur le fragment, sinon on fait rien
-    public void afficherConsole(FragmentImage fragment){
+    public void afficherConsole(FragmentStarter fragment){
        /* if () {
             Button bouton = (Button) findViewById(R.id.buttonOrdi);
             bouton.setOnClickListener();

@@ -20,6 +20,29 @@ public class FenetreSelection extends AppCompatActivity {
         setContentView(R.layout.fenetre_selection);
         manager = ((App)getApplication()).getManager();
         manager.ajouterCarte("lobby",getResources().openRawResource(R.raw.lobby));
+
+        Bundle bgauche = new Bundle();
+        Bundle bmilieu = new Bundle();
+        Bundle bdroit = new Bundle();
+
+        String imageDroit = "@drawable/arbre";
+        bdroit.putString("test", imageDroit);
+
+        getSupportFragmentManager().beginTransaction()
+                .setReorderingAllowed(true)
+                .add(R.id.fragment_gauche, FragmentStarter.class, bgauche)
+                .commit();
+
+        getSupportFragmentManager().beginTransaction()
+                .setReorderingAllowed(true)
+                .add(R.id.fragment_milieu, FragmentStarter.class, bmilieu)
+                .commit();
+
+        getSupportFragmentManager().beginTransaction()
+                .setReorderingAllowed(true)
+                .add(R.id.fragment_droit, FragmentStarter.class, bdroit)
+                .commit();
+
     }
 
     public void lancementPartie(View view){

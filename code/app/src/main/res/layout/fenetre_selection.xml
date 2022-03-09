@@ -20,8 +20,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="368dp"
+        android:layout_height="257dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@id/textnbVictoire"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,19 +35,13 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView3"
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragment_gauche"
+                android:name="com.example.ultimateandroid.vues.FragmentStarter"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
+                android:layout_height="match_parent" />
 
-            <Button
-                android:id="@+id/buttonBulbi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="lancementPartie"
-                android:text="Bulbizarre"
-                app:backgroundTint="#4CAF50" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -56,19 +50,13 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView4"
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragment_milieu"
+                android:name="com.example.ultimateandroid.vues.FragmentStarter"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
+                android:layout_height="match_parent" />
 
-            <Button
-                android:id="@+id/buttonSalameche"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="lancementPartie"
-                android:text="Salamèche"
-                app:backgroundTint="#F44336" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -77,20 +65,32 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView2"
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragment_droit"
+                android:name="com.example.ultimateandroid.vues.FragmentStarter"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
+                android:layout_height="match_parent" />
 
-            <Button
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="lancementPartie"
-                android:text="Carapuce"
-                app:backgroundTint="#00BCD4" />
+
         </LinearLayout>
+
+        <!--<androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_gauche"
+            android:name="com.example.ultimateandroid.vues.FragmentStarter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_milieu"
+            android:name="com.example.ultimateandroid.vues.FragmentStarter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_droit"
+            android:name="com.example.ultimateandroid.vues.FragmentStarter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />-->
 
     </LinearLayout>
 
