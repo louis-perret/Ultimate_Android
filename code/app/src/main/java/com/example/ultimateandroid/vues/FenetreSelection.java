@@ -25,8 +25,12 @@ public class FenetreSelection extends AppCompatActivity {
         Bundle bmilieu = new Bundle();
         Bundle bdroit = new Bundle();
 
-        String imageDroit = "@drawable/arbre";
-        bdroit.putString("test", imageDroit);
+        //String imageDroit = "@drawable/arbre";
+        //bdroit.putString("test", imageDroit);
+        bdroit.putInt("test", R.drawable.sol);
+        bmilieu.putInt("test", R.drawable.arbre);
+        bgauche.putInt("test", R.drawable.brique);
+
 
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)

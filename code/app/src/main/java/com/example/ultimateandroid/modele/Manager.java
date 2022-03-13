@@ -128,6 +128,10 @@ public class Manager {
         return monde;
     }
 
+    public List<Entite> getStarter() {
+        return banque.getEncyclopedie().getStarterLvl1();
+    }
+
     public Joueur getJoueurCourant() {
         return joueurCourant;
     }

@@ -1,7 +1,11 @@
 package com.example.ultimateandroid.vues;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,14 +24,19 @@ public class FragmentStarter extends Fragment {
 
     }*/
 
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle b = this.getArguments();
-        if (b != null){
-            String value = b.getString("test");
+        Bundle bundle = this.getArguments();
 
+        //View v = getView();
+        ImageView image = getActivity().findViewById(R.id.imageFragment);
+        Button bouton = getActivity().findViewById(R.id.buttonFragment);
+
+        if (bundle != null){
+            Bitmap b = BitmapFactory.decodeResource(getResources(), bundle.getInt("test"));
+            String value = bundle.getString("test");
+            image.setImageBitmap(b);
         }
 
     }
