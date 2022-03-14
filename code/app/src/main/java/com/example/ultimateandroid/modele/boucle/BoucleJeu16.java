@@ -1,5 +1,10 @@
 package com.example.ultimateandroid.modele.boucle;
 
+import android.app.Activity;
+
+import androidx.annotation.UiThread;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.ultimateandroid.modele.observateurs.Observateur;
 
 import java.util.LinkedList;
@@ -39,7 +44,9 @@ public class BoucleJeu16 extends BoucleJeu{
      */
     @Override
     public void notifier() {
+        //UiThread
         //Instruction envoyée au thread principal
+
         for(Observateur o : super.observateurs){
             o.update();
         }

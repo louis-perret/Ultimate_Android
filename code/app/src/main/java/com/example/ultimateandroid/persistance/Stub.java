@@ -176,7 +176,7 @@ public class Stub extends Chargeur{
         forces.add(NomType.glace);
         Type roche = new Type(NomType.roche,forces,faiblesses);
 
-        Position position = new Position(128,128);
+        Position position = new Position(0,0);
         Empoisonne empoisonne = new Empoisonne("Empoisonné","/Status/poison.png");
         Paralyse paralyse = new Paralyse("Paralysé","/Status/paralysie.png");
         Inflamme inflamme = new Inflamme("Inflammé","/Status/brulure.png");

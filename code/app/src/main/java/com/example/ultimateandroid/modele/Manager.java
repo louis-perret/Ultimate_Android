@@ -69,9 +69,7 @@ public class Manager {
      */
 
     public void lancerBoucleJeu(List<Observateur> observateurs){
-        if(allie.getPosition() == null) {
-            allie.setPosition(new Position(carteCourante.getSpawnX(), carteCourante.getSpawnY())); //on set sa position au point de spawn de la carte avant de commencer à le déplacer
-        }
+        allie.setPosition(new Position(carteCourante.getSpawnX(), carteCourante.getSpawnY())); //on set sa position au point de spawn de la carte avant de commencer à le déplacer
         BoucleJeu boucleJeu = new BoucleJeu16();
         for(Observateur o : observateurs){
             boucleJeu.addObservateur(o);
@@ -83,12 +81,14 @@ public class Manager {
     /**
      * Arrête le thread de la boucle de jeu
      */
-    public void terminerBoucleJeu(){
-        thread.interrupt();
-        try {
-            thread.join();
-        } catch (InterruptedException e) {
-            System.out.println("Problème dans l'arrêt de la boucle de jeu");
+    public void terminerBoucleJeu() {
+        if (thread != null) {
+            thread.interrupt();
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                System.out.println("Problème dans l'arrêt de la boucle de jeu");
+            }
         }
     }
 

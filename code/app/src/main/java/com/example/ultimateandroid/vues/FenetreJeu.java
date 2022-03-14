@@ -1,9 +1,12 @@
 package com.example.ultimateandroid.vues;
 
+import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.util.Log;
 import android.widget.ImageView;
 
@@ -13,6 +16,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.ultimateandroid.R;
 import com.example.ultimateandroid.modele.Manager;
+import com.example.ultimateandroid.modele.boucle.BoucleJeu;
+import com.example.ultimateandroid.modele.boucle.BoucleJeu16;
 import com.example.ultimateandroid.modele.monde.Carte;
 import com.example.ultimateandroid.modele.monde.Tuile;
 import com.example.ultimateandroid.modele.observateurs.Observateur;
@@ -30,6 +35,12 @@ public class FenetreJeu extends AppCompatActivity {
     private ConstraintLayout layout;
     private ImageView imageAllie;
 
+    private void setPositionImageAllie(){
+        imageAllie.setX((float)manager.getAllie().getPosition().getPositionX() * 3);
+        imageAllie.setY((float)manager.getAllie().getPosition().getPositionY() * 3) ;
+    }
+
+
     private void afficherCarte() {
         Carte carte = manager.getCarteCourante();
         ImageView image;
@@ -38,6 +49,7 @@ public class FenetreJeu extends AppCompatActivity {
                 Bitmap b = BitmapFactory.decodeResource(getResources(), carte.getTuile(i, j).getImage()); //on récupère notre image
                 image = new ImageView(this);
                 image.setImageBitmap(b); //on crée notre image view
+                //getWindowManager().getDefaultDisplay().getMetrics();
                 image.setX(i * Tuile.tuileLargeur * 3.5F);
                 image.setY(j * Tuile.tuileHauteur * 3.5F);
                 layout.addView(image); //puis on l'ajoute dans notre layout
@@ -46,8 +58,7 @@ public class FenetreJeu extends AppCompatActivity {
     }
 
     public void updatePosition(){
-        imageAllie.setX((float) manager.getAllie().getPosition().getPositionX());
-        imageAllie.setY((float) manager.getAllie().getPosition().getPositionY());
+        setPositionImageAllie();
     }
 
     @Override
@@ -61,15 +72,13 @@ public class FenetreJeu extends AppCompatActivity {
         afficherCarte();
         imageAllie = new ImageView(this); //On ajoute notre image view pour qu'elle soit au dessus et non en dessous de la map
         imageAllie.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.bulb_1));
-        imageAllie.setX(manager.getCarteCourante().getSpawnX());
-        imageAllie.setY(manager.getCarteCourante().getSpawnY());
+        setPositionImageAllie();
         layout.addView(imageAllie);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d("", "onStart: ");
         List<Observateur> observateurs = new ArrayList<>();
         observateurs.add(new ObservateurBoucle(manager));
         observateurs.add(new ObservateurBoucleVue(this));

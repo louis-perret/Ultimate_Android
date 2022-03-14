@@ -13,6 +13,8 @@ public class ObservateurBoucleVue implements Observateur {
 
     @Override
     public void update() {
-        fenetre.updatePosition();
+        fenetre.runOnUiThread(() -> { //Equivalent du platform runlater en javafx
+            fenetre.updatePosition();
+        });
     }
 }

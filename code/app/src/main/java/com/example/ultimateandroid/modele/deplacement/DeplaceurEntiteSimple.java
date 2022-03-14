@@ -28,15 +28,39 @@ public class DeplaceurEntiteSimple extends DeplaceurEntite {
     public void deplacer(Entite e, Carte carte){
         int xPortail = carte.getxPortail();
         int yPortail = carte.getyPortail();
-        double diff;
+        double diffX = e.getPosition().getPositionX() - xPortail;
+        double diffY = e.getPosition().getPositionY() - yPortail;
+        int pas = 2;
+        System.out.println("diffX = " + diffX + " et diffY = " + diffY);
+        if(diffX > -10 & diffX <10 && diffY > -10 && diffY < 10){
+            System.out.println("Vous êtes arrivés");
+        }
+        else{
+            if(diffX > diffY && diffX !=0){
+                if(diffX > 0){
+                    e.setPosition(new Position(e.getPosition().getPositionX() - pas, e.getPosition().getPositionY()));
+                }
+                else{
+                    e.setPosition(new Position(e.getPosition().getPositionX() + pas, e.getPosition().getPositionY()));
+                }
+            }
+            else{
+                if(diffY > 0 && diffY !=0){
+                    e.setPosition(new Position(e.getPosition().getPositionX(), e.getPosition().getPositionY() - pas));
+                }
+                else{
+                    e.setPosition(new Position(e.getPosition().getPositionX(), e.getPosition().getPositionY() + pas));
+                }
+            }
+        }
         /*if(e.getPosition().getPositionX() == xPortail){
             diff = e.getPosition().getPositionY() - xPortail;
             if(diff < 0){
                 e.setPosition(new Position(e.getPosition().getPositionX(),e.getPosition().getPositionY()+pas));
             }
         }*/
-        e.getPosition().setPositionX(e.getPosition().getPositionX()+5);
-        e.getPosition().setPositionY(e.getPosition().getPositionY()+0);
+        //e.getPosition().setPositionX(e.getPosition().getPositionX()+5);
+        //e.getPosition().setPositionY(e.getPosition().getPositionY()+0);
         //On regarde l'évènement lié à la tuile où l'on s'est déplacé
         /*
         if(getChangeurCarte().isChangement(p.getPosition(), carte) == 1) { //on va sur la carte lobby
