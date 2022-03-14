@@ -51,7 +51,7 @@ public class Manager {
      */
     public void deplacerEntite(){
         if(deplaceur == null){
-            deplaceur = new DeplaceurEntiteSimple(hauteurSurfaceJeu,largeurSurfaceJeu,10);
+            deplaceur = new DeplaceurEntiteSimple(hauteurSurfaceJeu,largeurSurfaceJeu,2);
         }
         deplaceur.deplacer(allie,carteCourante);
     }

@@ -14,7 +14,7 @@ public class DeplaceurEntiteSimple extends DeplaceurEntite {
      * Constructeur
      */
     public DeplaceurEntiteSimple(int hauteurSurface, int largeurSurface, int pas) {
-        super.setCollisionneur(new CollisionneurV1(hauteurSurface,largeurSurface));
+        collisionneur = new CollisionneurV1(hauteurSurface,largeurSurface);
         this.pas = pas;
        // super.setChangeurCarte(new ChangeurCarteV1(hauteurSurface,largeurSurface,hauteurTuile));
     }
@@ -30,117 +30,92 @@ public class DeplaceurEntiteSimple extends DeplaceurEntite {
         int yPortail = carte.getyPortail();
         double diffX = e.getPosition().getPositionX() - xPortail;
         double diffY = e.getPosition().getPositionY() - yPortail;
-        int pas = 2;
         System.out.println("diffX = " + diffX + " et diffY = " + diffY);
         if(diffX > -10 & diffX <10 && diffY > -10 && diffY < 10){
             System.out.println("Vous êtes arrivés");
         }
-        else{
-            if(diffX > diffY && diffX !=0){
-                if(diffX > 0){
-                    e.setPosition(new Position(e.getPosition().getPositionX() - pas, e.getPosition().getPositionY()));
+        else {
+            if (diffX > diffY && diffX != 0) {
+                if (diffX > 0) {
+                    //e.setPosition(new Position(e.getPosition().getPositionX() - pas, e.getPosition().getPositionY()));
+                    deplacerAGauche(e, carte);
+                } else {
+                    //e.setPosition(new Position(e.getPosition().getPositionX() + pas, e.getPosition().getPositionY()));
+                    deplacerADroite(e, carte);
                 }
-                else{
-                    e.setPosition(new Position(e.getPosition().getPositionX() + pas, e.getPosition().getPositionY()));
-                }
-            }
-            else{
-                if(diffY > 0 && diffY !=0){
-                    e.setPosition(new Position(e.getPosition().getPositionX(), e.getPosition().getPositionY() - pas));
-                }
-                else{
-                    e.setPosition(new Position(e.getPosition().getPositionX(), e.getPosition().getPositionY() + pas));
+            } else {
+                if (diffY > 0 && diffY != 0) {
+                    //e.setPosition(new Position(e.getPosition().getPositionX(), e.getPosition().getPositionY() - pas));
+                    deplacerEnHaut(e, carte);
+                } else {
+                    //e.setPosition(new Position(e.getPosition().getPositionX(), e.getPosition().getPositionY() + pas));
+                    deplacerEnBas(e, carte);
                 }
             }
         }
-        /*if(e.getPosition().getPositionX() == xPortail){
-            diff = e.getPosition().getPositionY() - xPortail;
-            if(diff < 0){
-                e.setPosition(new Position(e.getPosition().getPositionX(),e.getPosition().getPositionY()+pas));
-            }
-        }*/
-        //e.getPosition().setPositionX(e.getPosition().getPositionX()+5);
-        //e.getPosition().setPositionY(e.getPosition().getPositionY()+0);
-        //On regarde l'évènement lié à la tuile où l'on s'est déplacé
-        /*
-        if(getChangeurCarte().isChangement(p.getPosition(), carte) == 1) { //on va sur la carte lobby
-            manager.setCarteCourante("lobby");
-            manager.setChangeur(1);
-            manager.getEntiteCourant().setPosition(new Position(160,64)); //Le x et le y doivent être des multiples de 32
-
-        }
-        if(getChangeurCarte().isChangement(p.getPosition(), carte) == 2) { //on va sur la carte arène
-            manager.setCarteCourante("arene");
-            manager.setChangeur(2);
-            manager.getEntiteCourant().setPosition(new Position(128,192)); //Le x et le y doivent être des multiples de 32
-
-        }
-        if(getChangeurCarte().isChangement(p.getPosition(), carte) == 3) { //on lance le combat
-            manager.setChangeur(3);
-        }*/
     }
 
     /* Déplacer dans les 4 directions */
 
     /**
      * Déplacer l'entité vers la gauche
-     * @param p : Entite à déplacer
+     * @param e : Entite à déplacer
      * @param carte : Carte pour la collision
      */
     @Override
-    public void deplacerAGauche(Entite p, Carte carte) {
-        Position positionEntite = p.getPosition();
-        Position position = new Position(positionEntite.getPositionX()-32,positionEntite.getPositionY()); //On set la nouvelle position
-        if(!super.getCollisionneur().isCollision(position,carte) && false) { //Si y'a pas de collisions
+    public void deplacerAGauche(Entite e, Carte carte) {
+        Position positionEntite = e.getPosition();
+        Position position = new Position(positionEntite.getPositionX()-pas,positionEntite.getPositionY()); //On set la nouvelle position
+        if(!collisionneur.isCollision(position,carte)) { //Si y'a pas de collisions
             //On update les coordonnées de l'entité
-            p.getPosition().setPositionX(position.getPositionX());
-            p.getPosition().setPositionY(position.getPositionY());
+            e.getPosition().setPositionX(position.getPositionX());
+            e.getPosition().setPositionY(position.getPositionY());
 
         }
     }
 
     /**
      * Déplacer l'entité vers la droite
-     * @param p : Entité à déplacer
+     * @param e : Entité à déplacer
      * @param carte : Carte pour la collision
      */
     @Override
-    public void deplacerADroite(Entite p, Carte carte) {
-        Position positionEntite = p.getPosition();
-        Position position = new Position(positionEntite.getPositionX()+32,positionEntite.getPositionY());
-        if(!super.getCollisionneur().isCollision(position,carte) && false) {
-            p.getPosition().setPositionX(position.getPositionX());
-            p.getPosition().setPositionY(position.getPositionY());
+    public void deplacerADroite(Entite e, Carte carte) {
+        Position positionEntite = e.getPosition();
+        Position position = new Position(positionEntite.getPositionX()+pas,positionEntite.getPositionY());
+        if(!collisionneur.isCollision(position,carte)) {
+            e.getPosition().setPositionX(position.getPositionX());
+            e.getPosition().setPositionY(position.getPositionY());
         }
     }
 
     /**
      * Déplacer l'entité vers le haut
-     * @param p : Entité à déplacer
+     * @param e : Entité à déplacer
      * @param carte : Carte pour la collision
      */
     @Override
-    public void deplacerEnHaut(Entite p, Carte carte) {
-        Position positionEntite = p.getPosition();
-        Position position = new Position(positionEntite.getPositionX(),positionEntite.getPositionY()-32);
-        if(!super.getCollisionneur().isCollision(position,carte) && false) {
-            p.getPosition().setPositionX(position.getPositionX());
-            p.getPosition().setPositionY(position.getPositionY());
+    public void deplacerEnHaut(Entite e, Carte carte) {
+        Position positionEntite = e.getPosition();
+        Position position = new Position(positionEntite.getPositionX(),positionEntite.getPositionY()-pas);
+        if(!collisionneur.isCollision(position,carte)) {
+            e.getPosition().setPositionX(position.getPositionX());
+            e.getPosition().setPositionY(position.getPositionY());
         }
     }
 
     /**
      * Déplacer l'entité vers le bas
-     * @param p : Entité à déplacer
+     * @param e : Entité à déplacer
      * @param carte : Carte pour la collision
      */
     @Override
-    public void deplacerEnBas(Entite p, Carte carte) {
-        Position positionEntite = p.getPosition();
-        Position position = new Position(positionEntite.getPositionX(),positionEntite.getPositionY()+32);
-        if(!super.getCollisionneur().isCollision(position,carte) && false) {
-            p.getPosition().setPositionX(position.getPositionX());
-            p.getPosition().setPositionY(position.getPositionY());
+    public void deplacerEnBas(Entite e, Carte carte) {
+        Position positionEntite = e.getPosition();
+        Position position = new Position(positionEntite.getPositionX(),positionEntite.getPositionY()+pas);
+        if(!collisionneur.isCollision(position,carte)) {
+            e.getPosition().setPositionX(position.getPositionX());
+            e.getPosition().setPositionY(position.getPositionY());
         }
     }
 }

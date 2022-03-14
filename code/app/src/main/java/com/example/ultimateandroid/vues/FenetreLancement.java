@@ -2,6 +2,8 @@ package com.example.ultimateandroid.vues;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -40,5 +42,12 @@ public class FenetreLancement extends AppCompatActivity {
         //taille de la fenêtre : displayMetrix
         setContentView(R.layout.fenetre_lancement); //Je rattache le code behind à la fenêtre
         manager = ((App)getApplication()).getManager();
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+
+        int width = getResources().getConfiguration().screenWidthDp;
+        int height = getResources().getConfiguration().screenHeightDp;
+        System.out.println("cc");
     }
 }

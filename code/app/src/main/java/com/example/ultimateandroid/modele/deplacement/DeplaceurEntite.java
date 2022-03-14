@@ -8,8 +8,7 @@ import com.example.ultimateandroid.modele.entite.Entite;
  */
 public abstract class DeplaceurEntite {
 
-    private Collisionneur collisionneur; //pour savoir les collisions
-    private ChangeurCarte changeurCarte; //pour savoir les évènements
+    protected Collisionneur collisionneur; //pour savoir les collisions
     protected int pas;
 
     /**
@@ -51,18 +50,5 @@ public abstract class DeplaceurEntite {
      */
     public abstract void deplacerEnBas(Entite p, Carte carte);
 
-
-    //Getter et Setter
-    public ChangeurCarte getChangeurCarte() {return changeurCarte;}
-
-    public void setChangeurCarte(ChangeurCarte changeurCarte) {this.changeurCarte = changeurCarte;}
-
-    public Collisionneur getCollisionneur() {
-        return collisionneur;
-    }
-
-    public void setCollisionneur(Collisionneur collisionneur) {
-        this.collisionneur = collisionneur;
-    }
 }
 
