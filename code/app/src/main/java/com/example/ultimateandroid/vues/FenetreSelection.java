@@ -27,9 +27,13 @@ public class FenetreSelection extends AppCompatActivity {
 
         //String imageDroit = "@drawable/arbre";
         //bdroit.putString("test", imageDroit);
-        bdroit.putInt("test", R.drawable.sol);
-        bmilieu.putInt("test", R.drawable.arbre);
-        bgauche.putInt("test", R.drawable.brique);
+        bdroit.putInt("image", R.drawable.sol);
+        bmilieu.putInt("image", R.drawable.arbre);
+        bgauche.putInt("image", R.drawable.brique);
+
+        bdroit.putString("nomBouton", getResources().getString(R.string.nomBoutonStarterDroit));
+        bmilieu.putString("nomBouton", getResources().getString(R.string.nomBoutonStarterMilieu));
+        bgauche.putString("nomBouton", getResources().getString(R.string.nomBoutonStarterGauche));
 
 
         getSupportFragmentManager().beginTransaction()

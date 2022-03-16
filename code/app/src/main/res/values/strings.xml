@@ -2,4 +2,7 @@
     <string name="app_name">Ultimate</string>
     <string name="boutonLancement">Play</string>
     <string name="boutonQuitter">Exit</string>
+    <string name="nomBoutonStarterDroit">Bulbi</string>
+    <string name="nomBoutonStarterGauche">Salameche</string>
+    <string name="nomBoutonStarterMilieu">Bulbi2</string>
 </resources>
