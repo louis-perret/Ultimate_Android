@@ -10,8 +10,8 @@ public interface IAEntite {
 
     /**
      * Choisie l'attaque de l'entité ennemi
-     * @param p : entité à qui choisir l'attaque
+     * @param allie : entité à qui choisir l'attaque
      * @return un objet Mouvement -> l'attaque choisie
      */
-    public Mouvement choisirAttaque(Entite allie);
+     Mouvement choisirAttaque(Entite allie);
 }

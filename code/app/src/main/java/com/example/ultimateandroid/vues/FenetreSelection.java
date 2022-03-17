@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.ultimateandroid.R;
 import com.example.ultimateandroid.modele.Manager;
 
+
 public class FenetreSelection extends AppCompatActivity {
 
     private Manager manager;
@@ -21,21 +22,22 @@ public class FenetreSelection extends AppCompatActivity {
         manager = ((App)getApplication()).getManager();
         manager.ajouterCarte("lobby",getResources().openRawResource(R.raw.lobby));
 
+        //création des bundle pour chaque fragment
         Bundle bgauche = new Bundle();
         Bundle bmilieu = new Bundle();
         Bundle bdroit = new Bundle();
 
-        //String imageDroit = "@drawable/arbre";
-        //bdroit.putString("test", imageDroit);
-        bdroit.putInt("image", R.drawable.sol);
-        bmilieu.putInt("image", R.drawable.arbre);
-        bgauche.putInt("image", R.drawable.brique);
+        //ajouter les images pour les bundle
+        bdroit.putInt("image", R.drawable.ordi);
+        bmilieu.putInt("image", R.drawable.tel);
+        bgauche.putInt("image", R.drawable.console);
 
+        //ajouter les noms des boutons pour les bundle
         bdroit.putString("nomBouton", getResources().getString(R.string.nomBoutonStarterDroit));
         bmilieu.putString("nomBouton", getResources().getString(R.string.nomBoutonStarterMilieu));
         bgauche.putString("nomBouton", getResources().getString(R.string.nomBoutonStarterGauche));
 
-
+        //manager fragment, je donne les bundle en argument
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
                 .add(R.id.fragment_gauche, FragmentStarter.class, bgauche)
@@ -53,6 +55,10 @@ public class FenetreSelection extends AppCompatActivity {
 
     }
 
+    /**
+     * méthode permettant d'aller sur la vue fenetre_jeu mais aussi d'enregistrer le pseudo du joueur qu'il aura renseigné
+     * @param view
+     */
     public void lancementPartie(View view){
         Intent intent = new Intent(this,FenetreJeu.class);
         startActivity(intent); //On lance l'activité

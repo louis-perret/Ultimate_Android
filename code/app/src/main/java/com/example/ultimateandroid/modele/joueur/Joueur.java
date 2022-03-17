@@ -17,6 +17,9 @@ public class Joueur implements Serializable {
         this.nbVictoire = nbVictoire;
     }
 
+    /**
+     * méthode permettant d'incrémenter le nombre de victoire d'un joueur si celui-ci gagne une partie
+     */
     public void incrementerScore(){
         nbVictoire++;
     }

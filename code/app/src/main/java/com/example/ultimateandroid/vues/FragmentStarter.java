@@ -15,55 +15,33 @@ import androidx.fragment.app.Fragment;
 
 import com.example.ultimateandroid.R;
 
+/**
+ * code du fragment fragment_starter
+ */
 public class FragmentStarter extends Fragment {
     private FenetreSelection activiteParente;
 
 
-
+    /**
+     * constructeur de la classe
+     */
     public FragmentStarter() {
         super(R.layout.fragment_starter);
     }
 
-
-   /*@Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-    }*/
-
-   /* @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Bundle bundle = this.getArguments();
-
-
-
-       //View v = getView();
-        ImageView image = getActivity().findViewById(R.id.imageFragment);
-        Button bouton = getActivity().findViewById(R.id.buttonFragment);
-
-        if (bundle != null){
-            Bitmap b = BitmapFactory.decodeResource(getResources(), bundle.getInt("image"));
-            String value = bundle.getString("image");
-            String nameB = bundle.getString("nomBouton");
-            //image.setImageBitmap(b);
-            bouton.setText(nameB);
-            bouton.setTextColor(Integer.parseInt("white"));
-        }
-
-        /*appelFrag(activiteParente.getBdroit());
-        appelFrag(activiteParente.getBgauche());
-        appelFrag(activiteParente.getBmilieu());
-
-    }*/
-
+    /**
+     * onCreate de la vue
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+
         int someInt = requireArguments().getInt("some_int");
         Bundle bundle = this.getArguments();
         //View v = getView();
-        ImageView image = getActivity().findViewById(R.id.imageFragment);
-        Button bouton = getActivity().findViewById(R.id.buttonFragment);
+        ImageView image = view.findViewById(R.id.imageFragment);
+        Button bouton = view.findViewById(R.id.buttonFragment);
 
         if (bundle != null){
             Bitmap b = BitmapFactory.decodeResource(getResources(), bundle.getInt("image"));

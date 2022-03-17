@@ -28,6 +28,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.BlockingDeque;
 
+/**
+ * code behind de la vue fenetre_jeu
+ */
 public class FenetreJeu extends AppCompatActivity {
 
     private Manager manager;
@@ -35,12 +38,17 @@ public class FenetreJeu extends AppCompatActivity {
     private ConstraintLayout layout;
     private ImageView imageAllie;
 
+    /**
+     * permet de modifier la valeur de la position de l'image
+     */
     private void setPositionImageAllie(){
         imageAllie.setX((float)manager.getAllie().getPosition().getPositionX() * 3);
         imageAllie.setY((float)manager.getAllie().getPosition().getPositionY() * 3) ;
     }
 
-
+    /**
+     * méthode permettant d'afficher la cartedu jeu
+     */
     private void afficherCarte() {
         Carte carte = manager.getCarteCourante();
         ImageView image;
@@ -57,10 +65,18 @@ public class FenetreJeu extends AppCompatActivity {
         }
     }
 
+    /**
+     * permet de mettre à jour a postion de l'entité sur la carte
+     */
     public void updatePosition(){
         setPositionImageAllie();
     }
 
+
+    /**
+     * onCreate de la vue
+     * @param savedInstanceState:
+     */
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +92,9 @@ public class FenetreJeu extends AppCompatActivity {
         layout.addView(imageAllie);
     }
 
+    /**
+     *
+     */
     @Override
     protected void onStart() {
         super.onStart();
@@ -85,6 +104,9 @@ public class FenetreJeu extends AppCompatActivity {
         manager.lancerBoucleJeu(observateurs);
     }
 
+    /**
+     *
+     */
     @Override
     protected void onStop() {
         super.onStop();
@@ -92,3 +114,4 @@ public class FenetreJeu extends AppCompatActivity {
         manager.terminerBoucleJeu();
     }
 }
+//TODO finir de commenter cette classe
