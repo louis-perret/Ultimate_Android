@@ -21,6 +21,7 @@ import java.util.List;
  */
 public class Manager {
 
+    private boolean debutCombat;
     private Joueur joueurCourant;
     private Entite allie; //l'entité choisie par l'utilisateur
     private Carte carteCourante; //la carte actuellement affichée
@@ -43,6 +44,7 @@ public class Manager {
         controleurCombat = new ControleurCombat(banque.getEncyclopedie());
         monde = new Monde();
         this.banque = banque;
+        debutCombat = false;
     }
 
 
@@ -50,10 +52,7 @@ public class Manager {
      * Gère le déplacement d'une entité vers le portail
      */
     public void deplacerEntite(){
-        if(deplaceur == null){
-            deplaceur = new DeplaceurEntiteSimple(hauteurSurfaceJeu,largeurSurfaceJeu,2);
-        }
-        deplaceur.deplacer(allie,carteCourante);
+        debutCombat = deplaceur.deplacer(allie,carteCourante);
     }
 
     /**
@@ -118,6 +117,10 @@ public class Manager {
             monde = new Monde();
         }
         monde.ajouterCarte(nomCarte,fichier);
+    }
+
+    public boolean isDebutCombat(){
+        return debutCombat;
     }
 
     public void setCarteCourante(String nomCarte) {

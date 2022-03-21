@@ -43,7 +43,6 @@ public class FragmentStarter extends Fragment {
 
         if (bundle != null){
             Bitmap b = BitmapFactory.decodeResource(getResources(), bundle.getInt("image"));
-            String value = bundle.getString("image");
             String nameB = bundle.getString("nomBouton");
             image.setImageBitmap(b);
             bouton.setText(nameB);

@@ -44,9 +44,6 @@ public class BoucleJeu16 extends BoucleJeu{
      */
     @Override
     public void notifier() {
-        //UiThread
-        //Instruction envoyée au thread principal
-
         for(Observateur o : super.observateurs){
             o.update();
         }
