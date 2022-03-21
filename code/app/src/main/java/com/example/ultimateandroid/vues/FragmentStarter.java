@@ -37,9 +37,7 @@ public class FragmentStarter extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 
-        int someInt = requireArguments().getInt("some_int");
         Bundle bundle = this.getArguments();
-        //View v = getView();
         ImageView image = view.findViewById(R.id.imageFragment);
         Button bouton = view.findViewById(R.id.buttonFragment);
 

@@ -29,7 +29,7 @@ public class BoucleJeu16 extends BoucleJeu{
         boolean isRunning = true;
         try{
             while(isRunning) {
-                Thread.sleep(16);
+                Thread.sleep(100);
                 notifier();
             }
         }

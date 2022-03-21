@@ -30,25 +30,21 @@ public class DeplaceurEntiteSimple extends DeplaceurEntite {
         int yPortail = carte.getyPortail();
         double diffX = e.getPosition().getPositionX() - xPortail;
         double diffY = e.getPosition().getPositionY() - yPortail;
-        System.out.println("diffX = " + diffX + " et diffY = " + diffY);
+        //System.out.println("diffX = " + diffX + " et diffY = " + diffY);
         if(diffX > -10 & diffX <10 && diffY > -10 && diffY < 10){
             System.out.println("Vous êtes arrivés");
         }
         else {
             if (diffX > diffY && diffX != 0) {
                 if (diffX > 0) {
-                    //e.setPosition(new Position(e.getPosition().getPositionX() - pas, e.getPosition().getPositionY()));
                     deplacerAGauche(e, carte);
                 } else {
-                    //e.setPosition(new Position(e.getPosition().getPositionX() + pas, e.getPosition().getPositionY()));
                     deplacerADroite(e, carte);
                 }
             } else {
                 if (diffY > 0 && diffY != 0) {
-                    //e.setPosition(new Position(e.getPosition().getPositionX(), e.getPosition().getPositionY() - pas));
                     deplacerEnHaut(e, carte);
                 } else {
-                    //e.setPosition(new Position(e.getPosition().getPositionX(), e.getPosition().getPositionY() + pas));
                     deplacerEnBas(e, carte);
                 }
             }
@@ -66,12 +62,8 @@ public class DeplaceurEntiteSimple extends DeplaceurEntite {
     public void deplacerAGauche(Entite e, Carte carte) {
         Position positionEntite = e.getPosition();
         Position position = new Position(positionEntite.getPositionX()-pas,positionEntite.getPositionY()); //On set la nouvelle position
-        if(!collisionneur.isCollision(position,carte)) { //Si y'a pas de collisions
-            //On update les coordonnées de l'entité
-            e.getPosition().setPositionX(position.getPositionX());
-            e.getPosition().setPositionY(position.getPositionY());
-
-        }
+        e.getPosition().setPositionX(position.getPositionX());
+        e.getPosition().setPositionY(position.getPositionY());
     }
 
     /**
@@ -83,10 +75,8 @@ public class DeplaceurEntiteSimple extends DeplaceurEntite {
     public void deplacerADroite(Entite e, Carte carte) {
         Position positionEntite = e.getPosition();
         Position position = new Position(positionEntite.getPositionX()+pas,positionEntite.getPositionY());
-        if(!collisionneur.isCollision(position,carte)) {
-            e.getPosition().setPositionX(position.getPositionX());
-            e.getPosition().setPositionY(position.getPositionY());
-        }
+        e.getPosition().setPositionX(position.getPositionX());
+        e.getPosition().setPositionY(position.getPositionY());
     }
 
     /**
@@ -98,10 +88,8 @@ public class DeplaceurEntiteSimple extends DeplaceurEntite {
     public void deplacerEnHaut(Entite e, Carte carte) {
         Position positionEntite = e.getPosition();
         Position position = new Position(positionEntite.getPositionX(),positionEntite.getPositionY()-pas);
-        if(!collisionneur.isCollision(position,carte)) {
-            e.getPosition().setPositionX(position.getPositionX());
-            e.getPosition().setPositionY(position.getPositionY());
-        }
+        e.getPosition().setPositionX(position.getPositionX());
+        e.getPosition().setPositionY(position.getPositionY());
     }
 
     /**
@@ -113,9 +101,7 @@ public class DeplaceurEntiteSimple extends DeplaceurEntite {
     public void deplacerEnBas(Entite e, Carte carte) {
         Position positionEntite = e.getPosition();
         Position position = new Position(positionEntite.getPositionX(),positionEntite.getPositionY()+pas);
-        if(!collisionneur.isCollision(position,carte)) {
-            e.getPosition().setPositionX(position.getPositionX());
-            e.getPosition().setPositionY(position.getPositionY());
-        }
+        e.getPosition().setPositionX(position.getPositionX());
+        e.getPosition().setPositionY(position.getPositionY());
     }
 }

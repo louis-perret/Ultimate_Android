@@ -29,14 +29,14 @@ public class CollisionneurV1 extends Collisionneur{
         int nextX = (int)nextPosition.getPositionX();
         int nextY = (int)nextPosition.getPositionY();
 
-        /*if(nextX <0 || nextY<0 || nextX > carte.getLargeur() || nextY > carte.getHauteur()){
+        if(nextX <0 || nextY<0 || nextX > carte.getLargeur() || nextY > carte.getHauteur()){
             return true;
         }
 
         Tuile t = carte.getTuile(nextX/Tuile.tuileLargeur, nextY/Tuile.tuileHauteur);
         if(carte.getTuile(nextX/Tuile.tuileLargeur, nextY/Tuile.tuileHauteur).getTraversable()){
             return false;
-        }*/
+        }
         return false;
     }
 }

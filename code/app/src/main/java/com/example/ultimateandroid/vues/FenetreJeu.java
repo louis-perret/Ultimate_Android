@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.ImageView;
 
@@ -34,32 +35,35 @@ import java.util.concurrent.BlockingDeque;
 public class FenetreJeu extends AppCompatActivity {
 
     private Manager manager;
-    private Canvas canvas = new Canvas();
     private ConstraintLayout layout;
     private ImageView imageAllie;
+    private int largeurEcran;
+    private int hauteurEcran;
+    private int largeurTuile;
+    private int hauteurTuile;
 
     /**
      * permet de modifier la valeur de la position de l'image
      */
     private void setPositionImageAllie(){
         imageAllie.setX((float)manager.getAllie().getPosition().getPositionX() * 3);
-        imageAllie.setY((float)manager.getAllie().getPosition().getPositionY() * 3) ;
+        imageAllie.setY((float)manager.getAllie().getPosition().getPositionY() * 3);
     }
 
     /**
-     * méthode permettant d'afficher la cartedu jeu
+     * méthode permettant d'afficher la carte du jeu
      */
     private void afficherCarte() {
         Carte carte = manager.getCarteCourante();
         ImageView image;
         for (int j = 0; j < carte.getHauteur(); j++) {
             for (int i = 0; i < carte.getLargeur(); i++) {
-                Bitmap b = BitmapFactory.decodeResource(getResources(), carte.getTuile(i, j).getImage()); //on récupère notre image
+                Bitmap b1 = BitmapFactory.decodeResource(getResources(), carte.getTuile(i, j).getImage()); //on récupère notre image
+                Bitmap b2 = Bitmap.createScaledBitmap(b1, largeurTuile, hauteurTuile,false);
                 image = new ImageView(this);
-                image.setImageBitmap(b); //on crée notre image view
-                //getWindowManager().getDefaultDisplay().getMetrics();
-                image.setX(i * Tuile.tuileLargeur * 3.5F);
-                image.setY(j * Tuile.tuileHauteur * 3.5F);
+                image.setImageBitmap(b2); //on crée notre image view
+                image.setX(i * largeurTuile);
+                image.setY(j * hauteurTuile);
                 layout.addView(image); //puis on l'ajoute dans notre layout
             }
         }
@@ -85,6 +89,13 @@ public class FenetreJeu extends AppCompatActivity {
         layout = findViewById(R.id.layout2);
         manager= manager = ((App)getApplication()).getManager();
         manager.setAllie("Bulbizarre",1);
+
+        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+        largeurEcran = displayMetrics.widthPixels;
+        hauteurEcran = displayMetrics.heightPixels;
+        largeurTuile = largeurEcran/manager.getCarteCourante().getLargeur();
+        hauteurTuile = hauteurEcran/manager.getCarteCourante().getHauteur();
+
         afficherCarte();
         imageAllie = new ImageView(this); //On ajoute notre image view pour qu'elle soit au dessus et non en dessous de la map
         imageAllie.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.bulb_1));
