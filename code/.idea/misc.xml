@@ -5,18 +5,21 @@
       <map>
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.37135416666666665" />
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/drawable/ic_launcher_background.xml" value="0.37135416666666665" />
+        <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout-land/fenetre_combat.xml" value="0.30070546737213405" />
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout-land/fenetre_jeu.xml" value="0.15" />
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout-land/fenetre_lancement.xml" value="0.12395833333333334" />
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout-land/fenetre_score.xml" value="0.16049382716049382" />
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout-land/fenetre_selection.xml" value="0.16049382716049382" />
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout-land/fenetre_selection2.xml" value="0.30070546737213405" />
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout/cellule_joueur.xml" value="0.22" />
+        <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout/fenetre_combat.xml" value="0.3451086956521739" />
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout/fenetre_jeu.xml" value="0.10778985507246377" />
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout/fenetre_lancement.xml" value="0.24094202898550723" />
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout/fenetre_score.xml" value="0.14673913043478262" />
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout/fenetre_selection.xml" value="0.25" />
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout/fenetre_selection2.xml" value="0.35054347826086957" />
         <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout/fragment_image.xml" value="0.196875" />
+        <entry key="../../../../../../../etud/loperret2/iut2A/mobile/projet/projetmobile/code/app/src/main/res/layout/fragment_starter.xml" value="0.3451086956521739" />
         <entry key="app/src/main/res/layout-land/fenetre_jeu.xml" value="0.16049382716049382" />
         <entry key="app/src/main/res/layout-land/fenetre_lancement.xml" value="0.25" />
         <entry key="app/src/main/res/layout-land/fenetre_score.xml" value="0.16049382716049382" />

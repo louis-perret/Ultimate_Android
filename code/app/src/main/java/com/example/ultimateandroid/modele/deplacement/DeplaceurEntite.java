@@ -12,13 +12,11 @@ public abstract class DeplaceurEntite {
     protected int pas;
 
     /**
-     * Effectue le déplacement de l'entité
+     * Effectue le déplacement de l'entité, renvoie true si l'entité est au niveau du portail
      * @param e : entité à déplacer
      * @param carte : Carte pour vérifier la collision
      */
-    public void deplacer(Entite e, Carte carte){
-
-    }
+    public abstract boolean deplacer(Entite e, Carte carte);
 
     /* Déplacer dans les 4 directions */
 

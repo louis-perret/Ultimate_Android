@@ -1,6 +1,7 @@
 package com.example.ultimateandroid.vues;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -76,6 +77,11 @@ public class FenetreJeu extends AppCompatActivity {
         setPositionImageAllie();
     }
 
+
+    public void lancerCombat(){
+        Intent intent = new Intent(this,FenetreCombat.class);
+        startActivity(intent);
+    }
 
     /**
      * onCreate de la vue

@@ -58,7 +58,6 @@ public class FenetreLancement extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //taille de la fenêtre : displayMetrix
         setContentView(R.layout.fenetre_lancement); //Je rattache le code behind à la fenêtre
         manager = ((App)getApplication()).getManager();
 

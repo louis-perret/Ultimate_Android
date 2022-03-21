@@ -23,7 +23,7 @@
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".vues.FenetreLancement"/>
         </activity>
 
-        <activity android:name=".vues.FenetreJeu" android:screenOrientation="landscape"/>
+        <activity android:name=".vues.FenetreJeu" android:screenOrientation="sensorLandscape"/>
 
         <activity android:name=".vues.FenetreScore">
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".vues.FenetreScore"/>

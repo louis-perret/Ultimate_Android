@@ -20,19 +20,18 @@ public class DeplaceurEntiteSimple extends DeplaceurEntite {
     }
 
     /**
-     * Effectue le déplacement de l'entité
+     * Effectue le déplacement de l'entité, renvoie true si l'entité est au niveau du portail
      * @param e : entité à déplace
      * @param carte : Carte pour vérifier la collision
      */
     @Override
-    public void deplacer(Entite e, Carte carte){
+    public boolean deplacer(Entite e, Carte carte){
         int xPortail = carte.getxPortail();
         int yPortail = carte.getyPortail();
         double diffX = e.getPosition().getPositionX() - xPortail;
         double diffY = e.getPosition().getPositionY() - yPortail;
-        //System.out.println("diffX = " + diffX + " et diffY = " + diffY);
         if(diffX > -10 & diffX <10 && diffY > -10 && diffY < 10){
-            System.out.println("Vous êtes arrivés");
+            return true;
         }
         else {
             if (diffX > diffY && diffX != 0) {
@@ -49,6 +48,7 @@ public class DeplaceurEntiteSimple extends DeplaceurEntite {
                 }
             }
         }
+        return false;
     }
 
     /* Déplacer dans les 4 directions */
