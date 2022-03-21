@@ -28,9 +28,9 @@ public class FenetreSelection extends AppCompatActivity {
         Bundle bdroit = new Bundle();
 
         //ajouter les images pour les bundle
-        bdroit.putInt("image", R.drawable.ordi);
-        bmilieu.putInt("image", R.drawable.tel);
-        bgauche.putInt("image", R.drawable.console);
+        bdroit.putInt("image", R.drawable.arbre);
+        bmilieu.putInt("image", R.drawable.pilier);
+        bgauche.putInt("image", R.drawable.sol);
 
         //ajouter les noms des boutons pour les bundle
         bdroit.putString("nomBouton", getResources().getString(R.string.nomBoutonStarterDroit));
