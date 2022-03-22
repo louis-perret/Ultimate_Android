@@ -1,6 +1,7 @@
 package com.example.ultimateandroid.modele.joueur;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 
 public class Joueur implements Serializable {
@@ -16,6 +17,7 @@ public class Joueur implements Serializable {
         this.pseudo = pseudo;
         this.nbVictoire = nbVictoire;
     }
+
 
     /**
      * méthode permettant d'incrémenter le nombre de victoire d'un joueur si celui-ci gagne une partie
@@ -40,4 +42,13 @@ public class Joueur implements Serializable {
     public void setPseudo(String pseudo) {
         this.pseudo = pseudo;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Joueur joueur = (Joueur) o;
+        return pseudo.equals(joueur.pseudo);
+    }
+
 }

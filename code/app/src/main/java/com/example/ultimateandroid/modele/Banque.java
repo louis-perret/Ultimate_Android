@@ -36,4 +36,19 @@ public class Banque {
         return lesJoueurs;
     }
 
+    /**
+     * permet d'ajouter le joueur avec le nouveau pseudo dans la liste lesJoueurs
+     * @param pseudo: pseudo du joueur rentré par l'utilisateur
+     * @return le joueur
+     */
+    public Joueur addJoueur(String pseudo){
+        Joueur j =  new Joueur(pseudo, 0);
+        int index = lesJoueurs.indexOf(j);
+        if ( index==-1) {
+            lesJoueurs.add(j);
+            return j;
+        }
+        return lesJoueurs.get(index);
+    }
+
 }

@@ -45,6 +45,7 @@ public class Manager {
         monde = new Monde();
         this.banque = banque;
         debutCombat = false;
+        joueurCourant = new Joueur("", 0);
     }
 
 
@@ -141,5 +142,13 @@ public class Manager {
 
     public List<Joueur> getLesJoueurs(){
         return banque.getLesJoueurs();
+    }
+
+    /**
+     * permet de définir le joueur courant
+     * @param pseudo: pseudo du joueur rentré par l'utilisateur
+     */
+    public void addJoueur(String pseudo){
+        joueurCourant = banque.addJoueur(pseudo);
     }
 }
