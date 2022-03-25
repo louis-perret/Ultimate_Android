@@ -75,4 +75,9 @@ public class ControleurCombat {
         return false;
     }
 
+    public Entite getEnnemiCourant() {
+        return ennemiCourant;
+    }
+
+
 }

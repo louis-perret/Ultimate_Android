@@ -68,7 +68,6 @@ public class ControleurNiveau {
         allie.setVitesse(pEvolue.getVitesse());
         allie.setImage(pEvolue.getImage());
         allie.setMouvements(pEvolue.getMouvements());
-        allie.setImageCombat(pEvolue.getImageCombat());
         allie.setExperience(experienceRestante);
     }
 }

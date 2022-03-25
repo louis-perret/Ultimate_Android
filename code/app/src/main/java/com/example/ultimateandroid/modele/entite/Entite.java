@@ -7,8 +7,7 @@ import java.io.Serializable;
 public class Entite implements Serializable {
 
     private String nom; //son nom
-    private String image; //son image de déplacement
-    private String imageCombat; //son image
+    private int image; //son image de déplacement
     private int pv; //ses pv
     private int attaque; //ses points d'attaque
     private int defense; //ses points de défense
@@ -36,10 +35,9 @@ public class Entite implements Serializable {
      * @param experience : son expérience
      * @param evolution : le nom de son évolution
      */
-    public Entite(String nom, String image, String imageCombat, int pv, int attaque, int defense, int vitesse, Position position, Type type, Mouvement[] tabMouvements, int niveau, int experience, String evolution, Boolean isStarter) {
+    public Entite(String nom, int image, int pv, int attaque, int defense, int vitesse, Position position, Type type, Mouvement[] tabMouvements, int niveau, int experience, String evolution, Boolean isStarter) {
         this.nom=nom;
         this.image = image;
-        this.imageCombat=imageCombat;
         this.pv=pv;
         this.attaque = attaque;
         this.defense = defense;
@@ -59,7 +57,7 @@ public class Entite implements Serializable {
      * @return une Entite
      */
     public Entite cloner(){
-        return new Entite(getNom(),getImage(),getImageCombat(),getPv(),getAttaque(),getDefense(),getVitesse(), getPosition(),getType(),getMouvements(),getNiveau(),getExperience(),getEvolution(),getStarter());
+        return new Entite(getNom(),getImage(),getPv(),getAttaque(),getDefense(),getVitesse(), getPosition(),getType(),getMouvements(),getNiveau(),getExperience(),getEvolution(),getStarter());
     }
 
     /**
@@ -80,11 +78,6 @@ public class Entite implements Serializable {
         this.nom=nom;
     }
 
-    public String getImageCombat() { return imageCombat; }
-    public void setImageCombat(String image) {
-        imageCombat=image;
-    }
-
     public int getPv(){ return pv; }
     public void setPv(int pv){
         if(pv <= 0){
@@ -94,11 +87,11 @@ public class Entite implements Serializable {
             this.pv=pv;
         }
     }
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
     }
 

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="MissingDefaultResource"
-    android:background="@color/black">
+    android:background="@color/black"
+    tools:ignore="MissingDefaultResource">
 
 
     <Button
@@ -49,4 +49,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fond" />
+
+    <ImageView
+        android:id="@+id/imageAllie"
+        android:layout_width="87dp"
+        android:layout_height="129dp"
+        app:srcCompat="@drawable/console"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="279dp" />
+
+    <ImageView
+        android:id="@+id/imageEnnemi"
+        android:layout_width="90dp"
+        android:layout_height="169dp"
+        app:srcCompat="@drawable/ordi"
+        tools:layout_editor_absoluteX="484dp"
+        tools:layout_editor_absoluteY="121dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -64,6 +64,10 @@ public class Manager {
         return controleurCombat.tourDeCombat(allie,mAllie,joueurCourant,banque.getEncyclopedie());
     }
 
+    public boolean lancerCombat(){
+        return controleurCombat.lancerVague(allie,joueurCourant, banque.getEncyclopedie());
+    }
+
     /**
      * Lance la boucle de jeu utile au déplacement d'une entité du joueur
      */
@@ -150,5 +154,9 @@ public class Manager {
      */
     public void addJoueur(String pseudo){
         joueurCourant = banque.addJoueur(pseudo);
+    }
+
+    public Entite getEnnemiCourant(){
+        return controleurCombat.getEnnemiCourant();
     }
 }

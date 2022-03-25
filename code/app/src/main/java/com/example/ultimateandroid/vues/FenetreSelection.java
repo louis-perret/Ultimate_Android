@@ -11,7 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ultimateandroid.R;
 import com.example.ultimateandroid.modele.Manager;
+import com.example.ultimateandroid.modele.entite.Entite;
 import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.List;
 
 
 public class FenetreSelection extends AppCompatActivity {
@@ -30,19 +33,14 @@ public class FenetreSelection extends AppCompatActivity {
         manager.ajouterCarte("lobby",getResources().openRawResource(R.raw.lobby));
 
         //création des bundle pour chaque fragment
+        List<Entite> starters = manager.getStarter();
         Bundle bgauche = new Bundle();
         Bundle bmilieu = new Bundle();
         Bundle bdroit = new Bundle();
 
-        //ajouter les images pour les bundle
-        bdroit.putInt("image", R.drawable.ordi);
-        bmilieu.putInt("image", R.drawable.tel);
-        bgauche.putInt("image", R.drawable.console);
-
-        //ajouter les noms des boutons pour les bundle
-        bdroit.putString("nomBouton", getResources().getString(R.string.nomBoutonStarterDroit));
-        bmilieu.putString("nomBouton", getResources().getString(R.string.nomBoutonStarterMilieu));
-        bgauche.putString("nomBouton", getResources().getString(R.string.nomBoutonStarterGauche));
+        bgauche.putSerializable("starter", starters.get(0));
+        bmilieu.putSerializable("starter", starters.get(1));
+        bdroit.putSerializable("starter", starters.get(2));
 
         //manager fragment, je donne les bundle en argument
         getSupportFragmentManager().beginTransaction()
@@ -82,16 +80,16 @@ public class FenetreSelection extends AppCompatActivity {
         Log.d("onStop", "onStop selection" );
     }
 
+        //TODO ajouter joueur dans liste joueur
     /**
      * méthode permettant d'aller sur la vue fenetre_jeu mais aussi d'enregistrer le pseudo du joueur qu'il aura renseigné
      * @param view
      */
     public void lancementPartie(View view){
-        //TODO ajouter joueur dans liste joueur
         TextInputEditText pseudo = findViewById(R.id.inputPseudo);
         manager.addJoueur(pseudo.getText().toString());
-
         Intent intent = new Intent(this,FenetreJeu.class);
+
         startActivity(intent); //On lance l'activité
     }
 

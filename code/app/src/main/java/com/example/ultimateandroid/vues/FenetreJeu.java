@@ -80,6 +80,8 @@ public class FenetreJeu extends AppCompatActivity {
 
     public void lancerCombat(){
         Intent intent = new Intent(this,FenetreCombat.class);
+        intent.putExtra("largeurEcran",largeurEcran);
+        intent.putExtra("hauteurEcran", hauteurEcran);
         startActivity(intent);
     }
 
@@ -94,8 +96,7 @@ public class FenetreJeu extends AppCompatActivity {
         setContentView(R.layout.fenetre_jeu); //Je rattache le code behind à la fenêtre
         layout = findViewById(R.id.layout2);
         manager= manager = ((App)getApplication()).getManager();
-        manager.setAllie("Bulbizarre",1);
-
+        manager.setAllie("PC",1);
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
         largeurEcran = displayMetrics.widthPixels;
         hauteurEcran = displayMetrics.heightPixels;
@@ -104,7 +105,7 @@ public class FenetreJeu extends AppCompatActivity {
 
         afficherCarte();
         imageAllie = new ImageView(this); //On ajoute notre image view pour qu'elle soit au dessus et non en dessous de la map
-        imageAllie.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.bulb_1));
+        imageAllie.setImageBitmap(BitmapFactory.decodeResource(getResources(),manager.getAllie().getImage()));
         setPositionImageAllie();
         layout.addView(imageAllie);
     }

@@ -74,7 +74,7 @@ public class CollectionEntite implements Serializable {
         Entite p;
         while(listeEntite.size()<nbEntiteByVague){
             p= encyclopedie.get(numeroVague).get(random.nextInt(encyclopedie.get(numeroVague).size()));
-            if(!listeEntite.contains(p) && !p.getStarter()) { //Si l'entité n'a pas déjà été pris et si ce n'est pas un starter
+            if(!listeEntite.contains(p)) { //Si l'entité n'a pas déjà été pris et si ce n'est pas un starter
                 listeEntite.add(p.cloner()); //On l'ajoute à la liste
             }
         }

@@ -11,17 +11,19 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.ultimateandroid.R;
+import com.example.ultimateandroid.modele.entite.Entite;
 
 /**
  * code du fragment fragment_starter
  */
 public class FragmentStarter extends Fragment {
-    private FenetreSelection activiteParente;
 
-
+    private View activite;
+    private Entite allie;
     /**
      * constructeur de la classe
      */
@@ -36,19 +38,18 @@ public class FragmentStarter extends Fragment {
      */
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-
         Bundle bundle = this.getArguments();
-        ImageView image = view.findViewById(R.id.imageFragment);
-        Button bouton = view.findViewById(R.id.buttonFragment);
+        activite = view;
+        ImageView image = activite.findViewById(R.id.imageFragment);
+        Button bouton = activite.findViewById(R.id.buttonFragment);
 
         if (bundle != null){
-            Bitmap b = BitmapFactory.decodeResource(getResources(), bundle.getInt("image"));
-            String nameB = bundle.getString("nomBouton");
-            image.setImageBitmap(b);
-            bouton.setText(nameB);
-
+            allie = (Entite)bundle.getSerializable("starter");
+            image.setImageBitmap(BitmapFactory.decodeResource(getResources(), allie.getImage()));
+            bouton.setText(allie.getNom());
         }
     }
+
 
 }
 
