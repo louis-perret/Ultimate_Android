@@ -1177,13 +1177,30 @@
 											"height": 13,
 											"text": "+isDebutDeCombat()",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF/w5ayD+2xrM0=",
+											"_parent": {
+												"$ref": "AAAAAAF/RojoKSY/crs="
+											},
+											"model": {
+												"$ref": "AAAAAAF/w5ax8+2rOzg="
+											},
+											"font": "Arial;13;0",
+											"left": 1589,
+											"top": 1141,
+											"width": 344.10205078125,
+											"height": 13,
+											"text": "+getEnnemiCourant(): Entite",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1584,
 									"top": 1031,
 									"width": 354.10205078125,
-									"height": 113
+									"height": 128
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -7500,13 +7517,30 @@
 											"height": 13,
 											"text": "+lancerVague(allie: Entite, joueur: Joueur, pokedex: CollectionEntite)",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF/w5esLxh94Ks=",
+											"_parent": {
+												"$ref": "AAAAAAF/R2CQcUzumV4="
+											},
+											"model": {
+												"$ref": "AAAAAAF/w5esDhhWLss="
+											},
+											"font": "Arial;13;0",
+											"left": 2573,
+											"top": 553,
+											"width": 546.634765625,
+											"height": 13,
+											"text": "+getEnnemiCourant(): Entite",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 2568,
 									"top": 518,
 									"width": 556.634765625,
-									"height": 38
+									"height": 53
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -7546,7 +7580,7 @@
 							"left": 2568,
 							"top": 440,
 							"width": 556.634765625,
-							"height": 116,
+							"height": 131,
 							"nameCompartment": {
 								"$ref": "AAAAAAF/R2CQcEzoklk="
 							},
@@ -8946,7 +8980,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 2639,
-									"top": 559,
+									"top": 574,
 									"width": 107.65625,
 									"height": 13,
 									"alpha": 1.4268708705060487,
@@ -8968,7 +9002,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 2595,
-									"top": 577,
+									"top": 592,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -8987,7 +9021,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 2600,
-									"top": 559,
+									"top": 574,
 									"width": 7.22998046875,
 									"height": 13,
 									"alpha": -1.1263769595233697,
@@ -9033,7 +9067,7 @@
 							"tail": {
 								"$ref": "AAAAAAF/RojoKCY4U2s="
 							},
-							"points": "1937:1032;2624:1032;2624:555",
+							"points": "1937:1032;2624:1032;2624:570",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF/R2w94aGbTks="
@@ -22718,8 +22752,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 2364,
-									"top": 573,
+									"left": 2363,
+									"top": 577,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -22739,8 +22773,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 2366,
-									"top": 588,
+									"left": 2365,
+									"top": 592,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -22760,8 +22794,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 2359,
-									"top": 544,
+									"left": 2360,
+									"top": 548,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -22779,7 +22813,7 @@
 								"$ref": "AAAAAAF/R2CQcEznM7A="
 							},
 							"lineStyle": 1,
-							"points": "2567:536;2158:594",
+							"points": "2567:542;2158:596",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF/ZHSncz3WJM8="
@@ -22812,8 +22846,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1998,
-									"top": 507,
+									"left": 1997,
+									"top": 510,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -22833,8 +22867,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 1998,
-									"top": 522,
+									"left": 1997,
+									"top": 525,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -22854,8 +22888,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1997,
-									"top": 478,
+									"left": 1998,
+									"top": 481,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -22873,7 +22907,7 @@
 								"$ref": "AAAAAAF/R2CQcEznM7A="
 							},
 							"lineStyle": 1,
-							"points": "2567:498;1430:501",
+							"points": "2567:504;1430:501",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF/ZHS150CcJhA="
@@ -23828,6 +23862,27 @@
 								"$ref": "AAAAAAF/RojoJCY2vnU="
 							},
 							"name": "isDebutDeCombat"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF/w5ax8+2rOzg=",
+							"_parent": {
+								"$ref": "AAAAAAF/RojoJCY2vnU="
+							},
+							"name": "getEnnemiCourant",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF/w5bZqO+wr2Q=",
+									"_parent": {
+										"$ref": "AAAAAAF/w5ax8+2rOzg="
+									},
+									"type": {
+										"$ref": "AAAAAAF/RoAj5iOm4mc="
+									},
+									"direction": "return"
+								}
+							]
 						}
 					]
 				},
@@ -25136,6 +25191,27 @@
 									"type": {
 										"$ref": "AAAAAAF/RonBeilXQhU="
 									}
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF/w5esDhhWLss=",
+							"_parent": {
+								"$ref": "AAAAAAF/R2CQb0zloqw="
+							},
+							"name": "getEnnemiCourant",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF/w5gSvRpbSRA=",
+									"_parent": {
+										"$ref": "AAAAAAF/w5esDhhWLss="
+									},
+									"type": {
+										"$ref": "AAAAAAF/RoAj5iOm4mc="
+									},
+									"direction": "return"
 								}
 							]
 						}

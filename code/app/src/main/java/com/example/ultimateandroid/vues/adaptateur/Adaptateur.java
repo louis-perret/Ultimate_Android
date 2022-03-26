@@ -1,17 +1,14 @@
 package com.example.ultimateandroid.vues.adaptateur;
 
-import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ultimateandroid.R;
 import com.example.ultimateandroid.modele.joueur.Joueur;
-import com.example.ultimateandroid.vues.FenetreScore;
+import com.example.ultimateandroid.vues.fenetres.FenetreScore;
 
 import java.util.List;
 

@@ -1,13 +1,9 @@
-package com.example.ultimateandroid.vues;
+package com.example.ultimateandroid.vues.fenetres;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.HandlerThread;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.ImageView;
@@ -18,17 +14,14 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.ultimateandroid.R;
 import com.example.ultimateandroid.modele.Manager;
-import com.example.ultimateandroid.modele.boucle.BoucleJeu;
-import com.example.ultimateandroid.modele.boucle.BoucleJeu16;
 import com.example.ultimateandroid.modele.monde.Carte;
-import com.example.ultimateandroid.modele.monde.Tuile;
 import com.example.ultimateandroid.modele.observateurs.Observateur;
 import com.example.ultimateandroid.modele.observateurs.ObservateurBoucle;
+import com.example.ultimateandroid.vues.App;
 import com.example.ultimateandroid.vues.observateurs.ObservateurBoucleVue;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.BlockingDeque;
 
 /**
  * code behind de la vue fenetre_jeu
@@ -95,8 +88,7 @@ public class FenetreJeu extends AppCompatActivity {
         Log.d("","onCreate: ");
         setContentView(R.layout.fenetre_jeu); //Je rattache le code behind à la fenêtre
         layout = findViewById(R.id.layout2);
-        manager= manager = ((App)getApplication()).getManager();
-        manager.setAllie("PC",1);
+        manager = ((App)getApplication()).getManager();
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
         largeurEcran = displayMetrics.widthPixels;
         hauteurEcran = displayMetrics.heightPixels;
@@ -105,8 +97,8 @@ public class FenetreJeu extends AppCompatActivity {
 
         afficherCarte();
         imageAllie = new ImageView(this); //On ajoute notre image view pour qu'elle soit au dessus et non en dessous de la map
-        imageAllie.setImageBitmap(BitmapFactory.decodeResource(getResources(),manager.getAllie().getImage()));
-        setPositionImageAllie();
+        //on rescale l'image pour qu'elle s'adapte à la taille d'une tuile
+        imageAllie.setImageBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(),manager.getAllie().getImage()),largeurTuile, hauteurTuile,false));
         layout.addView(imageAllie);
     }
 

@@ -1,4 +1,4 @@
-package com.example.ultimateandroid.vues;
+package com.example.ultimateandroid.vues.fenetres;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ultimateandroid.R;
 import com.example.ultimateandroid.modele.Manager;
+import com.example.ultimateandroid.vues.App;
 import com.example.ultimateandroid.vues.adaptateur.Adaptateur;
 
 /**

@@ -61,7 +61,7 @@ public class ControleurCombat {
     }
 
     /**
-     * Gère les vagues d'entité ennemi du jeu
+     * Gère les vagues d'entitéss ennemi du jeu
      * @return une liste de 3 entités que devra combattre le joueur
      */
 

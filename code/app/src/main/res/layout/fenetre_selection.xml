@@ -75,19 +75,19 @@
 
         <!--<androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragment_gauche"
-            android:name="com.example.ultimateandroid.vues.FragmentStarter"
+            android:name="com.example.ultimateandroid.vues.fragments.FragmentStarter"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragment_milieu"
-            android:name="com.example.ultimateandroid.vues.FragmentStarter"
+            android:name="com.example.ultimateandroid.vues.fragments.FragmentStarter"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragment_droit"
-            android:name="com.example.ultimateandroid.vues.FragmentStarter"
+            android:name="com.example.ultimateandroid.vues.fragments.FragmentStarter"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />-->
 

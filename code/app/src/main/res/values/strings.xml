@@ -5,4 +5,7 @@
     <string name="nomBoutonStarterDroit">Ordi</string>
     <string name="nomBoutonStarterGauche">Console</string>
     <string name="nomBoutonStarterMilieu">Telephone</string>
+    <string name="texteDefaite">Vous avez perdu !</string>
+    <string name="texteVictoire">Vous avez gagné !</string>
+    <string name="texteBoutonDefaite">Menu principal</string>
 </resources>

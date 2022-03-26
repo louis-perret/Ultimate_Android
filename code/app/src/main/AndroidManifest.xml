@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UltimateAndroid" >
 
-        <activity android:name=".vues.FenetreLancement"
+        <activity android:name=".vues.fenetres.FenetreLancement"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -19,17 +19,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".vues.FenetreSelection">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".vues.FenetreLancement"/>
+        <activity android:name=".vues.fenetres.FenetreSelection">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".vues.fenetres.FenetreLancement"/>
         </activity>
 
-        <activity android:name=".vues.FenetreJeu" android:screenOrientation="sensorLandscape"/>
+        <activity android:name=".vues.fenetres.FenetreJeu" android:screenOrientation="sensorLandscape"/>
 
-        <activity android:name=".vues.FenetreScore">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".vues.FenetreScore"/>
+        <activity android:name=".vues.fenetres.FenetreScore">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".vues.fenetres.FenetreScore"/>
         </activity>
 
-        <activity android:name=".vues.FenetreCombat" android:screenOrientation="sensorLandscape"/>
+        <activity android:name=".vues.fenetres.FenetreCombat" android:screenOrientation="sensorLandscape"/>
+
+        <activity android:name=".vues.fenetres.FenetreFinDeJeu"/>
     </application>
 
 </manifest>

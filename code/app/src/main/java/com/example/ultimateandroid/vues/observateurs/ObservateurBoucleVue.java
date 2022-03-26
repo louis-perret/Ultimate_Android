@@ -3,7 +3,7 @@ package com.example.ultimateandroid.vues.observateurs;
 import com.example.ultimateandroid.modele.Manager;
 import com.example.ultimateandroid.modele.observateurs.Observateur;
 import com.example.ultimateandroid.vues.App;
-import com.example.ultimateandroid.vues.FenetreJeu;
+import com.example.ultimateandroid.vues.fenetres.FenetreJeu;
 
 //TODO faire la doc de cette classe, à quoi elle sert précisément?
 
