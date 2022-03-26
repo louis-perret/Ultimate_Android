@@ -5,7 +5,7 @@ import com.example.ultimateandroid.modele.entite.Entite;
 /**
  * Classe abstraite représentant l'état paralysé d'un entité
  */
-public class Paralyse extends Etat{
+public class MiseAJour extends Etat{
 
     private boolean vitesseReduit=false; //permet de savoir si l'effet a déjà été appliqué
 
@@ -14,7 +14,7 @@ public class Paralyse extends Etat{
      * @param nom : son nom
      * @param image : chemin vers son image
      */
-    public Paralyse(String nom,String image){
+    public MiseAJour(String nom, String image){
         this.nom=nom;
         this.image=image;
     }

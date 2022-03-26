@@ -2,7 +2,6 @@ package com.example.ultimateandroid.persistance;
 
 import com.example.ultimateandroid.R;
 import com.example.ultimateandroid.modele.Banque;
-import com.example.ultimateandroid.modele.Manager;
 import com.example.ultimateandroid.modele.joueur.Joueur;
 import com.example.ultimateandroid.modele.monde.Tuile;
 import com.example.ultimateandroid.modele.entite.CollectionEntite;
@@ -11,9 +10,9 @@ import com.example.ultimateandroid.modele.entite.NomType;
 import com.example.ultimateandroid.modele.entite.Entite;
 import com.example.ultimateandroid.modele.entite.Position;
 import com.example.ultimateandroid.modele.entite.Type;
-import com.example.ultimateandroid.modele.entite.etat.Empoisonne;
-import com.example.ultimateandroid.modele.entite.etat.Inflamme;
-import com.example.ultimateandroid.modele.entite.etat.Paralyse;
+import com.example.ultimateandroid.modele.entite.etat.CourtCircuit;
+import com.example.ultimateandroid.modele.entite.etat.Humide;
+import com.example.ultimateandroid.modele.entite.etat.MiseAJour;
 
 import java.util.*;
 
@@ -46,207 +45,169 @@ public class Stub extends Chargeur{
         List<NomType> faiblesses = new ArrayList<>();
         List<NomType> forces = new ArrayList<>();
 
-        faiblesses.add(NomType.feu);
-        faiblesses.add(NomType.glace);
-        faiblesses.add(NomType.insecte);
-        faiblesses.add(NomType.poison);
-        faiblesses.add(NomType.vol);
-        forces.add(NomType.eau);
-        forces.add(NomType.sol);
-        forces.add(NomType.roche);
-        Type plante = new Type(NomType.plante,forces,faiblesses);
+
+
+        faiblesses.add(NomType.smartphone);
+        forces.add(NomType.windows);
+        forces.add(NomType.mac);
+        forces.add(NomType.consolePortable);
+        forces.add(NomType.consoleSalon);
+        Type linux = new Type(NomType.linux,forces,faiblesses);
 
         faiblesses = new ArrayList<>();
-        faiblesses.add(NomType.eau);
-        faiblesses.add(NomType.sol);
-        faiblesses.add(NomType.roche);
+        faiblesses.add(NomType.linux);
+        faiblesses.add(NomType.consoleSalon);
         forces = new ArrayList<>();
-        forces.add(NomType.glace);
-        forces.add(NomType.plante);
-        forces.add(NomType.insecte);
-        Type feu = new Type(NomType.feu,forces,faiblesses);
+        forces.add(NomType.apple);
+        forces.add(NomType.windows);
+        forces.add(NomType.consolePortable);
+        Type mac = new Type(NomType.mac,forces,faiblesses);
 
         faiblesses = new ArrayList<>();
-        faiblesses.add(NomType.plante);
-        faiblesses.add(NomType.electrique);
+        faiblesses.add(NomType.linux);
+        faiblesses.add(NomType.mac);
+        faiblesses.add(NomType.consoleSalon);
         forces = new ArrayList<>();
-        forces.add(NomType.feu);
-        forces.add(NomType.sol);
-        forces.add(NomType.roche);
-        Type eau = new Type(NomType.eau,forces,faiblesses);
+        forces.add(NomType.smartphone);
+        forces.add(NomType.nokia);
+        Type windows = new Type(NomType.windows,forces,faiblesses);
 
         faiblesses = new ArrayList<>();
-        faiblesses.add(NomType.psy);
-        faiblesses.add(NomType.sol);
+        faiblesses.add(NomType.mac);
         forces = new ArrayList<>();
-        forces.add(NomType.plante);
-        Type poison = new Type(NomType.poison,forces,faiblesses);
+        forces.add(NomType.nokia);
+        Type apple = new Type(NomType.apple,forces,faiblesses);
 
         faiblesses = new ArrayList<>();
-        faiblesses.add(NomType.psy);
-        faiblesses.add(NomType.vol);
+        faiblesses.add(NomType.windows);
+        faiblesses.add(NomType.apple);
+        faiblesses.add(NomType.smartphone);
+        faiblesses.add(NomType.consolePortable);
         forces = new ArrayList<>();
-        forces.add(NomType.normal);
-        forces.add(NomType.roche);
-        forces.add(NomType.glace);
-        Type combat = new Type(NomType.combat,forces,faiblesses);
+
+        Type nokia = new Type(NomType.nokia,forces,faiblesses);
 
         faiblesses = new ArrayList<>();
-        faiblesses.add(NomType.feu);
-        faiblesses.add(NomType.vol);
+        faiblesses.add(NomType.windows);
+        faiblesses.add(NomType.consolePortable);
         forces = new ArrayList<>();
-        forces.add(NomType.psy);
-        forces.add(NomType.plante);
-        Type insecte = new Type(NomType.insecte,forces,faiblesses);
+        forces.add(NomType.linux);
+        forces.add(NomType.nokia);
+        Type smartphone = new Type(NomType.smartphone,forces,faiblesses);
 
         faiblesses = new ArrayList<>();
-        faiblesses.add(NomType.insecte);
-        faiblesses.add(NomType.ténèbre);
+        faiblesses.add(NomType.linux);
+        faiblesses.add(NomType.mac);
         forces = new ArrayList<>();
-        forces.add(NomType.combat);
-        forces.add(NomType.poison);
-        Type psy = new Type(NomType.insecte,forces,faiblesses);
+        forces.add(NomType.smartphone);
+        forces.add(NomType.nokia);
+        forces.add(NomType.consolePortable);
+        Type consoleP = new Type(NomType.consolePortable,forces,faiblesses);
+
 
         faiblesses = new ArrayList<>();
-        faiblesses.add(NomType.combat);
-        faiblesses.add(NomType.feu);
-        faiblesses.add(NomType.roche);
-        faiblesses.add(NomType.sol);
+        faiblesses.add(NomType.linux);
+        faiblesses.add(NomType.consolePortable);
         forces = new ArrayList<>();
-        forces.add(NomType.insecte);
-        forces.add(NomType.dragon);
-        forces.add(NomType.plante);
-        forces.add(NomType.vol);
-        forces.add(NomType.sol);
-        Type glace = new Type(NomType.glace,forces,faiblesses);
+        forces.add(NomType.mac);
+        forces.add(NomType.windows);
+        forces.add(NomType.consolePortable);
+        Type consoleS = new Type(NomType.consoleSalon,forces,faiblesses);
 
-        faiblesses = new ArrayList<>();
-        faiblesses.add(NomType.electrique);
-        faiblesses.add(NomType.glace);
-        faiblesses.add(NomType.roche);
-        forces = new ArrayList<>();
-        forces.add(NomType.insecte);
-        forces.add(NomType.plante);
-        Type vol = new Type(NomType.vol,forces,faiblesses);
-
-        faiblesses = new ArrayList<>();
-        faiblesses.add(NomType.ténèbre);
-        forces = new ArrayList<>();
-        forces.add(NomType.psy);
-        Type spectre = new Type(NomType.spectre,forces,faiblesses);
-
-        faiblesses = new ArrayList<>();
-        faiblesses.add(NomType.dragon);
-        faiblesses.add(NomType.glace);
-        forces = new ArrayList<>();
-        forces.add(NomType.dragon);
-        Type dragon = new Type(NomType.dragon,forces,faiblesses);
-
-        faiblesses = new ArrayList<>();
-        forces = new ArrayList<>();
-        Type normal = new Type(NomType.normal,forces,faiblesses);
-
-        faiblesses = new ArrayList<>();
-        faiblesses.add(NomType.sol);
-        forces = new ArrayList<>();
-        forces.add(NomType.eau);
-        forces.add(NomType.vol);
-        Type electrique = new Type(NomType.electrique,forces,faiblesses);
-
-        faiblesses = new ArrayList<>();
-        faiblesses.add(NomType.eau);
-        faiblesses.add(NomType.plante);
-        faiblesses.add(NomType.glace);
-        forces = new ArrayList<>();
-        forces.add(NomType.electrique);
-        forces.add(NomType.roche);
-        Type sol = new Type(NomType.sol,forces,faiblesses);
-
-        faiblesses = new ArrayList<>();
-        faiblesses.add(NomType.combat);
-        forces = new ArrayList<>();
-        forces.add(NomType.spectre);
-        Type tenebre = new Type(NomType.ténèbre,forces,faiblesses);
-
-        faiblesses = new ArrayList<>();
-        faiblesses.add(NomType.eau);
-        faiblesses.add(NomType.plante);
-        forces = new ArrayList<>();
-        forces.add(NomType.vol);
-        forces.add(NomType.glace);
-        Type roche = new Type(NomType.roche,forces,faiblesses);
 
         Position position = new Position(0,0);
-        Empoisonne empoisonne = new Empoisonne("Empoisonné","/Status/poison.png");
-        Paralyse paralyse = new Paralyse("Paralysé","/Status/paralysie.png");
-        Inflamme inflamme = new Inflamme("Inflammé","/Status/brulure.png");
+        CourtCircuit courtCircuit = new CourtCircuit("Court-circuit","/Status/poison.png");
+        MiseAJour miseAJour = new MiseAJour("Mise à jour","/Status/paralysie.png");
+        Humide humide = new Humide("Humide","/Status/brulure.png");
 
         /* Création des attaques */
-        Mouvement flammèche = new Mouvement(20,"Flammèche",feu,inflamme);
-        Mouvement foutLiane = new Mouvement(20,"Fouet-liane",plante,null);
-        Mouvement pistolet_a_eau = new Mouvement(20,"Pistolet à eau",eau,null);
-        Mouvement toxic = new Mouvement(0,"Toxic",poison,empoisonne);
-        Mouvement dracosouffle = new Mouvement(15,"Dracosouffle",dragon,null);
-        Mouvement eclair = new Mouvement(10,"Eclair",electrique,paralyse);
-        Mouvement ouragan = new Mouvement(10,"Ouragan",vol,null);
-        Mouvement tomberoche = new Mouvement(12,"Tomberoche",roche,null);
-        Mouvement pietisol = new Mouvement(10,"Piétisol",sol,null);
-        Mouvement piqure = new Mouvement(5,"Piqûre",insecte,null);
-        Mouvement charge = new Mouvement(9,"Charge",normal,null);
-        Mouvement sabotage = new Mouvement(11,"Sabotage",tenebre,null);
-        Mouvement ombre_portee = new Mouvement(11,"Ombre-portée",spectre,null);
-        Mouvement eclat_glace = new Mouvement(10,"Eclat-glace",glace,null);
-        Mouvement machpunch = new Mouvement(11,"Mach Punch",combat,null);
-        Mouvement vague_psy = new Mouvement(10,"Vague Psy",psy,null);
-        Mouvement trempette = new Mouvement(0,"Trempette",normal,null);
+        Mouvement pistolet_a_eau = new Mouvement(20,"Pistolet à eau",consoleP, humide);
+        Mouvement rapidite = new Mouvement(20,"Rapidité",linux,null);
+        Mouvement decharge = new Mouvement(0,"Décharge",nokia, courtCircuit);
+        Mouvement charge = new Mouvement(9,"Charge",nokia,null);
+        Mouvement batterie = new Mouvement(15,"Batterie",smartphone,null);
+        Mouvement trempette = new Mouvement(0,"Trempette",smartphone,null);
+        Mouvement mise_a_jour = new Mouvement(10,"Mise à jour",linux, miseAJour);
+        Mouvement depense = new Mouvement(10,"Dépense",apple,null);
+        Mouvement siri = new Mouvement(12,"Siri",mac,null);
+        Mouvement sabotage = new Mouvement(11,"Sabotage",mac,null);
+        Mouvement confort = new Mouvement(10,"Confort",consoleS,null);
+        Mouvement stabilite = new Mouvement(5,"Stabilité",windows,null);
+        Mouvement vague_psy = new Mouvement(10,"Vague Psy",windows,null);
 
 
-        Mouvement lanceFlamme = new Mouvement(30,"Lance-flamme",feu,inflamme);
-        Mouvement feuilleMagik = new Mouvement(30,"FeuilleMagik",plante,null);
-        Mouvement surf = new Mouvement(30,"Surf",eau,null);
-        Mouvement acide = new Mouvement(15,"Acide",poison,empoisonne);
-        Mouvement dracogriffe = new Mouvement(25,"Dracogriffe",dragon,null);
-        Mouvement rayonChargé = new Mouvement(20,"Rayon chargé",electrique,paralyse);
-        Mouvement cru_aile = new Mouvement(15,"Cru_aile",vol,null);
-        Mouvement tomberoche2 = new Mouvement(22,"Tomberoche2",roche,null);
-        Mouvement magnitude = new Mouvement(20,"Magnitude",sol,null);
-        Mouvement survInsecte = new Mouvement(10,"SurvInsecte",insecte,null);
-        Mouvement belier = new Mouvement(20,"Bélier",normal,null);
-        Mouvement tranche_nuit = new Mouvement(21,"Tranche-Nuit",tenebre,null);
-        Mouvement griffOmbre = new Mouvement(21,"Griffe Ombre",spectre,null);
-        Mouvement avalanche = new Mouvement(20,"Avalanche",glace,null);
-        Mouvement pied_saute = new Mouvement(21,"Pied sauté",combat,null);
-        Mouvement choque_psy = new Mouvement(15,"Choque Psy",psy,null);
+        Mouvement lanceEau = new Mouvement(30,"Lance-eau",consoleP, humide);
+        Mouvement pied_saute = new Mouvement(21,"Pied sauté",consoleP,null);
+        Mouvement rapide2 = new Mouvement(30,"Rapidité 2",linux,null);
+        Mouvement petitVoltage = new Mouvement(15,"Petit voltage",nokia, courtCircuit);
+        Mouvement superBatterie = new Mouvement(25,"Super batterie",smartphone,null);
+        Mouvement mise_a_jour2 = new Mouvement(20,"Mise à jour 2",linux, miseAJour);
+        Mouvement onereuse = new Mouvement(15,"Dépense onéreuse",apple,null);
+        Mouvement superSiri = new Mouvement(22,"Super Siri",mac,null);
+        Mouvement superConfort = new Mouvement(20,"Super Confort",consoleS,null);
+        Mouvement belier = new Mouvement(20,"Bélier",consoleS,null);
+        Mouvement superSatble = new Mouvement(10,"Super Satibilité",windows,null);
 
 
-        Mouvement deflagration = new Mouvement(40,"Déflagration",feu,inflamme);
-        Mouvement tempeteVerte = new Mouvement(40,"TempêteVerte",plante,null);
-        Mouvement hydrocanon = new Mouvement(40,"Hydrocanon",eau,null);
-        Mouvement detricanon = new Mouvement(25,"Détricanon",poison,empoisonne);
-        Mouvement draco_meteore = new Mouvement(25,"Draco-Météore",dragon,null);
-        Mouvement tonnerre = new Mouvement(25,"Tonerre",electrique,paralyse);
-        Mouvement rapace = new Mouvement(30,"Rapace",vol,null);
-        Mouvement lame_de_roc = new Mouvement(30,"Lame de Roc",roche,null);
-        Mouvement seisme = new Mouvement(30,"Séisme",sol,null);
-        Mouvement bourdon = new Mouvement(30,"Bourdon",insecte,null);
-        Mouvement giga_impact = new Mouvement(40,"Giga-Impact",normal,null);
-        Mouvement coup_bas = new Mouvement(30,"Coup Bas",tenebre,null);
-        Mouvement ball_ombre = new Mouvement(25,"Ball'Ombre",spectre,null);
-        Mouvement blizzard = new Mouvement(30,"Blizzard",glace,null);
-        Mouvement close_combat = new Mouvement(30,"Close combat",combat,null);
-        Mouvement psyko = new Mouvement(25,"Psyko",psy,null);
+
+        Mouvement tsunami = new Mouvement(40,"Tsunami",consoleP, humide);
+        Mouvement tempeteRapide = new Mouvement(40,"Tempête de rapidité",linux,null);
+        Mouvement volt = new Mouvement(25,"1000 volt",nokia, courtCircuit);
+        Mouvement megaBatterie = new Mouvement(25,"Mega Batterie",smartphone,null);
+        Mouvement miseAjour3 = new Mouvement(25,"Mega mise à jour",linux, miseAJour);
+        Mouvement ruine = new Mouvement(30,"Ruine",apple,null);
+        Mouvement giga_impact = new Mouvement(40,"Giga-Impact",apple,null);
+        Mouvement megaSiri = new Mouvement(30,"Mega Siri",mac,null);
+        Mouvement megaConfort = new Mouvement(30,"Mega confort",consoleS,null);
+        Mouvement megaStable = new Mouvement(30,"Mega Stabilité",windows,null);
 
 
-        //Création des entités
-        Mouvement[] tabMouvements=new Mouvement[]{foutLiane,toxic,charge,sabotage};
-        Entite e = new Entite("PC",R.drawable.ordi,70,25,30,10,position, plante,tabMouvements,1,0,"Herbizarre", true);
+
+        //Création des stater
+        Mouvement[] tabMouvements=new Mouvement[]{rapidite, rapide2, tempeteRapide, rapidite};
+        Entite e = new Entite("PC",R.drawable.ordi,70,25,30,10,position, linux,tabMouvements,1,0,"Herbizarre", true);
         niveau1.add(e);
-        tabMouvements=new Mouvement[]{flammèche,charge,ombre_portee,trempette};
-        e = new Entite("Console",R.drawable.console,70,30,20,15,position, feu,tabMouvements,1,0,"Reptincel", true);
+        tabMouvements=new Mouvement[]{pistolet_a_eau, lanceEau, tsunami, pied_saute };
+        e = new Entite("Console",R.drawable.console,70,30,20,15,position, consoleP,tabMouvements,1,0,"Reptincel", true);
         niveau1.add(e);
-        tabMouvements=new Mouvement[]{pistolet_a_eau,charge,sabotage,machpunch};
-        e = new Entite("Téléphone",R.drawable.tel,70,25,25,20,position, eau,tabMouvements,1,0,"Carabaffe", true);
+        tabMouvements=new Mouvement[]{batterie, superBatterie, megaBatterie, trempette};
+        e = new Entite("Téléphone",R.drawable.tel,70,25,25,20,position, smartphone,tabMouvements,1,0,"Carabaffe", true);
         niveau1.add(e);
+
+        //Création des ennemis
+        //niveau 1
+        tabMouvements=new Mouvement[]{charge, decharge, volt, petitVoltage };
+        e = new Entite("Nikia 3310",R.drawable.console,70,20,20,10,position, nokia,tabMouvements,1,0,"Reptincel", false);
+        niveau1.add(e);
+        tabMouvements=new Mouvement[]{sabotage, siri, superSiri, megaSiri };
+        e = new Entite("MacBook",R.drawable.console,70,25,25,15,position, mac,tabMouvements,1,0,"Reptincel", false);
+        niveau1.add(e);
+        tabMouvements=new Mouvement[]{vague_psy, stabilite, superSatble, megaStable };
+        e = new Entite("Windows 1.0",R.drawable.console,70,25,15,10,position, windows,tabMouvements,1,0,"Reptincel", false);
+        niveau1.add(e);
+
+        //niveau 2
+        tabMouvements=new Mouvement[]{belier, confort, superConfort, megaConfort };
+        e = new Entite("PS1",R.drawable.console,80,35,25,20,position, consoleS,tabMouvements,2,0,"Reptincel", false);
+        niveau2.add(e);
+        tabMouvements=new Mouvement[]{pistolet_a_eau, lanceEau, tsunami, pied_saute };
+        e = new Entite("Gameboy Color",R.drawable.console,40,30,25,25,position, consoleP,tabMouvements,2,0,"Reptincel", false);
+        niveau2.add(e);
+        tabMouvements=new Mouvement[]{batterie, superBatterie, megaBatterie, trempette };
+        e = new Entite("IBM Simon",R.drawable.console,80,35,30,25,position, smartphone,tabMouvements,2,0,"Reptincel", false);
+        niveau2.add(e);
+
+        //niveau 3
+        tabMouvements=new Mouvement[]{tempeteRapide,rapide2, rapidite, miseAjour3 };
+        e = new Entite("Super Linux",R.drawable.console,90,50,35,35,position, linux,tabMouvements,3,0,"Reptincel", false);
+        niveau3.add(e);
+        tabMouvements=new Mouvement[]{ giga_impact, ruine, depense, onereuse };
+        e = new Entite("iPhone",R.drawable.console,90,40,35,30,position, apple,tabMouvements,3,0,"Reptincel", false);
+        niveau3.add(e);
+        tabMouvements=new Mouvement[]{batterie, superBatterie, megaBatterie, trempette };
+        e = new Entite("Samsung",R.drawable.console,90,45,40,35,position, smartphone,tabMouvements,3,0,"Reptincel", false);
+        niveau2.add(e);
+
 
         CollectionEntite collectionEntite = new CollectionEntite(niveau1,niveau2,niveau3);
 
