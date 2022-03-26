@@ -13,8 +13,7 @@ public class DeplaceurEntiteSimple extends DeplaceurEntite {
     /**
      * Constructeur
      */
-    public DeplaceurEntiteSimple(int hauteurSurface, int largeurSurface, int pas) {
-        collisionneur = new CollisionneurV1(hauteurSurface,largeurSurface);
+    public DeplaceurEntiteSimple(int pas) {
         this.pas = pas;
        // super.setChangeurCarte(new ChangeurCarteV1(hauteurSurface,largeurSurface,hauteurTuile));
     }

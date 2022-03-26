@@ -37,8 +37,8 @@ public class Carte implements Serializable {
      * @param y : position en y
      * @return une Tuile
      */
-    public Tuile getTuile(int x, int y) {
-        Tuile t= Banque.DICOTUILES.get(lesTuiles[y][x]);
+    public Tuile getTuile(int x, int y, Map<Integer, Tuile> dicoTuiles) {
+        Tuile t= dicoTuiles.get(lesTuiles[y][x]);
         return t;
     }
 

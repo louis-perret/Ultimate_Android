@@ -8,7 +8,6 @@ import com.example.ultimateandroid.modele.entite.Entite;
  */
 public abstract class DeplaceurEntite {
 
-    protected Collisionneur collisionneur; //pour savoir les collisions
     protected int pas;
 
     /**

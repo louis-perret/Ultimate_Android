@@ -15,8 +15,8 @@ import com.example.ultimateandroid.vues.App;
  * code behind de la vue fenetre_lancement
  */
 public class FenetreLancement extends AppCompatActivity {
-    private Manager manager;
 
+    private Manager manager;
 
     /**
      * méthode permettant d'aller à la vue fenetre_lancement au click du bouton
@@ -53,6 +53,7 @@ public class FenetreLancement extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fenetre_lancement); //Je rattache le code behind à la fenêtre
+        manager = ((App) getApplication()).getManager();
     }
 
     @Override

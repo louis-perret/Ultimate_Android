@@ -29,6 +29,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         File fileName = new File(getFilesDir(), nomFichier);
+
         if(fileName.canRead()){ // si le fichier existe alors on le charge
             chargeur = new ChargeurBinaire(fileName.getPath());
             sauveur = new SauveurBinaire(fileName.getPath());
@@ -37,7 +38,6 @@ public class App extends Application {
         else{ //sinon on charge les données du Stub
             chargeur = new Stub();
             try {
-
                 fileName.createNewFile();
                 sauveur = new SauveurBinaire(fileName.getPath());
             } catch (IOException e) {
@@ -45,8 +45,11 @@ public class App extends Application {
             }
         }
 
-        manager = new Manager(chargeur.charger());
 
+        manager = new Manager(chargeur.charger());
+        /*manager = new Manager((new Stub().charger()));
+        sauveur = new SauveurBinaire(fileName.getPath());
+        sauveur.sauver(manager.getBanque());*/
 
 
     }

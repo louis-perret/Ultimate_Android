@@ -52,7 +52,7 @@ public class FenetreJeu extends AppCompatActivity {
         ImageView image;
         for (int j = 0; j < carte.getHauteur(); j++) {
             for (int i = 0; i < carte.getLargeur(); i++) {
-                Bitmap b1 = BitmapFactory.decodeResource(getResources(), carte.getTuile(i, j).getImage()); //on récupère notre image
+                Bitmap b1 = BitmapFactory.decodeResource(getResources(), carte.getTuile(i, j, manager.getBanque().getDicoTuiles()).getImage()); //on récupère notre image
                 Bitmap b2 = Bitmap.createScaledBitmap(b1, largeurTuile, hauteurTuile,false);
                 image = new ImageView(this);
                 image.setImageBitmap(b2); //on crée notre image view

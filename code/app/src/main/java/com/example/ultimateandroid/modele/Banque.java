@@ -15,7 +15,7 @@ public class Banque implements Serializable {
 
     private CollectionEntite encyclopedie; //collection des entités
     private List<Joueur> lesJoueurs; //faire une array
-    public static Map<Integer, Tuile> DICOTUILES; //dictionnaire contenant toutes les types de tuiles de nos cartes
+    public Map<Integer, Tuile> dicoTuiles; //dictionnaire contenant toutes les types de tuiles de nos cartes
 
     /**
      *constructeur de la classe Banque
@@ -26,15 +26,7 @@ public class Banque implements Serializable {
     public Banque(CollectionEntite encyclopedie, List<Joueur> lesJoueurs, Map<Integer, Tuile> dicoTuiles) {
         this.encyclopedie = encyclopedie;
         this.lesJoueurs = lesJoueurs;
-        DICOTUILES = dicoTuiles;
-    }
-
-    public CollectionEntite getEncyclopedie() {
-        return encyclopedie;
-    }
-
-    public List<Joueur> getLesJoueurs() {
-        return lesJoueurs;
+        this.dicoTuiles = dicoTuiles;
     }
 
     /**
@@ -50,6 +42,18 @@ public class Banque implements Serializable {
             return j;
         }
         return lesJoueurs.get(index);
+    }
+
+    public CollectionEntite getEncyclopedie() {
+        return encyclopedie;
+    }
+
+    public List<Joueur> getLesJoueurs() {
+        return lesJoueurs;
+    }
+
+    public Map<Integer, Tuile> getDicoTuiles() {
+        return dicoTuiles;
     }
 
 }

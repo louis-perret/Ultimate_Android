@@ -31,8 +31,6 @@ public class Manager {
     private ControleurCombat controleurCombat;
     private Monde monde; //notre monde
     private Thread thread; //thread de la boucle de jeu
-    private int hauteurSurfaceJeu;
-    private int largeurSurfaceJeu;
 
 
     /**
@@ -40,7 +38,7 @@ public class Manager {
       * @param banque : attribut contenant les collections de l'application
      */
     public Manager(Banque banque){
-        deplaceur = new DeplaceurEntiteSimple(hauteurSurfaceJeu,largeurSurfaceJeu,10);
+        deplaceur = new DeplaceurEntiteSimple(10);
         controleurCombat = new ControleurCombat(banque.getEncyclopedie());
         monde = new Monde();
         this.banque = banque;
