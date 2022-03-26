@@ -8,11 +8,14 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ultimateandroid.R;
+import com.example.ultimateandroid.modele.Manager;
+import com.example.ultimateandroid.vues.App;
 
 /**
  * code behind de la vue fenetre_lancement
  */
 public class FenetreLancement extends AppCompatActivity {
+    private Manager manager;
 
 
     /**
@@ -50,5 +53,11 @@ public class FenetreLancement extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fenetre_lancement); //Je rattache le code behind à la fenêtre
+    }
+
+    @Override
+    protected void onDestroy() {
+        ((App) getApplication()).getSauveur().sauver(manager.getBanque());
+        super.onDestroy();
     }
 }

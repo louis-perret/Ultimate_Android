@@ -92,5 +92,9 @@ public class FenetreSelection extends AppCompatActivity {
         startActivity(intent); //On lance l'activité
     }
 
-
+    @Override
+    protected void onDestroy() {
+        ((App) getApplication()).getSauveur().sauver(manager.getBanque());
+        super.onDestroy();
+    }
 }

@@ -159,4 +159,8 @@ public class Manager {
     public Entite getEnnemiCourant(){
         return controleurCombat.getEnnemiCourant();
     }
+
+    public Banque getBanque() {
+        return banque;
+    }
 }

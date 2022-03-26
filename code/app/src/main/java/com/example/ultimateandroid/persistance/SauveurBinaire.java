@@ -6,7 +6,9 @@ import com.example.ultimateandroid.modele.Manager;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 /**
  * Classe qui gère la sauvegarde d'un objet dans un fichier binaire

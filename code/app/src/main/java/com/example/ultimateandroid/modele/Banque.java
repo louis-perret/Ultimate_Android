@@ -4,13 +4,14 @@ import com.example.ultimateandroid.modele.entite.CollectionEntite;
 import com.example.ultimateandroid.modele.joueur.Joueur;
 import com.example.ultimateandroid.modele.monde.Tuile;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
 /**
  * classe contenant les collection de l'application
  */
-public class Banque {
+public class Banque implements Serializable {
 
     private CollectionEntite encyclopedie; //collection des entités
     private List<Joueur> lesJoueurs; //faire une array
