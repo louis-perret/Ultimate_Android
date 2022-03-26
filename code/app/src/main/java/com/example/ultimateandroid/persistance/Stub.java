@@ -138,7 +138,7 @@ public class Stub extends Chargeur{
 
         Mouvement lanceEau = new Mouvement(30,"Lance-eau",consoleP, humide);
         Mouvement pied_saute = new Mouvement(21,"Pied sauté",consoleP,null);
-        Mouvement rapide2 = new Mouvement(30,"Rapidité 2",linux,null);
+        Mouvement rapide2 = new Mouvement(30,"Super Rapidité ",linux,null);
         Mouvement petitVoltage = new Mouvement(15,"Petit voltage",nokia, courtCircuit);
         Mouvement superBatterie = new Mouvement(25,"Super batterie",smartphone,null);
         Mouvement mise_a_jour2 = new Mouvement(20,"Mise à jour 2",linux, miseAJour);
@@ -177,35 +177,35 @@ public class Stub extends Chargeur{
         //Création des ennemis
         //niveau 1
         tabMouvements=new Mouvement[]{charge, decharge, volt, petitVoltage };
-        e = new Entite("Nikia 3310",R.drawable.console,70,20,20,10,position, nokia,tabMouvements,1,0,"Reptincel", false);
+        e = new Entite("Nikia 3310",R.drawable.nokia,70,20,20,10,position, nokia,tabMouvements,1,0,"Super Nokia", false);
         niveau1.add(e);
         tabMouvements=new Mouvement[]{sabotage, siri, superSiri, megaSiri };
-        e = new Entite("MacBook",R.drawable.console,70,25,25,15,position, mac,tabMouvements,1,0,"Reptincel", false);
+        e = new Entite("MacBook",R.drawable.mac,70,25,25,15,position, mac,tabMouvements,1,0,"Mac book pro", false);
         niveau1.add(e);
         tabMouvements=new Mouvement[]{vague_psy, stabilite, superSatble, megaStable };
-        e = new Entite("Windows 1.0",R.drawable.console,70,25,15,10,position, windows,tabMouvements,1,0,"Reptincel", false);
+        e = new Entite("Windows 1.0",R.drawable.windows,70,25,15,10,position, windows,tabMouvements,1,0,"Windows 10", false);
         niveau1.add(e);
 
         //niveau 2
         tabMouvements=new Mouvement[]{belier, confort, superConfort, megaConfort };
-        e = new Entite("PS1",R.drawable.console,80,35,25,20,position, consoleS,tabMouvements,2,0,"Reptincel", false);
+        e = new Entite("PS1",R.drawable.console_s,80,35,25,20,position, consoleS,tabMouvements,2,0,"PS5", false);
         niveau2.add(e);
         tabMouvements=new Mouvement[]{pistolet_a_eau, lanceEau, tsunami, pied_saute };
-        e = new Entite("Gameboy Color",R.drawable.console,40,30,25,25,position, consoleP,tabMouvements,2,0,"Reptincel", false);
+        e = new Entite("Gameboy Color",R.drawable.console_p,40,30,25,25,position, consoleP,tabMouvements,2,0,"DS3D", false);
         niveau2.add(e);
         tabMouvements=new Mouvement[]{batterie, superBatterie, megaBatterie, trempette };
-        e = new Entite("IBM Simon",R.drawable.console,80,35,30,25,position, smartphone,tabMouvements,2,0,"Reptincel", false);
+        e = new Entite("IBM Simon",R.drawable.smartphone,80,35,30,25,position, smartphone,tabMouvements,2,0,"Super téléphone", false);
         niveau2.add(e);
 
         //niveau 3
         tabMouvements=new Mouvement[]{tempeteRapide,rapide2, rapidite, miseAjour3 };
-        e = new Entite("Super Linux",R.drawable.console,90,50,35,35,position, linux,tabMouvements,3,0,"Reptincel", false);
+        e = new Entite("Super Linux",R.drawable.linux,90,50,35,35,position, linux,tabMouvements,3,0,"Super linux", false);
         niveau3.add(e);
         tabMouvements=new Mouvement[]{ giga_impact, ruine, depense, onereuse };
-        e = new Entite("iPhone",R.drawable.console,90,40,35,30,position, apple,tabMouvements,3,0,"Reptincel", false);
+        e = new Entite("iPhone",R.drawable.apple,90,40,35,30,position, apple,tabMouvements,3,0,"Apple 11", false);
         niveau3.add(e);
         tabMouvements=new Mouvement[]{batterie, superBatterie, megaBatterie, trempette };
-        e = new Entite("Samsung",R.drawable.console,90,45,40,35,position, smartphone,tabMouvements,3,0,"Reptincel", false);
+        e = new Entite("Samsung",R.drawable.smartphone_evolution,90,45,40,35,position, smartphone,tabMouvements,3,0,"super spartphone", false);
         niveau2.add(e);
 
 
