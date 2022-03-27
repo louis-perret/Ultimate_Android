@@ -15,13 +15,14 @@ import com.example.ultimateandroid.vues.App;
 import com.example.ultimateandroid.vues.fenetres.FenetreSelection;
 
 /**
- * code du fragment fragment_starter
+ * Code du fragment fragment_starter
  */
 public class FragmentStarter extends Fragment {
 
-    private Entite allie;
+    private Entite allie; //entité à afficher
+
     /**
-     * constructeur de la classe
+     * Constructeur de la classe
      */
     public FragmentStarter() {
         super(R.layout.fragment_starter);
@@ -43,7 +44,7 @@ public class FragmentStarter extends Fragment {
             image.setImageBitmap(BitmapFactory.decodeResource(getResources(), allie.getImage()));
             bouton.setText(allie.getNom());
 
-            bouton.setOnClickListener(view1 -> {
+            bouton.setOnClickListener(view1 -> { //on set l'action du bouton du fragment
                 ((App)requireActivity().getApplication()).getManager().setAllie(allie.getNom(), allie.getNiveau()); //on récupère le manager pour set l'allié en fonction du choix de l'utilisateur
                 ((FenetreSelection)requireActivity()).lancementPartie(); //puis on lance le jeu
             });

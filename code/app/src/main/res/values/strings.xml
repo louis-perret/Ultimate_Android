@@ -38,6 +38,8 @@
     <string name="statusCourt_circuit">Court-circuit</string>
     <string name="statusMise_a_jour">Mise à jour</string>
     <string name="statusHumide">Humide</string>
+
+
     <string name="attaquePistolet_a_eau">Pistolet à eau</string>
     <string name="attaqueRapidite">Rapidité</string>
     <string name="attaqueDecharge">Décharge</string>

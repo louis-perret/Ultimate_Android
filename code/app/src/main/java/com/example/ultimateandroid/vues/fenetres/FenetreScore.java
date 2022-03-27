@@ -14,7 +14,7 @@ import com.example.ultimateandroid.vues.App;
 import com.example.ultimateandroid.vues.adaptateur.Adaptateur;
 
 /**
- * code behind de la vue fenetre_score
+ * Code behind de la vue fenetre_score
  */
 public class FenetreScore extends AppCompatActivity {
 
@@ -33,7 +33,7 @@ public class FenetreScore extends AppCompatActivity {
     }
 
     /**
-     * implémentation de la RecyclerView pour stocker la liste des joueurs
+     * Implémentation de la RecyclerView pour stocker la liste des joueurs
      */
     @Override
     protected void onResume() {

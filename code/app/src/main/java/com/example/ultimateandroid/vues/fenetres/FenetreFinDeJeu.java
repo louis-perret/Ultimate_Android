@@ -10,10 +10,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ultimateandroid.R;
 
+/**
+ * Code behind de la fenetre de fin de jeu
+ */
 public class FenetreFinDeJeu extends AppCompatActivity {
 
     private TextView text;
 
+    /**
+     * Appelée à la création de l'activité, initialise le texte à afficher
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +35,10 @@ public class FenetreFinDeJeu extends AppCompatActivity {
         }
     }
 
+    /**
+     * Retourne au menu principal
+     * @param view : view qui a appelée l'évènement
+     */
     public void retourMenu(View view){
         startActivity(new Intent(this,FenetreLancement.class));
         finish();

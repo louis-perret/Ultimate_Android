@@ -23,7 +23,7 @@ public class App extends Application {
     private Chargeur chargeur;
 
     /**
-     * Appelé au lancement du jeu, initialise le manager
+     * Appelé au lancement du jeu, initialise le manager, le chargeur et le sauveur
      */
     @Override
     public void onCreate() {
@@ -45,11 +45,6 @@ public class App extends Application {
             }
         }
         manager = new Manager(chargeur.charger());
-        //manager = new Manager((new Stub().charger()));
-        sauveur = new SauveurBinaire(fileName.getPath());
-        sauveur.sauver(manager.getBanque());
-
-
     }
 
 

@@ -8,10 +8,10 @@ import com.example.ultimateandroid.modele.entite.Type;
 public interface CalculCoefficient {
 
     /**
-     * Retourne un coefficiant de dégâts en fonction du type de l'attaque lancée par rapport au type de l'entité attaqué
+     * Retourne un coefficiant de dégâts en fonction du type de l'attaque lancée par rapport au type de l'entité attaquée
      * @param typeAttaquant : type de l'attaque utilisée
      * @param typeAttaque : type de l'entité attaqué
-     * @return
+     * @return float
      */
     public float getCoefficient(Type typeAttaquant, Type typeAttaque);
 }

@@ -22,7 +22,7 @@ public class BoucleJeu16 extends BoucleJeu{
     }
 
     /**
-     * Méthode exécutée par le thread. S'endort 16 milli-secondes avant de notifier son observateur
+     * Méthode exécutée par le thread. S'endort 16 milli-secondes avant de notifier ses observateurs
      */
     @Override
     public void run() {

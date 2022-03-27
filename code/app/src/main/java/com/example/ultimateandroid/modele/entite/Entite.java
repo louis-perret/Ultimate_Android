@@ -69,10 +69,21 @@ public class Entite implements Serializable {
         }
     }
 
+    /**
+     * Retourne sa technique par rapport à son nom
+     * @param nom : nom de l'attaque
+     * @return un Mouvement
+     */
+    public Mouvement getMouvement(int nom){
+        for (Mouvement m : mouvements){
+            if(m.getNom() == nom){
+                return m;
+            }
+        }
+        return null; //pas trouvé
+    }
 
     /* Getter et Setter */
-
-
     public int getNom() { return nom; }
     public void setNom(int nom) {
         this.nom=nom;
@@ -146,20 +157,6 @@ public class Entite implements Serializable {
             i=i+1;
         }
         this.mouvements=mouvements;
-    }
-
-    /**
-     * Retourne sa technique par rapport à son nom
-     * @param  : nom de l'attaque
-     * @return un Mouvement
-     */
-   public Mouvement getMouvement(int nom){
-        for (Mouvement m : mouvements){
-            if(m.getNom() == nom){
-                return m;
-            }
-        }
-        return null; //pas trouvé
     }
 
     public int getNiveau() {

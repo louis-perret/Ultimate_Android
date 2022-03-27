@@ -13,14 +13,14 @@ import com.example.ultimateandroid.modele.Manager;
 import com.example.ultimateandroid.vues.App;
 
 /**
- * code behind de la vue fenetre_lancement
+ * Code behind de la fenetre principale de notre jeu
  */
 public class FenetreLancement extends AppCompatActivity {
 
     private Manager manager;
 
     /**
-     * méthode permettant d'aller à la vue fenetre_lancement au click du bouton
+     * Méthode permettant d'aller à la vue fenetre_lancement au click du bouton
      * @param view
      */
     public void lancementJeu(View view){
@@ -30,18 +30,17 @@ public class FenetreLancement extends AppCompatActivity {
     }
 
     /**
-     *méthode permettant d'aller à la vue fenetre_score au click du bouton
-     * @param view
+     * Méthode permettant d'aller à la vue fenetre_score au click du bouton
+     * @param view : view qui a déclenché l'évènement
      */
     public void consultationScores(View view){
-
         Intent intent = new Intent(this,FenetreScore.class);
         startActivity(intent); //On lance l'activité
     }
 
     /**
-     * méthode permettant de quitter le jeu au click du bouton
-     * @param view
+     * Méthode permettant de quitter le jeu au click du bouton
+     * @param view : view qui a déclenché l'évènement
      */
     public void quitterJeu(View view) {
         finish();

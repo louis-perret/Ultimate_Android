@@ -19,6 +19,9 @@ import com.example.ultimateandroid.modele.entite.Entite;
 import com.example.ultimateandroid.modele.entite.Mouvement;
 import com.example.ultimateandroid.vues.App;
 
+/**
+ * Code behind de notre fenêtre combat
+ */
 public class FenetreCombat extends AppCompatActivity {
 
     private Manager manager;
@@ -28,14 +31,20 @@ public class FenetreCombat extends AppCompatActivity {
 
     private int largeurEcran, hauteurEcran, pvTotauxAllie, pvTotauxEnnemi;
 
+    /**
+     * Appelée à la création
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fenetre_combat);
         manager = ((App) getApplication()).getManager();
+        //On récupère la largeur et la hauteur de la fenêtre
         largeurEcran = getIntent().getIntExtra("largeurEran",getResources().getDisplayMetrics().widthPixels);
         hauteurEcran = getIntent().getIntExtra("hauteurEran",getResources().getDisplayMetrics().heightPixels);
 
+        //On récupère chaque élément de l'activité
         imageAllie = findViewById(R.id.imageAllie);
         imageEnnemi = findViewById(R.id.imageEnnemi);
         etatAllie = findViewById(R.id.etatAllie);
@@ -48,6 +57,9 @@ public class FenetreCombat extends AppCompatActivity {
         attaque4Allie = findViewById(R.id.attaque4Allie);
     }
 
+    /**
+     *
+     */
     @Override
     protected void onStart() {
         super.onStart();
@@ -62,6 +74,9 @@ public class FenetreCombat extends AppCompatActivity {
         imageEnnemi.setY(hauteurEcran * 0.2F);
     }
 
+    /**
+     * Permet d'actualiser les pv, les états et les images des entités
+     */
     @SuppressLint("SetTextI18n")
     public void updateCombat(){
         Entite allie = manager.getAllie();
@@ -82,6 +97,10 @@ public class FenetreCombat extends AppCompatActivity {
         attaque4Allie.setText(allie.getMouvements()[3].getNom());
     }
 
+    /**
+     * Effectue un tour de combat
+     * @param view : view qui a appelé la méthode
+     */
     public void effectuerUneManche(View view){
         Button b = (Button) view;
         Mouvement mouvementAllie = null;
@@ -111,6 +130,10 @@ public class FenetreCombat extends AppCompatActivity {
         }
     }
 
+    /**
+     * Termine le jeu
+     * @param isWinner : true si le joueur à remporté la partie
+     */
     public void lancerFinDeJeu(boolean isWinner){
         Intent intent = new Intent(this, FenetreFinDeJeu.class);
         intent.putExtra("isWinner", isWinner);
@@ -118,6 +141,9 @@ public class FenetreCombat extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * Lance une nouvelle vague
+     */
     public void lancerNouvelleVague(){
         Intent intent = new Intent(this, FenetreJeu.class);
         startActivity(intent);

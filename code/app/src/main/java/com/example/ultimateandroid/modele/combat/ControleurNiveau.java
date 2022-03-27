@@ -3,22 +3,25 @@ package com.example.ultimateandroid.modele.combat;
 import com.example.ultimateandroid.modele.entite.CollectionEntite;
 import com.example.ultimateandroid.modele.entite.Entite;
 
+/**
+ * Classe qui contrôle le gain d'expérience et de niveau ainsi que les évolutions d'une entité
+ */
 public class ControleurNiveau {
 
-    private CollectionEntite collectionEntite; //la collection de tous les entités
+    private CollectionEntite collectionEntite; //la collection de toutes les entités
 
     /**
      * Constructeur
-     * @param collectionEntite : collection de tous les pokmon
+     * @param collectionEntite : collection de toutes les entités
      */
     public ControleurNiveau(CollectionEntite collectionEntite) {
         this.collectionEntite = collectionEntite;
     }
 
     /**
-     * Augmente l'expérience de l'entité p en fonction du niveau de l'entité ennemi
+     * Augmente l'expérience de l'entité allie en fonction du niveau de l'entité ennemie
      * @param allie : entité qui gagne de l'expérience
-     * @param ennemi : l'entité ennemi
+     * @param ennemi : l'entité ennemie
      */
     public void gagnerExperience(Entite allie, Entite ennemi){
         int xpGagne=0;

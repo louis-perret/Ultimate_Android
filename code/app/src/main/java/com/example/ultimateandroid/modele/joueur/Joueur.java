@@ -4,9 +4,13 @@ import java.io.Serializable;
 import java.util.Objects;
 
 
+/**
+ * Classe qui représente un joueur
+ */
 public class Joueur implements Serializable {
-    private String pseudo;
-    private int nbVictoire;
+
+    private String pseudo; //son pseudo
+    private int nbVictoire; //son nombre de victoires
 
     /**
      * constructeur de la classe Joueur
@@ -20,7 +24,7 @@ public class Joueur implements Serializable {
 
 
     /**
-     * méthode permettant d'incrémenter le nombre de victoire d'un joueur si celui-ci gagne une partie
+     * Méthode permettant d'incrémenter le nombre de victoire d'un joueur si celui-ci gagne une partie
      */
     public void incrementerScore(){
         nbVictoire++;

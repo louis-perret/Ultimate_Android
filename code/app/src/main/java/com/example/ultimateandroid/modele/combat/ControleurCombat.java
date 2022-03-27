@@ -60,10 +60,9 @@ public class ControleurCombat {
     }
 
     /**
-     * Gère les vagues d'entitéss ennemi du jeu
+     * Gère les vagues d'entités ennemies du jeu
      * @return une liste de 3 entités que devra combattre le joueur
      */
-
     public boolean lancerVague(Entite allie,Joueur joueur, CollectionEntite pokedex){
         if(numeroVague>3){ //Le joueur a gagné toutes les vagues
             joueur.incrementerScore();
@@ -74,6 +73,10 @@ public class ControleurCombat {
         return false;
     }
 
+    /**
+     * Renvoie l'ennemi courant
+     * @return Entite
+     */
     public Entite getEnnemiCourant() {
         return ennemiCourant;
     }

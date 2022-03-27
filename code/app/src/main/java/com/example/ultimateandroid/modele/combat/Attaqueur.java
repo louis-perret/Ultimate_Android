@@ -11,11 +11,11 @@ public abstract class Attaqueur {
     protected CalculCoefficient calculCoefficient;
 
     /**
-     * Gère l'attaque d'une entité vers un autre
-     * @param attaquant : entité attaquant
-     * @param attaque : entité attaqué
+     * Gère l'attaque d'une entité vers une autre
+     * @param attaquant : entité attaquante
+     * @param attaque : entité attaquée
      * @param m : l'attaque utilisée
-     * @return True si l'entité attaquant a gagné le combat
+     * @return True si l'entité attaquante a gagné le combat
      */
     public abstract boolean attaquer(Entite attaquant, Entite attaque, Mouvement m);
 }

@@ -15,35 +15,37 @@ public class DeplaceurEntiteSimple extends DeplaceurEntite {
      */
     public DeplaceurEntiteSimple(int pas) {
         this.pas = pas;
-       // super.setChangeurCarte(new ChangeurCarteV1(hauteurSurface,largeurSurface,hauteurTuile));
     }
 
     /**
      * Effectue le déplacement de l'entité, renvoie true si l'entité est au niveau du portail
      * @param e : entité à déplace
      * @param carte : Carte pour vérifier la collision
+     * @return boolean
      */
     @Override
     public boolean deplacer(Entite e, Carte carte){
         int xPortail = carte.getxPortail();
         int yPortail = carte.getyPortail();
+
+        //on vérifie la différence de l'entité par rapport aux portails
         double diffX = e.getPosition().getPositionX() - xPortail;
         double diffY = e.getPosition().getPositionY() - yPortail;
-        if(diffX > -10 & diffX <10 && diffY > -10 && diffY < 10){
+        if(diffX > -10 & diffX <10 && diffY > -10 && diffY < 10){  //on considère qu'à 10px près, l'entité rentre en collision avec le portail
             return true;
         }
         else {
-            if (diffX > diffY && diffX != 0) {
-                if (diffX > 0) {
-                    deplacerAGauche(e, carte);
+            if (diffX > diffY && diffX != 0) { //si diffX est plus grand que diffY
+                if (diffX > 0) { //si diffX est positif
+                    deplacerAGauche(e, carte); //alors on le diminue
                 } else {
-                    deplacerADroite(e, carte);
+                    deplacerADroite(e, carte); //sinon on l'augmente
                 }
-            } else {
-                if (diffY > 0 && diffY != 0) {
-                    deplacerEnHaut(e, carte);
+            } else { //si diffY est plus grand que diffX
+                if (diffY > 0 && diffY != 0) { //si diffY est positif
+                    deplacerEnHaut(e, carte); //on le diminue
                 } else {
-                    deplacerEnBas(e, carte);
+                    deplacerEnBas(e, carte); //sinon on l'augmente
                 }
             }
         }

@@ -5,7 +5,7 @@ import com.example.ultimateandroid.modele.entite.Mouvement;
 import com.example.ultimateandroid.modele.entite.Entite;
 
 /**
- * Classe abtraite gérant le contrôle d'une manche
+ * Classe abstraite gérant le contrôle d'une manche
  */
 public abstract class ControleurManche {
 
@@ -16,7 +16,7 @@ public abstract class ControleurManche {
     /**
      * Effectue un tour de combat
      * @param allie : entité du joueur
-     * @param ennemi : entité ennemi
+     * @param ennemi : entité ennemie
      * @param mAllie : attaque utilisée par le joueur
      * @return un int signifiant s'il y a eu une entité ko
      */

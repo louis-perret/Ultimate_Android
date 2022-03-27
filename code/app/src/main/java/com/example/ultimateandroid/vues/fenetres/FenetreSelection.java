@@ -17,7 +17,9 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.List;
 
-
+/**
+ * Code behind de la fenêtre de sélection
+ */
 public class FenetreSelection extends AppCompatActivity {
 
     private Manager manager;
@@ -86,7 +88,7 @@ public class FenetreSelection extends AppCompatActivity {
     }
 
     /**
-     * méthode permettant d'aller sur la vue fenetre_jeu mais aussi d'enregistrer le pseudo du joueur qu'il aura renseigné
+     * Méthode permettant d'aller sur la vue fenetre_jeu mais aussi d'enregistrer le pseudo du joueur qu'il aura renseigné
      */
     public void lancementPartie(){
         manager.addJoueur(pseudo.getText().toString());
@@ -96,6 +98,9 @@ public class FenetreSelection extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * Enregistre nos donnée si détruite
+     */
     @Override
     protected void onDestroy() {
         super.onDestroy();

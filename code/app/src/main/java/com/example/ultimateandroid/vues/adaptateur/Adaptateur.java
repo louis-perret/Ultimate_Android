@@ -18,7 +18,7 @@ import java.util.List;
 public class Adaptateur extends RecyclerView.Adapter {
 
     private List<Joueur> lesJoueurs; //liste des joueurs à afficher
-    private FenetreScore actParent;
+    private FenetreScore actParent; //activité parente
 
     /**
      * Constructeur
@@ -34,7 +34,7 @@ public class Adaptateur extends RecyclerView.Adapter {
      * Créer la cellule
      * @param parent : ViewGroup dans lequel sera ajouté la cellule
      * @param viewType : Type de la nouvelle cellule
-     * @return : cellule_joueur
+     * @return : ViewHolderJoueur
      */
     @NonNull
     @Override

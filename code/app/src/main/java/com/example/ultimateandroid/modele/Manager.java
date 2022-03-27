@@ -21,14 +21,14 @@ import java.util.List;
  */
 public class Manager {
 
-    private boolean debutCombat;
-    private Joueur joueurCourant;
+    private boolean debutCombat; //vrai si un combat s'est lancé
+    private Joueur joueurCourant; //joueur qui joue
     private Entite allie; //l'entité choisie par l'utilisateur
     private Carte carteCourante; //la carte actuellement affichée
     private Banque banque;
 
     private DeplaceurEntite deplaceur; //pour le déplacement
-    private ControleurCombat controleurCombat;
+    private ControleurCombat controleurCombat; //pour les combats
     private Monde monde; //notre monde
     private Thread thread; //thread de la boucle de jeu
 
@@ -62,6 +62,10 @@ public class Manager {
         return controleurCombat.tourDeCombat(allie,mAllie,joueurCourant,banque.getEncyclopedie());
     }
 
+    /**
+     * Lance une nouvelle vague dans le jeu
+     * @return
+     */
     public boolean lancerCombat(){
         return controleurCombat.lancerVague(allie,joueurCourant, banque.getEncyclopedie());
     }
@@ -69,7 +73,6 @@ public class Manager {
     /**
      * Lance la boucle de jeu utile au déplacement d'une entité du joueur
      */
-
     public void lancerBoucleJeu(List<Observateur> observateurs){
         allie.setPosition(new Position(carteCourante.getSpawnX(), carteCourante.getSpawnY())); //on set sa position au point de spawn de la carte avant de commencer à le déplacer
         BoucleJeu boucleJeu = new BoucleJeu16();
@@ -94,8 +97,33 @@ public class Manager {
         }
     }
 
+    /**
+     * Renvoie la liste des starters
+     * @return Liste<Entite>
+     */
     public List<Entite> getStarterslvl1() {
         return banque.getEncyclopedie().getStarterLvl1();
+    }
+
+
+    /**
+     * Ajoute une carte à notre monde
+     * @param nomCarte : nom de la carte à ajouter
+     * @param fichier : flux de lecture vers le fichier qui contient notre carte
+     */
+    public void ajouterCarte(String nomCarte, InputStream fichier){
+        if(monde == null){
+            monde = new Monde();
+        }
+        monde.ajouterCarte(nomCarte,fichier);
+    }
+
+    /**
+     * Permet de définir le joueur courant
+     * @param pseudo: pseudo du joueur rentré par l'utilisateur
+     */
+    public void addJoueur(String pseudo){
+        joueurCourant = banque.addJoueur(pseudo);
     }
 
     //Getter et setter
@@ -113,13 +141,6 @@ public class Manager {
             this.setCarteCourante("lobby");
         }
         return carteCourante;
-    }
-
-    public void ajouterCarte(String nomCarte, InputStream fichier){
-        if(monde == null){
-            monde = new Monde();
-        }
-        monde.ajouterCarte(nomCarte,fichier);
     }
 
     public boolean isDebutCombat(){
@@ -144,14 +165,6 @@ public class Manager {
 
     public List<Joueur> getLesJoueurs(){
         return banque.getLesJoueurs();
-    }
-
-    /**
-     * permet de définir le joueur courant
-     * @param pseudo: pseudo du joueur rentré par l'utilisateur
-     */
-    public void addJoueur(String pseudo){
-        joueurCourant = banque.addJoueur(pseudo);
     }
 
     public Entite getEnnemiCourant(){

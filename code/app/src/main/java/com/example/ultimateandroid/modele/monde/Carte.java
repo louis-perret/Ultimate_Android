@@ -11,7 +11,7 @@ import java.util.Map;
 public class Carte implements Serializable {
 
     private int[][] lesTuiles; //les élements qui composent la carte
-    private int hauteur, largeur, spawnX, spawnY, xPortail, yPortail; //hauteur et largeur de la carte, point de spawn en x & y
+    private int hauteur, largeur, spawnX, spawnY, xPortail, yPortail; //hauteur et largeur de la carte, point de spawn et coordonnées du portail en x & y
 
     /**
      * Construit une carte

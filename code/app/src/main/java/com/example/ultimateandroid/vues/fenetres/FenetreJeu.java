@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * code behind de la vue fenetre_jeu
+ * Code behind de la vue fenetre_jeu
  */
 public class FenetreJeu extends AppCompatActivity {
 
@@ -37,7 +37,7 @@ public class FenetreJeu extends AppCompatActivity {
     private int hauteurTuile;
 
     /**
-     * permet de modifier la valeur de la position de l'image
+     * Permet de modifier la valeur de la position de l'image
      */
     private void setPositionImageAllie(){
         imageAllie.setX((float)manager.getAllie().getPosition().getPositionX() * 3);
@@ -45,7 +45,7 @@ public class FenetreJeu extends AppCompatActivity {
     }
 
     /**
-     * méthode permettant d'afficher la carte du jeu
+     * Méthode permettant d'afficher la carte du jeu
      */
     private void afficherCarte() {
         Carte carte = manager.getCarteCourante();
@@ -64,13 +64,16 @@ public class FenetreJeu extends AppCompatActivity {
     }
 
     /**
-     * permet de mettre à jour a postion de l'entité sur la carte
+     * Permet de mettre à jour a postion de l'entité sur la carte
      */
     public void updatePosition(){
         setPositionImageAllie();
     }
 
 
+    /**
+     * Lance un combat
+     */
     public void lancerCombat(){
         Intent intent = new Intent(this,FenetreCombat.class);
         intent.putExtra("largeurEcran",largeurEcran);
@@ -123,4 +126,3 @@ public class FenetreJeu extends AppCompatActivity {
         manager.terminerBoucleJeu();
     }
 }
-//TODO finir de commenter cette classe

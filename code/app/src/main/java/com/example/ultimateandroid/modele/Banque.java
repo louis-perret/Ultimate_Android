@@ -9,19 +9,19 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * classe contenant les collection de l'application
+ * Classe contenant les collections de l'application
  */
 public class Banque implements Serializable {
 
     private CollectionEntite encyclopedie; //collection des entités
-    private List<Joueur> lesJoueurs; //faire une array
-    public Map<Integer, Tuile> dicoTuiles; //dictionnaire contenant toutes les types de tuiles de nos cartes
+    private List<Joueur> lesJoueurs; //liste des joueurs
+    public Map<Integer, Tuile> dicoTuiles; //dictionnaire contenant tous les types de tuiles de nos cartes
 
     /**
-     *constructeur de la classe Banque
+     * Constructeur de la classe Banque
      * @param encyclopedie: collection des entités
-     * @param lesJoueurs: liste des joueurs ayant déjà joué
-     * @param dicoTuiles: dictionnaire contenant toutes les tuiles de nos cartes de jeu
+     * @param lesJoueurs: liste des joueurs ayant déjà joués
+     * @param dicoTuiles: dictionnaire contenant tous les tuiles de nos cartes de jeu
      */
     public Banque(CollectionEntite encyclopedie, List<Joueur> lesJoueurs, Map<Integer, Tuile> dicoTuiles) {
         this.encyclopedie = encyclopedie;
@@ -30,7 +30,7 @@ public class Banque implements Serializable {
     }
 
     /**
-     * permet d'ajouter le joueur avec le nouveau pseudo dans la liste lesJoueurs
+     * Permet d'ajouter le joueur avec le nouveau pseudo dans la liste lesJoueurs
      * @param pseudo: pseudo du joueur rentré par l'utilisateur
      * @return le joueur
      */

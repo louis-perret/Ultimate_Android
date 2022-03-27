@@ -14,9 +14,9 @@ public class AttaqueurEntite extends Attaqueur{
         calculCoefficient = new CalculCoefficientV1();
     }
     /**
-     * Gère l'attaque d'une entité vers un autre
+     * Gère l'attaque d'une entité vers une autre
      * @param attaquant : entité attaquant
-     * @param attaque : entité attaqué
+     * @param attaque : entité attaquée
      * @param m : l'attaque utilisée
      * @return True si l'entité attaquant a gagné le combat
      */

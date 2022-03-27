@@ -5,12 +5,12 @@ import com.example.ultimateandroid.modele.observateurs.Observateur;
 import com.example.ultimateandroid.vues.App;
 import com.example.ultimateandroid.vues.fenetres.FenetreJeu;
 
-//TODO faire la doc de cette classe, à quoi elle sert précisément?
-
-
+/**
+ * Observateur de notre boucle de jeu côté vue. Permet la mise à jour de cette dernière
+ */
 public class ObservateurBoucleVue implements Observateur {
 
-    private FenetreJeu fenetre;
+    private FenetreJeu fenetre; //activité à mettre à jour
     private Manager manager;
 
     public ObservateurBoucleVue(FenetreJeu fenetre) {
@@ -18,6 +18,9 @@ public class ObservateurBoucleVue implements Observateur {
         manager = ((App)fenetre.getApplication()).getManager();
     }
 
+    /**
+     * Effectuera un traitement lorsqu'il sera notifié par le sujet qu'il observe
+     */
     @Override
     public void update() {
         fenetre.runOnUiThread(() -> { //Equivalent du platform runlater en javafx

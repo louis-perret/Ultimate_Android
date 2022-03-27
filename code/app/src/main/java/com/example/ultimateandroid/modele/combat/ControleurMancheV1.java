@@ -20,6 +20,13 @@ public class ControleurMancheV1 extends ControleurManche {
         attaqueur = new AttaqueurEntite();
     }
 
+    /**
+     * Effectue un tour de combat
+     * @param allie : entité du joueur
+     * @param ennemi : entité ennemie
+     * @param mAllie : attaque utilisée par le joueur
+     * @return un int signifiant s'il y a eu une entité ko
+     */
     @Override
     public int effectuerCombat(Entite allie, Entite ennemi, Mouvement mAllie) {
         Mouvement mEnnemi = iaEntite.choisirAttaque(ennemi);
