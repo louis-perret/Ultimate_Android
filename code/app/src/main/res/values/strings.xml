@@ -8,7 +8,11 @@
     <string name="texteDefaite">Vous avez perdu !</string>
     <string name="texteVictoire">Vous avez gagné !</string>
     <string name="texteBoutonDefaite">Menu principal</string>
-
+    <string name="textePvJoueur">"PV joueur : "</string>
+    <string name="textePvEnnemi">"PV ennmemi : "</string>
+    <string name="texteNbVictoires">"nombre de victoire(s): "</string>
+    <string name="texteScoreNomJoueur">Nom du joueur</string>
+    <string name="texteScoreNombreVictoire">Nombre de victoire</string>
 
 
     <string name="nomPC">PC</string>
@@ -68,7 +72,5 @@
     <string name="attaqMega_Siri">Mega Siri</string>
     <string name="attaqueMega_confort">Mega confort</string>
     <string name="attaqueMega_Stabilite">Mega Stabilité</string>
-    <string name="textePvJoueur">"PV joueur : "</string>
-    <string name="textePvEnnemi">"PV ennmemi : "</string>
-    <string name="texteNbVictoires">"nombre de victoire(s): "</string>
+
 </resources>

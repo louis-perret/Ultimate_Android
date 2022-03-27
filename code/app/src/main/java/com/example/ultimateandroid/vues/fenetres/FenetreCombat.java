@@ -121,5 +121,6 @@ public class FenetreCombat extends AppCompatActivity {
     public void lancerNouvelleVague(){
         Intent intent = new Intent(this, FenetreJeu.class);
         startActivity(intent);
+        finish();
     }
 }

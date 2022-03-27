@@ -44,8 +44,8 @@ public class App extends Application {
                 e.printStackTrace();
             }
         }
-        //manager = new Manager(chargeur.charger());
-        manager = new Manager((new Stub().charger()));
+        manager = new Manager(chargeur.charger());
+        //manager = new Manager((new Stub().charger()));
         sauveur = new SauveurBinaire(fileName.getPath());
         sauveur.sauver(manager.getBanque());
 

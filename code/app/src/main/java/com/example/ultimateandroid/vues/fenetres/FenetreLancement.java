@@ -26,6 +26,7 @@ public class FenetreLancement extends AppCompatActivity {
     public void lancementJeu(View view){
         Intent intent = new Intent(this,FenetreSelection.class);
         startActivity(intent); //On lance l'activité
+        finish();
     }
 
     /**
@@ -59,7 +60,8 @@ public class FenetreLancement extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        ((App) getApplication()).getSauveur().sauver(manager.getBanque());
         super.onDestroy();
+        ((App) getApplication()).getSauveur().sauver(manager.getBanque());
+        finish();
     }
 }

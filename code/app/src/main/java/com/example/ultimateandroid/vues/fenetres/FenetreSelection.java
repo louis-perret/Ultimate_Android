@@ -96,4 +96,10 @@ public class FenetreSelection extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ((App) getApplication()).getSauveur().sauver(manager.getBanque());
+
+    }
 }
