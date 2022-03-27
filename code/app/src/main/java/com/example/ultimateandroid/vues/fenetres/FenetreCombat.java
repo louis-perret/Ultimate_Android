@@ -2,6 +2,7 @@ package com.example.ultimateandroid.vues.fenetres;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +22,7 @@ import com.example.ultimateandroid.vues.App;
 public class FenetreCombat extends AppCompatActivity {
 
     private Manager manager;
-    private ImageView imageAllie, imageEnnemi;
+    private ImageView imageAllie, imageEnnemi, etatAllie, etatEnnemi;
     private TextView vieAllie,vieEnnemi;
     private Button attaque1Allie, attaque2Allie, attaque3Allie, attaque4Allie;
 
@@ -37,8 +38,10 @@ public class FenetreCombat extends AppCompatActivity {
 
         imageAllie = findViewById(R.id.imageAllie);
         imageEnnemi = findViewById(R.id.imageEnnemi);
-        vieAllie = (TextView) findViewById(R.id.vieAllie);
-        vieEnnemi = (TextView) findViewById(R.id.vieEnnemi);
+        etatAllie = findViewById(R.id.etatAllie);
+        etatEnnemi = findViewById(R.id.etatEnnemi);
+        vieAllie = findViewById(R.id.vieAllie);
+        vieEnnemi = findViewById(R.id.vieEnnemi);
         attaque1Allie = findViewById(R.id.attaque1Allie);
         attaque2Allie = findViewById(R.id.attaque2Allie);
         attaque3Allie = findViewById(R.id.attaque3Allie);
@@ -63,10 +66,16 @@ public class FenetreCombat extends AppCompatActivity {
     public void updateCombat(){
         Entite allie = manager.getAllie();
         imageAllie.setImageBitmap(BitmapFactory.decodeResource(getResources(), manager.getAllie().getImage()));
-        vieAllie.setText("PV joueur : " + allie.getPv() + "/" + pvTotauxAllie);
+        vieAllie.setText(getString(R.string.textePvJoueur) + allie.getPv() + "/" + pvTotauxAllie);
         imageEnnemi.setImageBitmap(BitmapFactory.decodeResource(getResources(),manager.getEnnemiCourant().getImage()));
-        vieEnnemi.setText("PV ennmemi : " + manager.getEnnemiCourant().getPv() + "/" + pvTotauxEnnemi);
+        vieEnnemi.setText(getString(R.string.textePvEnnemi) + manager.getEnnemiCourant().getPv() + "/" + pvTotauxEnnemi);
 
+        if(manager.getAllie().getEtat() != null){
+            etatAllie.setImageBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), manager.getAllie().getEtat().getImage()),largeurEcran/12,hauteurEcran/10,false));
+        }
+        if(manager.getEnnemiCourant().getEtat() != null){
+            etatEnnemi.setImageBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), manager.getEnnemiCourant().getEtat().getImage()),largeurEcran/12,hauteurEcran/10,false));
+        }
         attaque1Allie.setText(allie.getMouvements()[0].getNom());
         attaque2Allie.setText(allie.getMouvements()[1].getNom());
         attaque3Allie.setText(allie.getMouvements()[2].getNom());
@@ -77,7 +86,8 @@ public class FenetreCombat extends AppCompatActivity {
         Button b = (Button) view;
         Mouvement mouvementAllie = null;
         for(Mouvement m : manager.getAllie().getMouvements()){
-            if(m.getNom().equals(b.getText())){
+            String mName = String.valueOf(m.getNom());
+            if(getString(m.getNom()).equals(b.getText().toString())){
                 mouvementAllie = m; //on récupère l'attaque d'après le nom
             }
         }
@@ -105,6 +115,7 @@ public class FenetreCombat extends AppCompatActivity {
         Intent intent = new Intent(this, FenetreFinDeJeu.class);
         intent.putExtra("isWinner", isWinner);
         startActivity(intent);
+        finish();
     }
 
     public void lancerNouvelleVague(){

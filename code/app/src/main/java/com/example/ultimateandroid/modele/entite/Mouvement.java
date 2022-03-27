@@ -11,7 +11,7 @@ import java.util.Random;
 public class Mouvement implements Serializable{
 
     private int degats; //ses points de dégâts
-    private String nom; //son nom
+    private int nom; //son nom
     private Type type; //son type
     private Etat etat; //l'état qu'il peut infliger à l'entité ennemi
 
@@ -22,7 +22,7 @@ public class Mouvement implements Serializable{
      * @param type : type
      * @param etat : quel état peut affliger cette attaque
      */
-    public Mouvement(int degats, String nom, Type type, Etat etat){
+    public Mouvement(int degats, int nom, Type type, Etat etat){
         this.degats=degats;
         this.nom=nom;
         this.type=type;
@@ -61,11 +61,11 @@ public class Mouvement implements Serializable{
         this.type = type;
     }
 
-    public String getNom() {
+    public int getNom() {
         return nom;
     }
 
-    public void setNom(String nom) {
+    public void setNom(int nom) {
         this.nom = nom;
     }
 

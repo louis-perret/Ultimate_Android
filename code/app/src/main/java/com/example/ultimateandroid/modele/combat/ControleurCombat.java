@@ -5,7 +5,6 @@ import com.example.ultimateandroid.modele.entite.Entite;
 import com.example.ultimateandroid.modele.entite.Mouvement;
 import com.example.ultimateandroid.modele.joueur.Joueur;
 
-import java.util.Collection;
 import java.util.List;
 
 

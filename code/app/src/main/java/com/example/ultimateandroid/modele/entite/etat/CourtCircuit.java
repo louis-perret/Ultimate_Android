@@ -16,7 +16,7 @@ public class CourtCircuit extends Etat{
      * @param nom : son nom
      * @param image : chemin vers son image
      */
-    public CourtCircuit(String nom, String image){
+    public CourtCircuit(int nom, int image){
         this.nom=nom;
         this.image=image;
     }

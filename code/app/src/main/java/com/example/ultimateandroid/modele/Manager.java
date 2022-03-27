@@ -103,7 +103,7 @@ public class Manager {
         return allie;
     }
 
-    public void setAllie(String nom, int niveau) {
+    public void setAllie(int nom, int niveau) {
         //On clone l'entité pour éviter qu'il pointe vers la même référence et ainsi éviter qu'il modifie directement l'entité contenu dans le pokedex
         this.allie = banque.getEncyclopedie().getEntite(nom, niveau).cloner();
     }

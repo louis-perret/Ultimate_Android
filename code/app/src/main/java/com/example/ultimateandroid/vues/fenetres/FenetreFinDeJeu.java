@@ -30,5 +30,6 @@ public class FenetreFinDeJeu extends AppCompatActivity {
 
     public void retourMenu(View view){
         startActivity(new Intent(this,FenetreLancement.class));
+        finish();
     }
 }

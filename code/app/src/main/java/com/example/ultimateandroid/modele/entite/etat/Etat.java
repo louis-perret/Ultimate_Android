@@ -9,8 +9,8 @@ import java.io.Serializable;
  */
 public abstract class Etat implements Serializable {
 
-    protected String nom; //nom de l'état
-    protected String image; //image de l'état
+    protected int nom; //nom de l'état
+    protected int image; //image de l'état
 
     /**
      * Comportement associé à l'état
@@ -19,19 +19,19 @@ public abstract class Etat implements Serializable {
     public abstract void comportement(Entite e);
 
     //Getter et setter
-    public String getNom() {
+    public int getNom() {
         return nom;
     }
 
-    public void setNom(String nom) {
+    public void setNom(int nom) {
         this.nom = nom;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
     }
 }

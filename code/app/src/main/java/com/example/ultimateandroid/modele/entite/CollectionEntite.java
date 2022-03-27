@@ -34,12 +34,12 @@ public class CollectionEntite implements Serializable {
      * @param niveau : niveau de l'entité à récupérer
      * @return une entité
      */
-    public Entite getEntite(String nom, int niveau){
+    public Entite getEntite(int nom, int niveau){
         List<Entite> ens = encyclopedie.get(niveau);
-        Entite entiteRecherche =null;
+        Entite entiteRecherche = null;
         for(Entite p : ens){
-            if(p.getNom().equals((nom))){
-                entiteRecherche =p;
+            if(p.getNom() == nom){
+                entiteRecherche = p;
             }
         }
         return entiteRecherche;
@@ -74,7 +74,7 @@ public class CollectionEntite implements Serializable {
         Entite p;
         while(listeEntite.size()<nbEntiteByVague){
             p= encyclopedie.get(numeroVague).get(random.nextInt(encyclopedie.get(numeroVague).size()));
-            if(!listeEntite.contains(p)) { //Si l'entité n'a pas déjà été pris et si ce n'est pas un starter
+            if(!listeEntite.contains(p) && !p.getStarter()) { //Si l'entité n'a pas déjà été pris et si ce n'est pas un starter
                 listeEntite.add(p.cloner()); //On l'ajoute à la liste
             }
         }

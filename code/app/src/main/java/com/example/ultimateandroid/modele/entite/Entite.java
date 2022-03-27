@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 public class Entite implements Serializable {
 
-    private String nom; //son nom
+    private int nom; //son nom
     private int image; //son image de déplacement
     private int pv; //ses pv
     private int attaque; //ses points d'attaque
@@ -18,7 +18,7 @@ public class Entite implements Serializable {
     private Mouvement[] mouvements; //contient ses 4 attaques
     private int niveau; //son niveau (1 au minimum)
     private int experience; //son expérience (0 au minimum)
-    private String evolution; //contient le nom de son évolution
+    private int evolution; //contient le nom de son évolution
     private Boolean isStarter; //true si c'est un starter, false sinon
     private transient Etat etat; //état d'une entité
 
@@ -35,7 +35,7 @@ public class Entite implements Serializable {
      * @param experience : son expérience
      * @param evolution : le nom de son évolution
      */
-    public Entite(String nom, int image, int pv, int attaque, int defense, int vitesse, Position position, Type type, Mouvement[] tabMouvements, int niveau, int experience, String evolution, Boolean isStarter) {
+    public Entite(int nom, int image, int pv, int attaque, int defense, int vitesse, Position position, Type type, Mouvement[] tabMouvements, int niveau, int experience, int evolution, Boolean isStarter) {
         this.nom=nom;
         this.image = image;
         this.pv=pv;
@@ -73,8 +73,8 @@ public class Entite implements Serializable {
     /* Getter et Setter */
 
 
-    public String getNom() { return nom; }
-    public void setNom(String nom) {
+    public int getNom() { return nom; }
+    public void setNom(int nom) {
         this.nom=nom;
     }
 
@@ -153,9 +153,9 @@ public class Entite implements Serializable {
      * @param  : nom de l'attaque
      * @return un Mouvement
      */
-   public Mouvement getMouvement(String nom){
+   public Mouvement getMouvement(int nom){
         for (Mouvement m : mouvements){
-            if(m.getNom().equals(nom)){
+            if(m.getNom() == nom){
                 return m;
             }
         }
@@ -178,11 +178,11 @@ public class Entite implements Serializable {
         this.experience = experience;
     }
 
-    public String getEvolution() {
+    public int getEvolution() {
         return evolution;
     }
 
-    public void setEvolution(String evolution) {
+    public void setEvolution(int evolution) {
         this.evolution = evolution;
     }
 
@@ -209,7 +209,7 @@ public class Entite implements Serializable {
         if(this.getClass()!=o.getClass()) return false;
 
         Entite p=(Entite)o;
-        if(getNom().equals(p.getNom())) return true;
+        if(getNom() == p.getNom()) return true;
         return false;
     }
 
@@ -222,7 +222,7 @@ public class Entite implements Serializable {
         int premier=13;
         int result=1;
 
-        result=premier*result + nom.hashCode();
+        result=premier*result + nom;
         return result;
     }
 

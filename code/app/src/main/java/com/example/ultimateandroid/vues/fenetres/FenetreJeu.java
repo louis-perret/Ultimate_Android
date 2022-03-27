@@ -76,6 +76,7 @@ public class FenetreJeu extends AppCompatActivity {
         intent.putExtra("largeurEcran",largeurEcran);
         intent.putExtra("hauteurEcran", hauteurEcran);
         startActivity(intent);
+        finish();
     }
 
     /**
@@ -85,7 +86,6 @@ public class FenetreJeu extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("","onCreate: ");
         setContentView(R.layout.fenetre_jeu); //Je rattache le code behind à la fenêtre
         layout = findViewById(R.id.layout2);
         manager = ((App)getApplication()).getManager();
@@ -120,7 +120,6 @@ public class FenetreJeu extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d("", "onStop: ");
         manager.terminerBoucleJeu();
     }
 }

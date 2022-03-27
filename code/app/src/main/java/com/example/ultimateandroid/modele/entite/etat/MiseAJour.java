@@ -14,7 +14,7 @@ public class MiseAJour extends Etat{
      * @param nom : son nom
      * @param image : chemin vers son image
      */
-    public MiseAJour(String nom, String image){
+    public MiseAJour(int nom, int image){
         this.nom=nom;
         this.image=image;
     }

@@ -38,18 +38,16 @@ public class App extends Application {
         else{ //sinon on charge les données du Stub
             chargeur = new Stub();
             try {
-                fileName.createNewFile();
+                fileName.createNewFile(); //puis on crée le fichier pour la sauvegarde
                 sauveur = new SauveurBinaire(fileName.getPath());
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
-
-        manager = new Manager(chargeur.charger());
-        /*manager = new Manager((new Stub().charger()));
+        //manager = new Manager(chargeur.charger());
+        manager = new Manager((new Stub().charger()));
         sauveur = new SauveurBinaire(fileName.getPath());
-        sauveur.sauver(manager.getBanque());*/
+        sauveur.sauver(manager.getBanque());
 
 
     }
@@ -63,12 +61,36 @@ public class App extends Application {
         return manager;
     }
 
+    /**
+     * Renvoie le sauveur
+     * @return
+     */
     public Sauveur getSauveur() {
         return sauveur;
     }
 
+    /**
+     * Modifie le sauveur
+     * @param sauveur : nouveau sauveur
+     */
     public void setSauveur(Sauveur sauveur) {
         this.sauveur = sauveur;
+    }
+
+    /**
+     * Renvoie le chargeur
+     * @return
+     */
+    public Chargeur getChargeur() {
+        return chargeur;
+    }
+
+    /**
+     * Modifie le chargeur
+     * @param chargeur
+     */
+    public void setChargeur(Chargeur chargeur) {
+        this.chargeur = chargeur;
     }
 }
 

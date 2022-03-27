@@ -22,6 +22,7 @@ public class FenetreSelection extends AppCompatActivity {
 
     private Manager manager;
     private TextView nbVic;
+    private TextInputEditText pseudo;
 
     /**
      * Méthode appelée lors de la création de l'activité
@@ -61,6 +62,7 @@ public class FenetreSelection extends AppCompatActivity {
                 .commit();
 
         nbVic = findViewById(R.id.textnbVictoire);
+        pseudo = findViewById(R.id.inputPseudo);
     }
 
     /**
@@ -69,7 +71,10 @@ public class FenetreSelection extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        nbVic.setText("nombre de victoire(s): " + manager.getJoueurCourant().getNbVictoire()); //pour afficher le nombre de victoire du joueur courrant
+        if(manager.getJoueurCourant() != null){
+            pseudo.setText(manager.getJoueurCourant().getPseudo());
+        }
+        nbVic.setText(getString(R.string.texteNbVictoires) + + manager.getJoueurCourant().getNbVictoire()); //pour afficher le nombre de victoire du joueur courrant
     }
 
     /**
@@ -78,23 +83,17 @@ public class FenetreSelection extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d("onStop", "onStop selection" );
     }
 
     /**
      * méthode permettant d'aller sur la vue fenetre_jeu mais aussi d'enregistrer le pseudo du joueur qu'il aura renseigné
      */
     public void lancementPartie(){
-        TextInputEditText pseudo = findViewById(R.id.inputPseudo);
         manager.addJoueur(pseudo.getText().toString());
         Intent intent = new Intent(this,FenetreJeu.class);
 
         startActivity(intent); //On lance l'activité
+        finish();
     }
 
-    @Override
-    protected void onDestroy() {
-        ((App) getApplication()).getSauveur().sauver(manager.getBanque());
-        super.onDestroy();
-    }
 }

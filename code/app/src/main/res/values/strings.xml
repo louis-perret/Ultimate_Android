@@ -8,4 +8,67 @@
     <string name="texteDefaite">Vous avez perdu !</string>
     <string name="texteVictoire">Vous avez gagné !</string>
     <string name="texteBoutonDefaite">Menu principal</string>
+
+
+
+    <string name="nomPC">PC</string>
+    <string name="nomLinux">Linux</string>
+    <string name="nomSuper_linux">Super Linux</string>
+    <string name="nomConsole">Console</string>
+    <string name="nomTelephone">Telephone</string>
+    <string name="nomNokia_3310">Nokia 3310</string>
+    <string name="nomMacbook">Macbook</string>
+    <string name="nomWindows_1_0">Windows 1.0</string>
+    <string name="nomPS1">PS1</string>
+    <string name="nomGame_Boy_Color">GameBoy color</string>
+    <string name="nomIBM_Simon">IBM Simon</string>
+    <string name="nomSuper_Windows">Super Windows</string>
+    <string name="nomIphone">Iphone</string>
+    <string name="nomSamsung">Samsung</string>
+    <string name="nomDS3">DS3</string>
+    <string name="nomNokia_Evolution">Nokia V2</string>
+    <string name="nomIphone6">Iphone6</string>
+    <string name="nomPS5">PS5</string>
+
+
+    <string name="statusCourt_circuit">Court-circuit</string>
+    <string name="statusMise_a_jour">Mise à jour</string>
+    <string name="statusHumide">Humide</string>
+    <string name="attaquePistolet_a_eau">Pistolet à eau</string>
+    <string name="attaqueRapidite">Rapidité</string>
+    <string name="attaqueDecharge">Décharge</string>
+    <string name="attaqueCharge">Charge</string>
+    <string name="attaqueBatterie">Batterie</string>
+    <string name="attaqueTrempette">Trempette</string>
+    <string name="attaqueMise_a_jour">Mise à jour</string>
+    <string name="attaqueDepense">Dépense</string>
+    <string name="attaqueSiri">Siri</string>
+    <string name="attaqueSabotage">Sabotage</string>
+    <string name="attaqueConfort">Confort</string>
+    <string name="attaqueStabilité">Stabilité</string>
+    <string name="attaqueVague_Psy">Vague Psy</string>
+    <string name="attaqueLance_eau">Lance-eau</string>
+    <string name="attaquePied_saute">Pied sauté</string>
+    <string name="attaqueSuper_Rapidite">Super Rapidité</string>
+    <string name="attaquePetit_voltage">Petit voltage</string>
+    <string name="attaqueSuper_batterie">Super batterie</string>
+    <string name="attaqueMise_a_jour_2">Mise à jour 2</string>
+    <string name="attaqueDepense_onereuse">Dépense onéreuse</string>
+    <string name="Super_Siri">Super Siri</string>
+    <string name="attaqueSuper_Confort">Super Confort</string>
+    <string name="attaqueBelier">Bélier</string>
+    <string name="attaqueSuper_Satibilite">Super Satibilité</string>
+    <string name="attaqueTsunami">Tsunami</string>
+    <string name="attaqueTempete_de_rapidite">Tempête de rapidité</string>
+    <string name="attaque1000_volt">1000 volt</string>
+    <string name="attaqueMega_Batterie">Mega Batterie</string>
+    <string name="attaqueMega_mise_a_jour">Mega mise à jour</string>
+    <string name="attaqueRuine">Ruine</string>
+    <string name="attaqueGiga_Impact">Giga-Impact</string>
+    <string name="attaqMega_Siri">Mega Siri</string>
+    <string name="attaqueMega_confort">Mega confort</string>
+    <string name="attaqueMega_Stabilite">Mega Stabilité</string>
+    <string name="textePvJoueur">"PV joueur : "</string>
+    <string name="textePvEnnemi">"PV ennmemi : "</string>
+    <string name="texteNbVictoires">"nombre de victoire(s): "</string>
 </resources>

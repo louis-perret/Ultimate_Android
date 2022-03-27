@@ -69,10 +69,10 @@
         android:id="@+id/vieAllie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="15dp"
         android:textColor="@color/white"
         android:textSize="50px"
-        android:layout_margin="15dp"
-        app:layout_constraintEnd_toStartOf="@+id/vieEnnemi"
+        app:layout_constraintEnd_toStartOf="@+id/etatEnnemi"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <TextView
@@ -84,4 +84,19 @@
         android:layout_margin="15dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/etatAllie"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toStartOf="@+id/vieAllie"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/etatEnnemi"
+        android:layout_width="63dp"
+        android:layout_height="77dp"
+        app:layout_constraintEnd_toStartOf="@+id/vieEnnemi"
+        app:layout_constraintTop_toTopOf="@+id/imageView"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

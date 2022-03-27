@@ -16,7 +16,7 @@ public class Humide extends Etat{
      * @param nom : son nom
      * @param image : chemin vers son image
      */
-    public Humide(String nom, String image){
+    public Humide(int nom, int image){
         this.nom=nom;
         this.image=image;
     }
